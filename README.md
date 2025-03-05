@@ -1,37 +1,29 @@
 # CMSC335
 
 Design, implement and test a Java class Inheritance hierarchy that would satisfy the following is-a and has-a relationships:
-[x] A Shape is an object
-[x] A Shape has a NumberofDimensions
-    [x] A TwoDimensionalShape is a Shape
-    [x] A TwoDimensionalShape has an area
-        [x] A Circle is a TwoDimensionalShape
-            [x] Area
-        [ ] A Square is a TwoDimensionalShape
-            [ ] Area
-        [ ] A Triangle is a TwoDimensionalShape
-            [ ] Area
-        [ ] A Rectangle is a TwoDimensionalShape
-            [ ] Area
 
-    [x] A ThreeDimensionalShape is a Shape
-    [x] A ThreeDimensionalShape has a volume
-        [ ] A Sphere is a ThreeDimensionalShape
-            [ ] Volume
-        [ ] A Cube is a ThreeDimensionalShape
-            [ ] Volume
-        [ ] A Cone is a ThreeDimensionalShape
-            [ ] Volume
-        [ ] A Cylinder is a ThreeDimensionalShape
-            [ ] Volume
-        [ ] A Torus is a ThreeDimensionalShape
-            [ ] Volume
+- [x] A Shape is an object
+- [x] A Shape has a NumberofDimensions
+- [x] A TwoDimensionalShape is a Shape
+- [x] A TwoDimensionalShape has an area
+- [x] A Circle is a TwoDimensionalShape
+- [ ] A Square is a TwoDimensionalShape
+- [ ] A Triangle is a TwoDimensionalShape
+- [ ] A Rectangle is a TwoDimensionalShape
 
-[ ]Create a command line driven menu that allows a user to construct each of the TwoDimensional and ThreeDimensional Shape subclasses. 
-[x] The menu should continue to loop prompting for a specific class and then prompt for appropriate input parameters. 
-[ ] The values returned should be the volume or area as appropriate to the shape. 
-[ ] Error checks should be in developed to make sure appropriate menu items and types of data were input and prompt the user to enter to correct data. 
-[x] An option to exit the program should be available as well that will provide an appropriate Thank you message along with the current date and time.
+- [x] A ThreeDimensionalShape is a Shape
+- [x] A ThreeDimensionalShape has a volume
+- [ ] A Sphere is a ThreeDimensionalShape
+- [ ] A Cube is a ThreeDimensionalShape
+- [ ] A Cone is a ThreeDimensionalShape
+- [ ] A Cylinder is a ThreeDimensionalShape
+- [ ] A Torus is a ThreeDimensionalShape
+
+- [ ] Create a command line driven menu that allows a user to construct each of the TwoDimensional and ThreeDimensional Shape subclasses. 
+- [x] The menu should continue to loop prompting for a specific class and then prompt for appropriate input parameters. 
+- [ ] The values returned should be the volume or area as appropriate to the shape. 
+- [ ] Error checks should be in developed to make sure appropriate menu items and types of data were input and prompt the user to enter to correct data. 
+- [x] An option to exit the program should be available as well that will provide an appropriate Thank you message along with the current date and time.
 
 ### Example
 ```
