@@ -20,7 +20,7 @@ Design, implement and test a Java class Inheritance hierarchy that would satisfy
 - [ ] A Torus is a ThreeDimensionalShape
 
 - [ ]Create a command line driven menu that allows a user to construct each of the TwoDimensional and ThreeDimensional Shape subclasses. 
-[x] The menu should continue to loop prompting for a specific class and then prompt for appropriate input parameters. 
+- [x] The menu should continue to loop prompting for a specific class and then prompt for appropriate input parameters. 
 - [ ] The values returned should be the volume or area as appropriate to the shape. 
 - [ ] Error checks should be in developed to make sure appropriate menu items and types of data were input and prompt the user to enter to correct data. 
 - [x] An option to exit the program should be available as well that will provide an appropriate Thank you message along with the current date and time.
