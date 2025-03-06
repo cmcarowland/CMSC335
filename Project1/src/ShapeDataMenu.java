@@ -24,6 +24,9 @@ public class ShapeDataMenu extends Menu {
         if ((questions & 4) > 0) {
             getWidth();
         }
+        if ((questions & 8) > 0) {
+            getBase();
+        }
 
         System.out.println(shape.getClass().getSimpleName() + " has been created with the following data:");
         System.out.println(shape.toString());
@@ -48,20 +51,19 @@ public class ShapeDataMenu extends Menu {
         System.out.println("Enter the Height :");
         float height = parseUserFloat();
         
-        if (shape instanceof Square) {
-            try{
+        try{
+            if (shape instanceof Square) {
                 ((Square)shape).setSides(height);
                 System.out.println("Both sides of the Square have been set to " + height);
-            } catch (IllegalArgumentException e) {
-                System.err.println(e.getMessage());
-            }
-        } else if (shape instanceof Rectangle) {
-            try{
+            } else if (shape instanceof Rectangle) {
                 ((Rectangle)shape).setHeight(height);
                 System.out.println("The height of the Rectangle has been set to " + height);
-            } catch (IllegalArgumentException e) {
-                System.err.println(e.getMessage());
+            } else if (shape instanceof Triangle) {
+                ((Triangle)shape).setHeight(height);
+                System.out.println("The height of the Triangle has been set to " + height);
             }
+        } catch (IllegalArgumentException e) {
+            System.err.println(e.getMessage());
         }
     }
 
@@ -73,6 +75,20 @@ public class ShapeDataMenu extends Menu {
             try{
                 ((Rectangle)shape).setWidth(width);
                 System.out.println("The width of the Rectangle has been set to " + width);
+            } catch (IllegalArgumentException e) {
+                System.err.println(e.getMessage());
+            }
+        } 
+    }
+    
+    private void getBase() {
+        System.out.println("Enter the Base :");
+        float base = parseUserFloat();
+        
+        if (shape instanceof Triangle) {
+            try{
+                ((Triangle)shape).setBase(base);
+                System.out.println("The base of the Triangle has been set to " + base);
             } catch (IllegalArgumentException e) {
                 System.err.println(e.getMessage());
             }
