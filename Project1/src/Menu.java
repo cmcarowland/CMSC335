@@ -22,4 +22,17 @@ public abstract class Menu {
             }
         }
     }
+    
+    public static Float parseUserFloat() {
+        System.out.print(">> ");
+        while (true) {
+            String input = Project1.scanner.nextLine();
+            try {
+                Float intNum = Float.parseFloat(input);
+                return intNum;
+            } catch (NumberFormatException e) {
+                System.err.print("Invalid string format. Cannot convert to integer.\n>>");
+            }
+        }
+    }
 }
