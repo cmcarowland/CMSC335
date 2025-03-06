@@ -3,5 +3,5 @@ public abstract class TwoDimensionalShape extends Shape {
         super(2);
     }
     
-    public abstract double calculateArea();
+    public abstract float calculateArea();
 }

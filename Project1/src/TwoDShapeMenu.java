@@ -37,9 +37,11 @@ public class TwoDShapeMenu extends Menu {
 
         switch(userInput) {
             case 1:
-                return this;
+                return new ShapeDataMenu(this, new Circle(), 1);
             case 2:
-                return this;
+                return new ShapeDataMenu(this, new Rectangle(), 6);
+            case 3:
+                return new ShapeDataMenu(this, new Square(), 2);
             case 0:
                 return parentMenu;
             default:
