@@ -36,14 +36,13 @@ public class ShapeDataMenu extends Menu {
     private void getRadius() {
         System.out.println("Enter the radius : ");
         float radius = parseUserFloat();
-        
-        if (shape instanceof Circle) {
-            try{
+        try{
+            if (shape instanceof Circle) {
                 ((Circle)shape).setRadius(radius);
                 System.out.println("The radius of the Circle has been set to " + radius);
-            } catch (IllegalArgumentException e) {
-                System.err.println(e.getMessage());
-            }
+            } 
+        } catch (IllegalArgumentException e) {
+            System.err.println(e.getMessage());
         }
     }
 
@@ -70,28 +69,26 @@ public class ShapeDataMenu extends Menu {
     private void getWidth() {
         System.out.println("Enter the Width :");
         float width = parseUserFloat();
-        
-        if (shape instanceof Rectangle) {
-            try{
+        try{
+            if (shape instanceof Rectangle) {
                 ((Rectangle)shape).setWidth(width);
                 System.out.println("The width of the Rectangle has been set to " + width);
-            } catch (IllegalArgumentException e) {
-                System.err.println(e.getMessage());
-            }
-        } 
+            } 
+        } catch (IllegalArgumentException e) {
+            System.err.println(e.getMessage());
+        }
     }
     
     private void getBase() {
         System.out.println("Enter the Base :");
         float base = parseUserFloat();
-        
-        if (shape instanceof Triangle) {
-            try{
+        try{
+            if (shape instanceof Triangle) {
                 ((Triangle)shape).setBase(base);
                 System.out.println("The base of the Triangle has been set to " + base);
-            } catch (IllegalArgumentException e) {
-                System.err.println(e.getMessage());
-            }
-        } 
+            } 
+        } catch (IllegalArgumentException e) {
+            System.err.println(e.getMessage());
+        }
     }
 }
