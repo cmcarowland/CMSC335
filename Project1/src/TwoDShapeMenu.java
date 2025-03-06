@@ -1,5 +1,16 @@
 public class TwoDShapeMenu extends Menu {     
 
+    protected enum Questions {
+        Radius,
+        Height,
+        Width,
+        Base;
+
+        public int getStatusFlagValue(){
+            return 1 << this.ordinal();
+        } 
+    }
+
     public TwoDShapeMenu() {
         super();
         menuName = "2D Shape Menu";
@@ -37,11 +48,13 @@ public class TwoDShapeMenu extends Menu {
 
         switch(userInput) {
             case 1:
-                return new ShapeDataMenu(this, new Circle(), 1);
+                return new ShapeDataMenu(this, new Circle(), Questions.Radius.getStatusFlagValue());
             case 2:
-                return new ShapeDataMenu(this, new Rectangle(), 6);
+                return new ShapeDataMenu(this, new Rectangle(), Questions.Height.getStatusFlagValue() | Questions.Width.getStatusFlagValue());
             case 3:
-                return new ShapeDataMenu(this, new Square(), 2);
+                return new ShapeDataMenu(this, new Square(), Questions.Height.getStatusFlagValue());
+            case 4:
+                return new ShapeDataMenu(this, new Triangle(), Questions.Base.getStatusFlagValue() | Questions.Height.getStatusFlagValue());
             case 0:
                 return parentMenu;
             default:
