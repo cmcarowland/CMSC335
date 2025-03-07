@@ -15,6 +15,7 @@ public class Cone extends ThreeDimensionalShape {
     public void setRadius(float radius) {
         if(isMeasurementValid(radius)) {
             this.radius = radius;
+            System.out.println("The radius of the Cone's base has been set to " + radius);
         } else {
             throw new IllegalArgumentException("Invalid radius. Please enter a positive value.");
         }
@@ -27,6 +28,7 @@ public class Cone extends ThreeDimensionalShape {
     public void setHeight(float height) {
         if(isMeasurementValid(height)) {
             this.height = height;
+            System.out.println("The hight of the Cone have been set to " + height);
         } else {
             throw new IllegalArgumentException("Invalid height. Please enter a positive value.");
         }

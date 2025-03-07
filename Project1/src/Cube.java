@@ -13,6 +13,7 @@ public class Cube extends ThreeDimensionalShape {
     public void setSide(float side) {
         if(isMeasurementValid(side)) {
             this.side = side;
+            System.out.println("All sides of the Cube have been set to " + side);
         } else {
             throw new IllegalArgumentException("Invalid side");
         }
