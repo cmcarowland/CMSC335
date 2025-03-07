@@ -43,6 +43,9 @@ public class ShapeDataMenu extends Menu {
             } else if (shape instanceof Sphere) {
                 ((Sphere)shape).setRadius(radius);
                 System.out.println("The radius of the Sphere has been set to " + radius);
+            } else if (shape instanceof Cone) {
+                ((Cone)shape).setRadius(radius);
+                System.out.println("The radius of the Cone's base has been set to " + radius);
             } 
         } catch (IllegalArgumentException e) {
             System.err.println(e.getMessage());
@@ -66,6 +69,9 @@ public class ShapeDataMenu extends Menu {
             } else if (shape instanceof Cube) {
                 ((Cube)shape).setSide(height);
                 System.out.println("All sides of the Cube have been set to " + height);
+            } else if (shape instanceof Cone) {
+                ((Cone)shape).setHeight(height);
+                System.out.println("The hight of the Cone have been set to " + height);
             }
         } catch (IllegalArgumentException e) {
             System.err.println(e.getMessage());
