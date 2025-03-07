@@ -3,5 +3,5 @@ public abstract class ThreeDimensionalShape extends Shape {
         super(3);
     }
 
-    public abstract double calculateVolume();
+    public abstract float calculateVolume();
 }
