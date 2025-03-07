@@ -50,7 +50,7 @@ public class ShapeDataMenu extends Menu {
     }
 
     private void getHeight() {
-        System.out.println("Enter the Height :");
+        System.out.println("Enter the height :");
         float height = parseUserFloat();
         
         try{
@@ -63,6 +63,9 @@ public class ShapeDataMenu extends Menu {
             } else if (shape instanceof Triangle) {
                 ((Triangle)shape).setHeight(height);
                 System.out.println("The height of the Triangle has been set to " + height);
+            } else if (shape instanceof Cube) {
+                ((Cube)shape).setSide(height);
+                System.out.println("All sides of the Cube have been set to " + height);
             }
         } catch (IllegalArgumentException e) {
             System.err.println(e.getMessage());

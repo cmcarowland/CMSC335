@@ -11,7 +11,11 @@ public class Sphere extends ThreeDimensionalShape {
     }
 
     public void setRadius(float radius) {
-        this.radius = radius;
+        if(isMeasurementValid(radius)) {
+            this.radius = radius;
+        } else {
+            throw new IllegalArgumentException("Invalid radius");
+        }
     }
 
     @Override
