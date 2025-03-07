@@ -40,6 +40,9 @@ public class ShapeDataMenu extends Menu {
             if (shape instanceof Circle) {
                 ((Circle)shape).setRadius(radius);
                 System.out.println("The radius of the Circle has been set to " + radius);
+            } else if (shape instanceof Sphere) {
+                ((Sphere)shape).setRadius(radius);
+                System.out.println("The radius of the Sphere has been set to " + radius);
             } 
         } catch (IllegalArgumentException e) {
             System.err.println(e.getMessage());
