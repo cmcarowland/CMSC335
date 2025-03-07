@@ -38,7 +38,7 @@ public class ThreeDShapeMenu extends Menu {
 
         switch(userInput) {
             case 1:
-                return this;
+                return new ShapeDataMenu(this, new Sphere(), Questions.Radius.getStatusFlagValue());
             case 2:
                 return this;
             case 0:

@@ -1,16 +1,5 @@
 public class TwoDShapeMenu extends Menu {     
 
-    protected enum Questions {
-        Radius,
-        Height,
-        Width,
-        Base;
-
-        public int getStatusFlagValue(){
-            return 1 << this.ordinal();
-        } 
-    }
-
     public TwoDShapeMenu() {
         super();
         menuName = "2D Shape Menu";
