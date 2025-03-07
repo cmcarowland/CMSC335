@@ -25,6 +25,7 @@ public class Circle extends TwoDimensionalShape {
     public void setRadius(float r) {
         if(isMeasurementValid(r)) {
             radius = r;
+            System.out.println("The radius of the Circle has been set to " + radius);
         } else {
             throw new IllegalArgumentException("Invalid radius");
         }

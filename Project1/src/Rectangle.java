@@ -23,6 +23,7 @@ public class Rectangle extends TwoDimensionalShape {
     public void setHeight(float side) {
         if (isMeasurementValid(side)) {
             this.height = side;
+            System.out.println("The height of the Rectangle has been set to " + height);
         } else {
             throw new IllegalArgumentException("Invalid side length");
         }
@@ -31,6 +32,7 @@ public class Rectangle extends TwoDimensionalShape {
     public void setWidth(float side) {
         if (isMeasurementValid(side)) {
             this.width = side;
+            System.out.println("The width of the Rectangle has been set to " + width);
         } else {
             throw new IllegalArgumentException("Invalid side length");
         }

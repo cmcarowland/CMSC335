@@ -25,6 +25,7 @@ public class Triangle extends TwoDimensionalShape {
     public void setBase(float base) {
         if (isMeasurementValid(base)) {
             this.base = base;
+            System.out.println("The base of the Triangle has been set to " + base);
         } else {
             throw new IllegalArgumentException("Invalid base length");
         }
@@ -33,6 +34,7 @@ public class Triangle extends TwoDimensionalShape {
     public void setHeight(float height) {
         if (isMeasurementValid(height)) {
             this.height = height;
+            System.out.println("The height of the Triangle has been set to " + height);
         } else {
             throw new IllegalArgumentException("Invalid height length");
         }

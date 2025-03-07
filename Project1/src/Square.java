@@ -3,6 +3,7 @@ public class Square extends Rectangle {
         if (isMeasurementValid(side)) {
             this.height = side;
             this.width = side;
+            System.out.println("Both sides of the Square have been set to " + height);
         } else {
             throw new IllegalArgumentException("Invalid side length");
         }

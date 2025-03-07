@@ -13,6 +13,7 @@ public class Sphere extends ThreeDimensionalShape {
     public void setRadius(float radius) {
         if(isMeasurementValid(radius)) {
             this.radius = radius;
+            System.out.println("The radius of the Sphere has been set to " + radius);
         } else {
             throw new IllegalArgumentException("Invalid radius");
         }
