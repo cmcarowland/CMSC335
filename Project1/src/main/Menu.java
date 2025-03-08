@@ -1,3 +1,5 @@
+package main;
+
 public abstract class Menu {
     public Menu parentMenu;
     protected String menuName;

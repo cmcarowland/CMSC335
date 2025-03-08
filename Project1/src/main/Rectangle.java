@@ -1,3 +1,5 @@
+package main;
+
 public class Rectangle extends TwoDimensionalShape {
     protected float height;
     protected float width;
