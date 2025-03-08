@@ -6,10 +6,6 @@ public class Cube extends ThreeDimensionalShape {
         side = 0;
     }
 
-    public float getSide() {
-        return side;
-    }
-
     public void setSide(float side) {
         if(isMeasurementValid(side)) {
             this.side = side;
