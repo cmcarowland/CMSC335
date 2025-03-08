@@ -6,10 +6,6 @@ public class Sphere extends ThreeDimensionalShape {
         radius = 0;
     }
 
-    public float getRadius() {
-        return radius;
-    }
-
     public void setRadius(float radius) {
         if(isMeasurementValid(radius)) {
             this.radius = radius;
