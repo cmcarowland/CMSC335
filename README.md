@@ -16,7 +16,7 @@ Design, implement and test a Java class Inheritance hierarchy that would satisfy
 - [x] A Sphere is a ThreeDimensionalShape
 - [x] A Cube is a ThreeDimensionalShape
 - [x] A Cone is a ThreeDimensionalShape
-- [ ] A Cylinder is a ThreeDimensionalShape
+- [x] A Cylinder is a ThreeDimensionalShape
 - [ ] A Torus is a ThreeDimensionalShape
 
 - [*] Create a command line driven menu that allows a user to construct each of the TwoDimensional and ThreeDimensional Shape subclasses. 

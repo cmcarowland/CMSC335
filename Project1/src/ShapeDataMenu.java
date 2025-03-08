@@ -43,6 +43,8 @@ public class ShapeDataMenu extends Menu {
                 ((Sphere)shape).setRadius(radius);
             } else if (shape instanceof Cone) {
                 ((Cone)shape).setRadius(radius);
+            } else if (shape instanceof Cylinder) {
+                ((Cylinder)shape).setRadius(radius);
             } 
         } catch (IllegalArgumentException e) {
             System.err.println(e.getMessage());
@@ -64,6 +66,8 @@ public class ShapeDataMenu extends Menu {
                 ((Cube)shape).setSide(height);
             } else if (shape instanceof Cone) {
                 ((Cone)shape).setHeight(height);
+            } else if (shape instanceof Cylinder) {
+                ((Cylinder)shape).setHeight(height);
             }
         } catch (IllegalArgumentException e) {
             System.err.println(e.getMessage());
