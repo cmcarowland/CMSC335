@@ -46,7 +46,7 @@ public class ThreeDShapeMenu extends Menu {
             case 4:
                 return new ShapeDataMenu(this, new Cylinder(), Questions.Radius.getStatusFlagValue() | Questions.Height.getStatusFlagValue());
             case 5:
-                return this;//new ShapeDataMenu(this, new Torus(), Questions.Radius.getStatusFlagValue() | Questions.Height.getStatusFlagValue());
+                return new ShapeDataMenu(this, new Torus(), Questions.MajorMinorRadius.getStatusFlagValue());
             case 0:
                 return parentMenu;
             default:
