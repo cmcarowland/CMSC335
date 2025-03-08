@@ -15,29 +15,35 @@ public class ShapeDataMenu extends Menu {
 
     @Override
     public Menu run() {
+        boolean success = true;
         if ((questions & 1) > 0) {
-            getRadius();
+            success = getRadius();
         }
-        if ((questions & 2) > 0) {
-            getHeight();
+        if ((questions & 2) > 0 && success) {
+            success = getHeight();
         }
-        if ((questions & 4) > 0) {
-            getWidth();
+        if ((questions & 4) > 0 && success) {
+            success = getWidth();
         }
-        if ((questions & 8) > 0) {
-            getBase();
+        if ((questions & 8) > 0 && success) {
+            success = getBase();
         }
-        if ((questions & 16) > 0) {
-            getRadius("Major");
-            getRadius("Minor");
+        if ((questions & 16) > 0 && success) {
+            success = getRadius("Major");
+            success = getRadius("Minor");
         }
 
-        System.out.println(shape.getClass().getSimpleName() + " has been created with the following data:");
-        System.out.println(shape.toString());
+        if(success) {
+            System.out.println(shape.getClass().getSimpleName() + " has been created with the following data:");
+            System.out.println(shape.toString());
+        } else {
+            System.err.println("Error Creating " + shape.getClass().getSimpleName() + ".\nPlease try again.\n");
+        }
+        
         return parentMenu;
     }
     
-    private void getRadius() {
+    private boolean getRadius() {
         System.out.println("Enter the radius : ");
         float radius = parseUserFloat();
         try{
@@ -52,10 +58,13 @@ public class ShapeDataMenu extends Menu {
             } 
         } catch (IllegalArgumentException e) {
             System.err.println(e.getMessage());
+            return false;
         }
+
+        return true;
     }
 
-    private void getRadius(String radiusType) {
+    private boolean getRadius(String radiusType) {
         System.out.printf("Enter the %s radius : ", radiusType);
         float radius = parseUserFloat();
         try{
@@ -70,10 +79,13 @@ public class ShapeDataMenu extends Menu {
             }
         } catch (IllegalArgumentException e) {
             System.err.println(e.getMessage());
+            return false;
         }
+
+        return true;
     }
 
-    private void getHeight() {
+    private boolean getHeight() {
         System.out.println("Enter the height :");
         float height = parseUserFloat();
         
@@ -93,10 +105,13 @@ public class ShapeDataMenu extends Menu {
             }
         } catch (IllegalArgumentException e) {
             System.err.println(e.getMessage());
+            return false;
         }
+
+        return true;
     }
 
-    private void getWidth() {
+    private boolean getWidth() {
         System.out.println("Enter the Width :");
         float width = parseUserFloat();
         try{
@@ -105,10 +120,13 @@ public class ShapeDataMenu extends Menu {
             } 
         } catch (IllegalArgumentException e) {
             System.err.println(e.getMessage());
+            return false;
         }
+
+        return true;
     }
     
-    private void getBase() {
+    private boolean getBase() {
         System.out.println("Enter the Base :");
         float base = parseUserFloat();
         try{
@@ -117,6 +135,9 @@ public class ShapeDataMenu extends Menu {
             } 
         } catch (IllegalArgumentException e) {
             System.err.println(e.getMessage());
+            return false;
         }
+
+        return true;
     }
 }
