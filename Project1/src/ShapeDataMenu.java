@@ -27,6 +27,10 @@ public class ShapeDataMenu extends Menu {
         if ((questions & 8) > 0) {
             getBase();
         }
+        if ((questions & 16) > 0) {
+            getRadius("Major");
+            getRadius("Minor");
+        }
 
         System.out.println(shape.getClass().getSimpleName() + " has been created with the following data:");
         System.out.println(shape.toString());
@@ -46,6 +50,24 @@ public class ShapeDataMenu extends Menu {
             } else if (shape instanceof Cylinder) {
                 ((Cylinder)shape).setRadius(radius);
             } 
+        } catch (IllegalArgumentException e) {
+            System.err.println(e.getMessage());
+        }
+    }
+
+    private void getRadius(String radiusType) {
+        System.out.printf("Enter the %s radius : ", radiusType);
+        float radius = parseUserFloat();
+        try{
+            Torus t = (Torus)shape;
+            if (radiusType.equals("Major")) {
+                t.setMajorRadius(radius);
+            } else if (radiusType.equals("Minor")) {
+                if (t.getMajorRadius() < radius) {
+                    throw new IllegalArgumentException("Minor radius must be less than Major radius");
+                }
+                t.setMinorRadius(radius);
+            }
         } catch (IllegalArgumentException e) {
             System.err.println(e.getMessage());
         }
