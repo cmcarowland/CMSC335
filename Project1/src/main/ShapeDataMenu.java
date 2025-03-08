@@ -1,3 +1,5 @@
+package main;
+
 public class ShapeDataMenu extends Menu {
     private Shape shape;
     private int questions;

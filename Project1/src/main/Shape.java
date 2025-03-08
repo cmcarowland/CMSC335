@@ -1,3 +1,5 @@
+package main;
+
 public abstract class Shape {
     private int numberOfDimensions;
     protected String shapeData = "  -Type: %s\n";

@@ -1,3 +1,5 @@
+package main;
+
 public class Triangle extends TwoDimensionalShape {
     private float base;
     private float height;

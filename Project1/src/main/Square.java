@@ -1,3 +1,5 @@
+package main;
+
 public class Square extends Rectangle {
     public void setSides(float side) {
         if (isMeasurementValid(side)) {
