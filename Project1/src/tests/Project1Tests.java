@@ -260,4 +260,37 @@ public class Project1Tests {
         e = assertThrows(IllegalArgumentException.class, () -> shape.setHeight(-1f));
         assertTrue(e.getMessage().contains("Height must be greater than 0"));
     }
+
+    @Test
+    public void CreateTorus() {
+        Torus shape = new Torus();
+        shape.setMajorRadius(4);
+        shape.setMinorRadius(3);
+        assertEquals(710.61, shape.calculateVolume(), 0.1f);
+    }
+
+    @Test
+    public void CreateTorusWithFloat() {
+        Torus shape = new Torus();
+        shape.setMajorRadius(11.6f);
+        shape.setMinorRadius(7.3f);
+        assertEquals(12202.07f, shape.calculateVolume(), 0.01f);
+    }
+
+    @Test
+    public void CreateTorusInvalid() {
+        Torus shape = new Torus();
+        Exception e = assertThrows(IllegalArgumentException.class, () -> shape.setMajorRadius(-1f));
+        assertTrue(e.getMessage().contains("Major Radius must be greater than 0"));
+        e = assertThrows(IllegalArgumentException.class, () -> shape.setMinorRadius(-1f));
+        assertTrue(e.getMessage().contains("Minor Radius must be greater than 0"));
+    }
+
+    @Test
+    public void CreateTorusInvalidMinorLess() {
+        Torus shape = new Torus();
+        shape.setMajorRadius(4.6f);
+        Exception e = assertThrows(IllegalArgumentException.class, () -> shape.setMinorRadius(5.3f));
+        assertTrue(e.getMessage().contains("Minor Radius must be less than Major Radius"));
+    }
 }
