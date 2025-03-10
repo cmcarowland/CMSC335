@@ -211,4 +211,29 @@ public class Project1Tests {
         Exception e = assertThrows(IllegalArgumentException.class, () -> shape.setSide(-1f));
         assertTrue(e.getMessage().contains("Invalid side"));
     }
+   
+    @Test
+    public void CreateCone() {
+        Cone shape = new Cone();
+        shape.setRadius(62);
+        shape.setHeight(7);
+        assertEquals(28177.99, shape.calculateVolume(), 0.1f);
+    }
+
+    @Test
+    public void CreateConeWithFloat() {
+        Cone shape = new Cone();
+        shape.setRadius(12.56f);
+        shape.setHeight(9.7f);
+        assertEquals(1602.43f, shape.calculateVolume(), 0.01f);
+    }
+
+    @Test
+    public void CreateConeInvalid() {
+        Cone shape = new Cone();
+        Exception e = assertThrows(IllegalArgumentException.class, () -> shape.setRadius(-1f));
+        assertTrue(e.getMessage().contains("Invalid radius. Please enter a positive value."));
+        e = assertThrows(IllegalArgumentException.class, () -> shape.setHeight(-1f));
+        assertTrue(e.getMessage().contains("Invalid height. Please enter a positive value."));
+    }
 }
