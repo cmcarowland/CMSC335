@@ -23,6 +23,15 @@ public class CLITests {
     public void restoreStreams() {
         System.setIn(originalIn);
     }
+    
+    @Test
+    public void mainItem0() {
+        setupSystemIn("0\n");
+        MainMenu mainMenu = new MainMenu();
+        Menu menu = mainMenu.run();        
+
+        assertEquals(menu, null);
+    }
 
     @Test
     public void mainItem1() {
@@ -43,11 +52,102 @@ public class CLITests {
     }
 
     @Test
-    public void mainItem0() {
-        setupSystemIn("0\n");
-        MainMenu mainMenu = new MainMenu();
-        Menu menu = mainMenu.run();        
+    public void twoDMenuItem1() {
+        setupSystemIn("1\n");
+        TwoDShapeMenu twoDMenu = new TwoDShapeMenu(new MainMenu());
+        Menu menu = twoDMenu.run();        
 
-        assertEquals(menu, null);
+        assertTrue(menu instanceof ShapeDataMenu);  
+        assertEquals(Questions.Radius.getStatusFlagValue(), ((ShapeDataMenu)menu).getQuestions());      
     }
+    
+    @Test
+    public void twoDMenuItem2() {
+        setupSystemIn("2\n");
+        TwoDShapeMenu twoDMenu = new TwoDShapeMenu(new MainMenu());
+        Menu menu = twoDMenu.run();        
+
+        assertTrue(menu instanceof ShapeDataMenu);  
+        assertEquals(Questions.Height.getStatusFlagValue() | Questions.Width.getStatusFlagValue(), ((ShapeDataMenu)menu).getQuestions());      
+    }
+
+    @Test
+    public void twoDMenuItem3() {
+        setupSystemIn("3\n");
+        TwoDShapeMenu twoDMenu = new TwoDShapeMenu(new MainMenu());
+        Menu menu = twoDMenu.run();        
+
+        assertTrue(menu instanceof ShapeDataMenu);  
+        assertEquals(Questions.Height.getStatusFlagValue(), ((ShapeDataMenu)menu).getQuestions());      
+    }
+
+    @Test
+    public void twoDMenuItem4() {
+        setupSystemIn("4\n");
+        TwoDShapeMenu twoDMenu = new TwoDShapeMenu(new MainMenu());
+        Menu menu = twoDMenu.run();        
+
+        assertTrue(menu instanceof ShapeDataMenu);  
+        assertEquals(Questions.Base.getStatusFlagValue() | Questions.Height.getStatusFlagValue(), ((ShapeDataMenu)menu).getQuestions());      
+    }
+    
+    @Test
+    public void twoDMenuItem0() {
+        setupSystemIn("0\n");
+        TwoDShapeMenu twoDMenu = new TwoDShapeMenu(new MainMenu());
+        Menu menu = twoDMenu.run();        
+
+        assertTrue(menu instanceof MainMenu);  
+    }
+    
+    @Test
+    public void threeDMenuItem1() {
+        setupSystemIn("1\n");
+        ThreeDShapeMenu threeDMenu = new ThreeDShapeMenu(new MainMenu());
+        Menu menu = threeDMenu.run();        
+
+        assertTrue(menu instanceof ShapeDataMenu);  
+        assertEquals(Questions.Radius.getStatusFlagValue(), ((ShapeDataMenu)menu).getQuestions());      
+    }
+    
+    @Test
+    public void threeDMenuItem2() {
+        setupSystemIn("2\n");
+        ThreeDShapeMenu threeDMenu = new ThreeDShapeMenu(new MainMenu());
+        Menu menu = threeDMenu.run();        
+
+        assertTrue(menu instanceof ShapeDataMenu);  
+        assertEquals(Questions.Height.getStatusFlagValue(), ((ShapeDataMenu)menu).getQuestions());    
+    }
+    
+    @Test
+    public void threeDMenuItem3() {
+        setupSystemIn("3\n");
+        ThreeDShapeMenu threeDMenu = new ThreeDShapeMenu(new MainMenu());
+        Menu menu = threeDMenu.run();        
+
+        assertTrue(menu instanceof ShapeDataMenu);  
+        assertEquals(Questions.Height.getStatusFlagValue() | Questions.Radius.getStatusFlagValue(), ((ShapeDataMenu)menu).getQuestions());    
+    }
+
+    @Test
+    public void threeDMenuItem4() {
+        setupSystemIn("4\n");
+        ThreeDShapeMenu threeDMenu = new ThreeDShapeMenu(new MainMenu());
+        Menu menu = threeDMenu.run();        
+
+        assertTrue(menu instanceof ShapeDataMenu);  
+        assertEquals(Questions.Height.getStatusFlagValue() | Questions.Radius.getStatusFlagValue(), ((ShapeDataMenu)menu).getQuestions());    
+    }
+
+    @Test
+    public void threeDMenuItem5() {
+        setupSystemIn("5\n");
+        ThreeDShapeMenu threeDMenu = new ThreeDShapeMenu(new MainMenu());
+        Menu menu = threeDMenu.run();        
+
+        assertTrue(menu instanceof ShapeDataMenu);  
+        assertEquals(Questions.MajorMinorRadius.getStatusFlagValue(), ((ShapeDataMenu)menu).getQuestions());    
+    }
+
 }
