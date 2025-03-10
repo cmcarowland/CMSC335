@@ -145,6 +145,31 @@ public class Project1Tests {
         assertTrue(e.getMessage().contains("Invalid side length"));
     }
 
+    @Test
+    public void CreateTriangle() {
+        Triangle shape = new Triangle();
+        shape.setBase(8);
+        shape.setHeight(13);
+        assertEquals(52, shape.calculateArea(), 0f);
+    }
+
+    @Test
+    public void CreateTriangleWithFloat() {
+        Triangle shape = new Triangle();
+        shape.setBase(6.26f);
+        shape.setHeight(9.4f);
+        assertEquals(29.42f, shape.calculateArea(), 0.01f);
+    }
+
+    @Test
+    public void CreateTriangleInvalid() {
+        Triangle shape = new Triangle();
+        Exception e = assertThrows(IllegalArgumentException.class, () -> shape.setBase(-1f));
+        assertTrue(e.getMessage().contains("Invalid base length"));
+        e = assertThrows(IllegalArgumentException.class, () -> shape.setHeight(-1f));
+        assertTrue(e.getMessage().contains("Invalid height length"));
+    }
+
     
 
 }
