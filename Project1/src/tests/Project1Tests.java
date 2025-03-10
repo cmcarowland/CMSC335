@@ -190,4 +190,25 @@ public class Project1Tests {
         Exception e = assertThrows(IllegalArgumentException.class, () -> shape.setRadius(-1f));
         assertTrue(e.getMessage().contains("Invalid radius"));
     }
+
+    @Test
+    public void CreateCube() {
+        Cube shape = new Cube();
+        shape.setSide(27);
+        assertEquals(19683, shape.calculateVolume(), 0f);
+    }
+
+    @Test
+    public void CreateCubeWithFloat() {
+        Cube shape = new Cube();
+        shape.setSide(15.7f);
+        assertEquals(3869.89f, shape.calculateVolume(), 0.01f);
+    }
+
+    @Test
+    public void CreateCubeInvalid() {
+        Cube shape = new Cube();
+        Exception e = assertThrows(IllegalArgumentException.class, () -> shape.setSide(-1f));
+        assertTrue(e.getMessage().contains("Invalid side"));
+    }
 }
