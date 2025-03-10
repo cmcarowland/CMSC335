@@ -236,4 +236,28 @@ public class Project1Tests {
         e = assertThrows(IllegalArgumentException.class, () -> shape.setHeight(-1f));
         assertTrue(e.getMessage().contains("Invalid height. Please enter a positive value."));
     }
+    @Test
+    public void CreateCylinder() {
+        Cylinder shape = new Cylinder();
+        shape.setRadius(4);
+        shape.setHeight(3);
+        assertEquals(150.8, shape.calculateVolume(), 0.1f);
+    }
+
+    @Test
+    public void CreateCylinderWithFloat() {
+        Cylinder shape = new Cylinder();
+        shape.setRadius(11.6f);
+        shape.setHeight(7.3f);
+        assertEquals(3085.95f, shape.calculateVolume(), 0.01f);
+    }
+
+    @Test
+    public void CreateCylinderInvalid() {
+        Cylinder shape = new Cylinder();
+        Exception e = assertThrows(IllegalArgumentException.class, () -> shape.setRadius(-1f));
+        assertTrue(e.getMessage().contains("Radius must be greater than 0"));
+        e = assertThrows(IllegalArgumentException.class, () -> shape.setHeight(-1f));
+        assertTrue(e.getMessage().contains("Height must be greater than 0"));
+    }
 }
