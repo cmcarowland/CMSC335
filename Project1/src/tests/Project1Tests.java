@@ -170,6 +170,24 @@ public class Project1Tests {
         assertTrue(e.getMessage().contains("Invalid height length"));
     }
 
-    
+    @Test
+    public void CreateSphere() {
+        Sphere shape = new Sphere();
+        shape.setRadius(12);
+        assertEquals(7238.23, shape.calculateVolume(), 0.1f);
+    }
 
+    @Test
+    public void CreateSphereWithFloat() {
+        Sphere shape = new Sphere();
+        shape.setRadius(12.27f);
+        assertEquals(7737.89f, shape.calculateVolume(), 0.01f);
+    }
+
+    @Test
+    public void CreateSphereInvalid() {
+        Sphere shape = new Sphere();
+        Exception e = assertThrows(IllegalArgumentException.class, () -> shape.setRadius(-1f));
+        assertTrue(e.getMessage().contains("Invalid radius"));
+    }
 }
