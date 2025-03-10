@@ -2,11 +2,8 @@ package main;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.Scanner;
 
 public class Project1 {
-
-    static Scanner scanner = new Scanner(System.in);
     static Menu currentMenu;
     
     public static void main(String[] args) {
