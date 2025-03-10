@@ -2,9 +2,9 @@ package tests;
 
 import main.*;
 import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThrows;
 import org.junit.Test;
-
-import main.TwoDimensionalShape;
 
 public class Project1Tests {
 
@@ -79,4 +79,50 @@ public class Project1Tests {
         Torus shape = new Torus();
         assertTrue(shape instanceof ThreeDimensionalShape);
     }
+
+    @Test
+    public void CreateCircle() {
+        Circle shape = new Circle();
+        shape.setRadius(5);
+        assertEquals(78.54f, shape.calculateArea(), 0.1f);
+    }
+
+    @Test
+    public void CreateCircleWithFloat() {
+        Circle shape = new Circle();
+        shape.setRadius(7.64f);
+        assertEquals(183.37f, shape.calculateArea(), 0.1f);
+    }
+
+    @Test
+    public void CreateCircleInvalid() {
+        Circle shape = new Circle();
+        Exception e = assertThrows(IllegalArgumentException.class, () -> shape.setRadius(-12f));
+        assertTrue(e.getMessage().contains("Invalid radius"));
+    }
+    
+    @Test
+    public void CreateRectangle() {
+        Rectangle shape = new Rectangle();
+        shape.setHeight(5);
+        shape.setWidth(22);
+        assertEquals(110f, shape.calculateArea(), 0f);
+    }
+
+    @Test
+    public void CreateRectangleWithFloat() {
+        Rectangle shape = new Rectangle();
+        shape.setHeight(7.64f);
+        shape.setWidth(31.68f);
+        assertEquals(242.0352f, shape.calculateArea(), 0.01f);
+    }
+
+    @Test
+    public void CreateRectangleInvalid() {
+        Rectangle shape = new Rectangle();
+        Exception e = assertThrows(IllegalArgumentException.class, () -> shape.setHeight(-12f));
+        assertTrue(e.getMessage().contains("Invalid side length"));
+    }
+
+
 }
