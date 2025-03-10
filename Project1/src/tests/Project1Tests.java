@@ -100,7 +100,7 @@ public class Project1Tests {
         Exception e = assertThrows(IllegalArgumentException.class, () -> shape.setRadius(-12f));
         assertTrue(e.getMessage().contains("Invalid radius"));
     }
-    
+
     @Test
     public void CreateRectangle() {
         Rectangle shape = new Rectangle();
@@ -124,5 +124,27 @@ public class Project1Tests {
         assertTrue(e.getMessage().contains("Invalid side length"));
     }
 
+    @Test
+    public void CreateSquare() {
+        Square shape = new Square();
+        shape.setSides(5);
+        assertEquals(25, shape.calculateArea(), 0f);
+    }
+
+    @Test
+    public void CreateSquareWithFloat() {
+        Square shape = new Square();
+        shape.setSides(7.64f);
+        assertEquals(58.3696f, shape.calculateArea(), 0.01f);
+    }
+
+    @Test
+    public void CreateSquareInvalid() {
+        Square shape = new Square();
+        Exception e = assertThrows(IllegalArgumentException.class, () -> shape.setHeight(-12f));
+        assertTrue(e.getMessage().contains("Invalid side length"));
+    }
+
+    
 
 }
