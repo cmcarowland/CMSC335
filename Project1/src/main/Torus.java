@@ -23,6 +23,9 @@ public class Torus extends ThreeDimensionalShape {
 
     public void setMinorRadius(float minorRadius) {
         if (isMeasurementValid(minorRadius)) {
+            if(minorRadius >= majorRadius) {
+                throw new IllegalArgumentException("Minor Radius must be less than Major Radius");
+            }
             this.minorRadius = minorRadius;
             System.out.println("Minor Radius of the Torus have been set to " + minorRadius);
         } else {

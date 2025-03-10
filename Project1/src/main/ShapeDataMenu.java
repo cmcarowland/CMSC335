@@ -10,6 +10,10 @@ public class ShapeDataMenu extends Menu {
         this.questions = questions;
     }
 
+    public int getQuestions() {
+        return questions;
+    }
+
     @Override
     public boolean validateUserInput(int userInput) {
         return true;
