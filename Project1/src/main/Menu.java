@@ -37,7 +37,7 @@ public abstract class Menu {
                 Float intNum = Float.parseFloat(input);
                 return intNum;
             } catch (NumberFormatException e) {
-                System.err.print("Invalid string format. Cannot convert to integer.\n>> ");
+                System.err.print("Invalid string format. Cannot convert to float.\n>> ");
             }
         }
     }
