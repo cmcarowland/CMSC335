@@ -22,6 +22,7 @@ public class ShapeDataMenu extends Menu {
     @Override
     public Menu run() {
         boolean success = true;
+        System.out.println("\nYou are creating a " + shape.getClass().getSimpleName() + ".\nPlease enter the following information\n");
         if ((questions & 1) > 0) {
             success = getRadius();
         }

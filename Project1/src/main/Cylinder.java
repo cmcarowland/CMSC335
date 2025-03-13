@@ -1,8 +1,8 @@
 package main;
 
 public class Cylinder extends ThreeDimensionalShape {
-    private float radius;
-    private float height;
+    protected float radius;
+    protected float height;
 
     public Cylinder() {
         super();
@@ -11,7 +11,7 @@ public class Cylinder extends ThreeDimensionalShape {
     public void setRadius(float radius) {
         if (isMeasurementValid(radius)) {
             this.radius = radius;
-            System.out.println("Radius of the Cylinder have been set to " + radius);
+            System.out.println("Radius of the " + getClass().getSimpleName() + " have been set to " + radius);
         } else {
             throw new IllegalArgumentException("Radius must be greater than 0");
         }
@@ -20,7 +20,7 @@ public class Cylinder extends ThreeDimensionalShape {
     public void setHeight(float height) {
         if (isMeasurementValid(height)) {
             this.height = height;
-            System.out.println("Height of the Cylinder have been set to " + height);
+            System.out.println("Height of the " + getClass().getSimpleName() + " have been set to " + height);
         } else {
             throw new IllegalArgumentException("Height must be greater than 0");
         }

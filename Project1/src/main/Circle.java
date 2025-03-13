@@ -19,10 +19,6 @@ public class Circle extends TwoDimensionalShape {
     public float calculateArea() {
         return (float)(Math.PI * Math.pow(radius, 2));
     }
-
-    public float getRadius() {
-        return radius;
-    }
     
     public void setRadius(float r) {
         if(isMeasurementValid(r)) {
