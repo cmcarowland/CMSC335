@@ -9,6 +9,6 @@ tests: main
 clean:
 	rm -rf bin/*
 
-executeTests:
+executeTests: tests
 	java -cp "bin/:../test-lib/*" org.junit.runner.JUnitCore tests.CLITests
 	java -cp "bin/:../test-lib/*" org.junit.runner.JUnitCore tests.Project1Tests
