@@ -1,35 +1,9 @@
 package main;
 
-public class Cone extends ThreeDimensionalShape {
-    private float radius;
-    private float height;
+public class Cone extends Cylinder {
 
     public Cone() {
         super();
-        radius = 0;
-        height = 0;
-    }
-
-    public void setRadius(float radius) {
-        if(isMeasurementValid(radius)) {
-            this.radius = radius;
-            System.out.println("The radius of the Cone's base has been set to " + radius);
-        } else {
-            throw new IllegalArgumentException("Invalid radius. Please enter a positive value.");
-        }
-    }
-
-    public float getHeight() {
-        return height;
-    }
-
-    public void setHeight(float height) {
-        if(isMeasurementValid(height)) {
-            this.height = height;
-            System.out.println("The hight of the Cone have been set to " + height);
-        } else {
-            throw new IllegalArgumentException("Invalid height. Please enter a positive value.");
-        }
     }
 
     @Override
