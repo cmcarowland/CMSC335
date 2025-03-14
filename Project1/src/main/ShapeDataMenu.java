@@ -1,5 +1,13 @@
 package main;
 
+/**
+ * DATE: March 14, 2025
+ * AUTHOR: Raymond Rowland
+ * PURPOSE: This class represents the Shape Data Menu of the Java OO Shape Tool application.
+ *          It includes methods to display the menu, validate user input, and collect data for shape construction.
+ * FILE: ShapeDataMenu.java
+ */
+
 public class ShapeDataMenu extends Menu {
     private Shape shape;
     private int questions;

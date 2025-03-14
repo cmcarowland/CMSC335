@@ -1,5 +1,13 @@
 package main;
 
+/**
+ * DATE: March 14, 2025
+ * AUTHOR: Raymond Rowland
+ * PURPOSE: This class represents a Sphere, which is a type of ThreeDimensionalShape.
+ *          It includes methods to set the radius of the sphere, and to calculate its volume.
+ * FILE: Sphere.java
+ */
+
 public class Sphere extends ThreeDimensionalShape {
     private float radius;
 

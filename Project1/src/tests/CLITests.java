@@ -1,5 +1,13 @@
 package tests;
 
+/**
+ * DATE: March 14, 2025
+ * AUTHOR: Raymond Rowland
+ * PURPOSE: This class contains unit tests for the Java OO Shape Tool application.
+ *          It includes methods to test the main menu and shape construction menus.
+ * FILE: CLITests.java
+ */
+
 import main.*;
 
 import java.io.ByteArrayInputStream;

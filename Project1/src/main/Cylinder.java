@@ -1,5 +1,13 @@
 package main;
 
+/**
+ * DATE: March 14, 2025
+ * AUTHOR: Raymond Rowland
+ * PURPOSE: This class represents a Cylinder, which is a type of ThreeDimensionalShape.
+ *          It includes methods to set the radius and height of the cylinder, and to calculate its volume.
+ * FILE: Cylinder.java
+ */
+
 public class Cylinder extends ThreeDimensionalShape {
     protected float radius;
     protected float height;

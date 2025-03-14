@@ -1,5 +1,13 @@
 package main;
 
+/**
+ * DATE: March 14, 2025
+ * AUTHOR: Raymond Rowland
+ * PURPOSE: This class represents the 3D Shape Menu of the Java OO Shape Tool application.
+ *          It includes methods to display the menu, validate user input, and navigate to the appropriate shape construction submenu.
+ * FILE: ThreeDShapeMenu.java
+ */
+
 public class ThreeDShapeMenu extends Menu {
 
     public ThreeDShapeMenu() {

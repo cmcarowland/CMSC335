@@ -1,5 +1,13 @@
 package main;
 
+/**
+ * DATE: March 14, 2025
+ * AUTHOR: Raymond Rowland
+ * PURPOSE: This class represents a Torus, which is a type of ThreeDimensionalShape.
+ *          It includes methods to set the major and minor radii of the torus, and to calculate its volume.
+ * FILE: Torus.java
+ */
+
 public class Torus extends ThreeDimensionalShape {
     private float majorRadius;
     private float minorRadius;
