@@ -17,8 +17,8 @@ public class Rectangle extends TwoDimensionalShape {
     }
 
     @Override
-    public float calculateArea() {
-        return height * width;
+    public void calculate() {
+        area = height * width;
     }
 
     @Override
@@ -27,7 +27,7 @@ public class Rectangle extends TwoDimensionalShape {
         sb.append("    -Height: %.2f\n");
         sb.append("    -Width : %.2f\n");
         sb.append("    -Area  : %.2f\n");
-        return String.format(sb.toString(), this.getClass().getSimpleName(), width, height, calculateArea());
+        return String.format(sb.toString(), this.getClass().getSimpleName(), width, height, area);
     }
 
     public void setHeight(float side) {

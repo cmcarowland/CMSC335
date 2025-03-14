@@ -92,14 +92,16 @@ public class Project1Tests {
     public void CreateCircle() {
         Circle shape = new Circle();
         shape.setRadius(5);
-        assertEquals(78.54f, shape.calculateArea(), 0.1f);
+        shape.calculate();
+        assertEquals(78.54f, shape.getArea(), 0.1f);
     }
 
     @Test
     public void CreateCircleWithFloat() {
         Circle shape = new Circle();
         shape.setRadius(7.64f);
-        assertEquals(183.37f, shape.calculateArea(), 0.1f);
+        shape.calculate();
+        assertEquals(183.37f, shape.getArea(), 0.1f);
     }
 
     @Test
@@ -114,7 +116,8 @@ public class Project1Tests {
         Rectangle shape = new Rectangle();
         shape.setHeight(5);
         shape.setWidth(22);
-        assertEquals(110f, shape.calculateArea(), 0f);
+        shape.calculate();
+        assertEquals(110f, shape.getArea(), 0f);
     }
 
     @Test
@@ -122,7 +125,8 @@ public class Project1Tests {
         Rectangle shape = new Rectangle();
         shape.setHeight(7.64f);
         shape.setWidth(31.68f);
-        assertEquals(242.0352f, shape.calculateArea(), 0.01f);
+        shape.calculate();
+        assertEquals(242.0352f, shape.getArea(), 0.01f);
     }
 
     @Test
@@ -136,14 +140,16 @@ public class Project1Tests {
     public void CreateSquare() {
         Square shape = new Square();
         shape.setSides(5);
-        assertEquals(25, shape.calculateArea(), 0f);
+        shape.calculate();
+        assertEquals(25, shape.getArea(), 0f);
     }
 
     @Test
     public void CreateSquareWithFloat() {
         Square shape = new Square();
         shape.setSides(7.64f);
-        assertEquals(58.3696f, shape.calculateArea(), 0.01f);
+        shape.calculate();
+        assertEquals(58.3696f, shape.getArea(), 0.01f);
     }
 
     @Test
@@ -158,7 +164,8 @@ public class Project1Tests {
         Triangle shape = new Triangle();
         shape.setBase(8);
         shape.setHeight(13);
-        assertEquals(52, shape.calculateArea(), 0f);
+        shape.calculate();
+        assertEquals(52, shape.getArea(), 0f);
     }
 
     @Test
@@ -166,7 +173,8 @@ public class Project1Tests {
         Triangle shape = new Triangle();
         shape.setBase(6.26f);
         shape.setHeight(9.4f);
-        assertEquals(29.42f, shape.calculateArea(), 0.01f);
+        shape.calculate();
+        assertEquals(29.42f, shape.getArea(), 0.01f);
     }
 
     @Test
@@ -182,14 +190,16 @@ public class Project1Tests {
     public void CreateSphere() {
         Sphere shape = new Sphere();
         shape.setRadius(12);
-        assertEquals(7238.23, shape.calculateVolume(), 0.1f);
+        shape.calculate();
+        assertEquals(7238.23, shape.getVolume(), 0.1f);
     }
 
     @Test
     public void CreateSphereWithFloat() {
         Sphere shape = new Sphere();
         shape.setRadius(12.27f);
-        assertEquals(7737.89f, shape.calculateVolume(), 0.01f);
+        shape.calculate();
+        assertEquals(7737.89f, shape.getVolume(), 0.01f);
     }
 
     @Test
@@ -203,14 +213,16 @@ public class Project1Tests {
     public void CreateCube() {
         Cube shape = new Cube();
         shape.setSide(27);
-        assertEquals(19683, shape.calculateVolume(), 0f);
+        shape.calculate();
+        assertEquals(19683, shape.getVolume(), 0f);
     }
 
     @Test
     public void CreateCubeWithFloat() {
         Cube shape = new Cube();
         shape.setSide(15.7f);
-        assertEquals(3869.89f, shape.calculateVolume(), 0.01f);
+        shape.calculate();
+        assertEquals(3869.89f, shape.getVolume(), 0.01f);
     }
 
     @Test
@@ -225,7 +237,8 @@ public class Project1Tests {
         Cone shape = new Cone();
         shape.setRadius(62);
         shape.setHeight(7);
-        assertEquals(28177.99, shape.calculateVolume(), 0.1f);
+        shape.calculate();
+        assertEquals(28177.99, shape.getVolume(), 0.1f);
     }
 
     @Test
@@ -233,23 +246,25 @@ public class Project1Tests {
         Cone shape = new Cone();
         shape.setRadius(12.56f);
         shape.setHeight(9.7f);
-        assertEquals(1602.43f, shape.calculateVolume(), 0.01f);
+        shape.calculate();
+        assertEquals(1602.43f, shape.getVolume(), 0.01f);
     }
 
     @Test
     public void CreateConeInvalid() {
         Cone shape = new Cone();
         Exception e = assertThrows(IllegalArgumentException.class, () -> shape.setRadius(-1f));
-        assertTrue(e.getMessage().contains("Invalid radius. Please enter a positive value."));
+        assertTrue(e.getMessage().contains("Radius must be greater than 0"));
         e = assertThrows(IllegalArgumentException.class, () -> shape.setHeight(-1f));
-        assertTrue(e.getMessage().contains("Invalid height. Please enter a positive value."));
+        assertTrue(e.getMessage().contains("Height must be greater than 0"));
     }
     @Test
     public void CreateCylinder() {
         Cylinder shape = new Cylinder();
         shape.setRadius(4);
         shape.setHeight(3);
-        assertEquals(150.8, shape.calculateVolume(), 0.1f);
+        shape.calculate();
+        assertEquals(150.8, shape.getVolume(), 0.1f);
     }
 
     @Test
@@ -257,7 +272,8 @@ public class Project1Tests {
         Cylinder shape = new Cylinder();
         shape.setRadius(11.6f);
         shape.setHeight(7.3f);
-        assertEquals(3085.95f, shape.calculateVolume(), 0.01f);
+        shape.calculate();
+        assertEquals(3085.95f, shape.getVolume(), 0.01f);
     }
 
     @Test
@@ -274,7 +290,8 @@ public class Project1Tests {
         Torus shape = new Torus();
         shape.setMajorRadius(4);
         shape.setMinorRadius(3);
-        assertEquals(710.61, shape.calculateVolume(), 0.1f);
+        shape.calculate();
+        assertEquals(710.61, shape.getVolume(), 0.1f);
     }
 
     @Test
@@ -282,7 +299,8 @@ public class Project1Tests {
         Torus shape = new Torus();
         shape.setMajorRadius(11.6f);
         shape.setMinorRadius(7.3f);
-        assertEquals(12202.07f, shape.calculateVolume(), 0.01f);
+        shape.calculate();
+        assertEquals(12202.07f, shape.getVolume(), 0.01f);
     }
 
     @Test

@@ -9,9 +9,14 @@ package main;
  */
 
 public abstract class TwoDimensionalShape extends Shape {
+    protected float area;
+
     public TwoDimensionalShape() {
         super(2);
     }
     
-    public abstract float calculateArea();
+    public abstract void calculate();
+    public float getArea() {
+        return area;
+    }
 }

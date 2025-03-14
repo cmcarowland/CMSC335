@@ -35,8 +35,8 @@ public class Cylinder extends ThreeDimensionalShape {
     }
 
     @Override
-    public float calculateVolume() {
-        return (float) (Math.PI * Math.pow(radius, 2) * height);
+    public void calculate() {
+        volume = (float) (Math.PI * Math.pow(radius, 2) * height);
     }
 
     @Override
@@ -45,7 +45,7 @@ public class Cylinder extends ThreeDimensionalShape {
         sb.append("    -Radius : %.2f\n");
         sb.append("    -Height : %.2f\n");
         sb.append("    -Volume : %.2f\n");
-        return String.format(sb.toString(), this.getClass().getSimpleName(), radius, height, calculateVolume());
+        return String.format(sb.toString(), this.getClass().getSimpleName(), radius, height, volume);
     }
     
 }

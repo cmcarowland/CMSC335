@@ -42,8 +42,8 @@ public class Torus extends ThreeDimensionalShape {
     }
 
     @Override
-    public float calculateVolume() {
-        return (float) (2 * Math.PI * Math.PI * majorRadius * Math.pow(minorRadius, 2));
+    public void calculate() {
+        volume = (float) (2 * Math.PI * Math.PI * majorRadius * Math.pow(minorRadius, 2));
     }
 
     @Override
@@ -52,7 +52,7 @@ public class Torus extends ThreeDimensionalShape {
         sb.append("    -Major Radius : %.2f\n");
         sb.append("    -Minor Radius : %.2f\n");
         sb.append("    -Volume       : %.2f\n");
-        return String.format(sb.toString(), this.getClass().getSimpleName(), majorRadius, minorRadius, calculateVolume());
+        return String.format(sb.toString(), this.getClass().getSimpleName(), majorRadius, minorRadius, volume);
     }
     
 }

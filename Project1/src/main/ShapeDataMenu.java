@@ -49,6 +49,7 @@ public class ShapeDataMenu extends Menu {
         }
 
         if(success) {
+            shape.calculate();
             System.out.println(shape.getClass().getSimpleName() + " has been created with the following data:");
             System.out.println(shape.toString());
         } else {

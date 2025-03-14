@@ -9,9 +9,14 @@ package main;
  */
 
 public abstract class ThreeDimensionalShape extends Shape {
+    protected float volume;
+
     public ThreeDimensionalShape() {
         super(3);
     }
 
-    public abstract float calculateVolume();
+    public abstract void calculate();
+    public float getVolume() {
+        return volume;
+    }
 }
