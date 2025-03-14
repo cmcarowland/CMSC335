@@ -32,20 +32,20 @@ public class ShapeDataMenu extends Menu {
         boolean success = true;
         System.out.println("\nYou are creating a " + shape.getClass().getSimpleName() + ".\nPlease enter the following information\n");
         if ((questions & 1) > 0) {
-            success = getRadius();
+            success = setShapeRadiusFromInput();
         }
         if ((questions & 2) > 0 && success) {
-            success = getHeight();
+            success = setShapeHeight();
         }
         if ((questions & 4) > 0 && success) {
-            success = getWidth();
+            success = setRectangleWidth();
         }
         if ((questions & 8) > 0 && success) {
-            success = getBase();
+            success = setShapeBase();
         }
         if ((questions & 16) > 0 && success) {
-            success = getRadius("Major");
-            success = getRadius("Minor");
+            success = setTorusRadius("Major");
+            success = setTorusRadius("Minor");
         }
 
         if(success) {
@@ -58,7 +58,7 @@ public class ShapeDataMenu extends Menu {
         return parentMenu;
     }
     
-    private boolean getRadius() {
+    private boolean setShapeRadiusFromInput() {
         System.out.println("Enter the radius : ");
         float radius = parseUserFloat();
         try{
@@ -79,7 +79,7 @@ public class ShapeDataMenu extends Menu {
         return true;
     }
 
-    private boolean getRadius(String radiusType) {
+    private boolean setTorusRadius(String radiusType) {
         System.out.printf("Enter the %s radius : ", radiusType);
         float radius = parseUserFloat();
         try{
@@ -100,7 +100,7 @@ public class ShapeDataMenu extends Menu {
         return true;
     }
 
-    private boolean getHeight() {
+    private boolean setShapeHeight() {
         System.out.println("Enter the height :");
         float height = parseUserFloat();
         
@@ -126,13 +126,11 @@ public class ShapeDataMenu extends Menu {
         return true;
     }
 
-    private boolean getWidth() {
+    private boolean setRectangleWidth() {
         System.out.println("Enter the Width :");
         float width = parseUserFloat();
         try{
-            if (shape instanceof Rectangle) {
-                ((Rectangle)shape).setWidth(width);
-            } 
+            ((Rectangle)shape).setWidth(width);
         } catch (IllegalArgumentException e) {
             System.err.println(e.getMessage());
             return false;
@@ -141,7 +139,7 @@ public class ShapeDataMenu extends Menu {
         return true;
     }
     
-    private boolean getBase() {
+    private boolean setShapeBase() {
         System.out.println("Enter the Base :");
         float base = parseUserFloat();
         try{
