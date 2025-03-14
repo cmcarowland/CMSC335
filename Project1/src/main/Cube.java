@@ -29,8 +29,8 @@ public class Cube extends ThreeDimensionalShape {
     }
 
     @Override
-    public float calculateVolume() {
-        return (float) Math.pow(side, 3);
+    public void calculate() {
+        volume = (float) Math.pow(side, 3);
     }
 
     @Override
@@ -38,7 +38,7 @@ public class Cube extends ThreeDimensionalShape {
         StringBuilder sb = new StringBuilder(shapeData);
         sb.append("    -Side   : %.2f\n");
         sb.append("    -Volume : %.2f\n");
-        return String.format(sb.toString(), this.getClass().getSimpleName(), side, calculateVolume());
+        return String.format(sb.toString(), this.getClass().getSimpleName(), side, volume);
     }
     
 }

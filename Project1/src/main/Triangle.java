@@ -19,8 +19,8 @@ public class Triangle extends TwoDimensionalShape {
     }
 
     @Override
-    public float calculateArea() {
-        return (base * height) / 2;
+    public void calculate() {
+        area = (base * height) / 2;
     }
 
     @Override
@@ -29,7 +29,7 @@ public class Triangle extends TwoDimensionalShape {
         sb.append("    -Base  : %.2f\n");
         sb.append("    -Height: %.2f\n");
         sb.append("    -Area  : %.2f\n");
-        return String.format(sb.toString(), this.getClass().getSimpleName(), base, height, calculateArea());
+        return String.format(sb.toString(), this.getClass().getSimpleName(), base, height, area);
     }
 
     public void setBase(float base) {

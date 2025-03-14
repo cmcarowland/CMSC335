@@ -15,8 +15,8 @@ public class Cone extends Cylinder {
     }
 
     @Override
-    public float calculateVolume() {
-        return (float) (1.0 / 3.0 * Math.PI * Math.pow(radius, 2) * height);
+    public void calculate() {
+        volume = (float) (1.0 / 3.0 * Math.PI * Math.pow(radius, 2) * height);
     }
 
     @Override
@@ -25,7 +25,7 @@ public class Cone extends Cylinder {
         sb.append("    -Radius : %.2f\n");
         sb.append("    -Height : %.2f\n");
         sb.append("    -Volume : %.2f\n");
-        return String.format(sb.toString(), this.getClass().getSimpleName(), radius, height, calculateVolume());
+        return String.format(sb.toString(), this.getClass().getSimpleName(), radius, height, volume);
     }
     
 }

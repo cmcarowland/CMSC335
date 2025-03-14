@@ -23,4 +23,6 @@ public abstract class Shape {
     public boolean isMeasurementValid(float measurement) {
         return measurement > 0;
     }
+
+    public abstract void calculate();
 }

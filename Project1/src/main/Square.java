@@ -23,6 +23,6 @@ public class Square extends Rectangle {
         StringBuilder sb = new StringBuilder(shapeData);
         sb.append("    -Sides : %.2f\n");
         sb.append("    -Area  : %.2f\n");
-        return String.format(sb.toString(), this.getClass().getSimpleName(), width, calculateArea());
+        return String.format(sb.toString(), this.getClass().getSimpleName(), width, area);
     }
 }

@@ -26,8 +26,8 @@ public class Sphere extends ThreeDimensionalShape {
     }
 
     @Override
-    public float calculateVolume() {
-        return (float) (4.0 / 3.0 * Math.PI * Math.pow(radius, 3));
+    public void calculate() {
+        volume = (float) (4.0 / 3.0 * Math.PI * Math.pow(radius, 3));
     }
 
     @Override
@@ -35,7 +35,7 @@ public class Sphere extends ThreeDimensionalShape {
         StringBuilder sb = new StringBuilder(shapeData);
         sb.append("    -Radius : %.2f\n");
         sb.append("    -Volume : %.2f\n");
-        return String.format(sb.toString(), this.getClass().getSimpleName(), radius, calculateVolume());
+        return String.format(sb.toString(), this.getClass().getSimpleName(), radius, volume);
     }
     
 }
