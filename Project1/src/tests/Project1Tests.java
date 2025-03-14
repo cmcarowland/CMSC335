@@ -1,5 +1,13 @@
 package tests;
 
+/**
+ * DATE: March 14, 2025
+ * AUTHOR: Raymond Rowland
+ * PURPOSE: This class contains unit tests for the Java OO Shape Tool application.
+ *          It includes methods to test the creation and validation of various shapes.
+ * FILE: Project1Tests.java
+ */
+
 import main.*;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.assertEquals;

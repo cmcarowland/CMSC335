@@ -1,5 +1,13 @@
 package main;
 
+/**
+ * DATE: March 14, 2025
+ * AUTHOR: Raymond Rowland
+ * PURPOSE: This class represents the main menu of the Java OO Shape Tool application.
+ *          It includes methods to display the menu, validate user input, and navigate to the appropriate submenu.
+ * FILE: MainMenu.java
+ */
+
 public class MainMenu extends Menu {
 
     public MainMenu() {

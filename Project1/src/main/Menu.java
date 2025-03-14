@@ -1,5 +1,13 @@
 package main;
 
+/**
+ * DATE: March 14, 2025
+ * AUTHOR: Raymond Rowland
+ * PURPOSE: This class represents an abstract base class for all menus in the Java OO Shape Tool application.
+ *          It includes methods to validate user input and to run the menu.
+ * FILE: Menu.java
+ */
+
 import java.util.Scanner;
 
 public abstract class Menu {

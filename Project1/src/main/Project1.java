@@ -1,5 +1,13 @@
 package main;
 
+/**
+ * DATE: March 14, 2025
+ * AUTHOR: Raymond Rowland
+ * PURPOSE: This class represents the main entry point for the Java OO Shape Tool application.
+ *          It includes the main method to run the application and a method to create a formatted date string.
+ * FILE: Project1.java
+ */
+
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 

@@ -1,5 +1,13 @@
 package main;
 
+/**
+ * DATE: March 14, 2025
+ * AUTHOR: Raymond Rowland
+ * PURPOSE: This class represents a Rectangle, which is a type of TwoDimensionalShape.
+ *          It includes methods to set the height and width of the rectangle, and to calculate its area.
+ * FILE: Rectangle.java
+ */
+
 public class Rectangle extends TwoDimensionalShape {
     protected float height;
     protected float width;

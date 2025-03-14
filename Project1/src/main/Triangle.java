@@ -1,5 +1,13 @@
 package main;
 
+/**
+ * DATE: March 14, 2025
+ * AUTHOR: Raymond Rowland
+ * PURPOSE: This class represents a Triangle, which is a type of TwoDimensionalShape.
+ *          It includes methods to set the base and height of the triangle, and to calculate its area.
+ * FILE: Triangle.java
+ */
+
 public class Triangle extends TwoDimensionalShape {
     private float base;
     private float height;
