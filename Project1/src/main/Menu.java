@@ -11,20 +11,20 @@ package main;
 import java.util.Scanner;
 
 public abstract class Menu {
-    protected static Scanner scanner;
-    public Menu parentMenu;
+    protected Scanner scanner;
     protected String menuName;
+    public Menu parentMenu;
 
     public Menu() {
         this.parentMenu = null;
         scanner = new Scanner(System.in);
     }
 
-    public abstract boolean validateUserInput(int userInput);
+    protected abstract boolean validateUserInput(int userInput);
     
     public abstract Menu run();
 
-    public static int parseUserInt() {
+    protected int parseUserInt() {
         System.out.print(">> ");
         while (true) {
             String input = scanner.nextLine();
@@ -37,7 +37,7 @@ public abstract class Menu {
         }
     }
     
-    public static Float parseUserFloat() {
+    protected Float parseUserFloat() {
         System.out.print(">> ");
         while (true) {
             String input = scanner.nextLine();

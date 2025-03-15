@@ -12,9 +12,19 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 public class Project1 {
-    static Menu currentMenu;
+    private Menu currentMenu;
     
+    public Project1() {
+        MainMenu mainMenu = new MainMenu();
+        currentMenu = mainMenu;
+    }
+
     public static void main(String[] args) {
+        Project1 project1 = new Project1();
+        project1.run();
+    }
+
+    private void run() {
         MainMenu mainMenu = new MainMenu();
         currentMenu = mainMenu;
         while(currentMenu != null) {
