@@ -63,15 +63,7 @@ public class ShapeDataMenu extends Menu {
         System.out.println("Enter the radius : ");
         float radius = parseUserFloat();
         try{
-            if (shape instanceof Circle) {
-                ((Circle)shape).setRadius(radius);
-            } else if (shape instanceof Sphere) {
-                ((Sphere)shape).setRadius(radius);
-            } else if (shape instanceof Cone) {
-                ((Cone)shape).setRadius(radius);
-            } else if (shape instanceof Cylinder) {
-                ((Cylinder)shape).setRadius(radius);
-            } 
+            ((IRadius)shape).setRadius(radius);               
         } catch (IllegalArgumentException e) {
             System.err.println(e.getMessage());
             return false;
@@ -106,18 +98,10 @@ public class ShapeDataMenu extends Menu {
         float height = parseUserFloat();
         
         try{
-            if (shape instanceof Square) {
-                ((Square)shape).setSides(height);
-            } else if (shape instanceof Rectangle) {
-                ((Rectangle)shape).setHeight(height);
-            } else if (shape instanceof Triangle) {
-                ((Triangle)shape).setHeight(height);
-            } else if (shape instanceof Cube) {
-                ((Cube)shape).setSide(height);
-            } else if (shape instanceof Cone) {
-                ((Cone)shape).setHeight(height);
-            } else if (shape instanceof Cylinder) {
-                ((Cylinder)shape).setHeight(height);
+            if (shape instanceof ISides) {
+                ((ISides)shape).setSides(height);
+            } else {
+                ((IHeight)shape).setHeight(height);
             }
         } catch (IllegalArgumentException e) {
             System.err.println(e.getMessage());

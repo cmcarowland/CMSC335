@@ -8,7 +8,7 @@ package main;
  * FILE: Square.java
  */
 
-public class Square extends Rectangle {
+public class Square extends Rectangle implements ISides {
     public void setSides(float side) {
         try {
             setHeight(side);
