@@ -9,10 +9,19 @@ package main;
  */
 
 public class Square extends Rectangle implements ISides {
+    @Override
+    public void setHeight(float side) {
+        try{
+            setSides(side);
+        } catch (IllegalArgumentException e) {
+            throw e;
+        }
+    }
+
     public void setSides(float side) {
         try {
-            setHeight(side);
-            setWidth(side);
+            super.setHeight(side);
+            super.setWidth(side);
         } catch (IllegalArgumentException e) {
             throw e;
         }

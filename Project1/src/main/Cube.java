@@ -19,6 +19,11 @@ public class Cube extends ThreeDimensionalShape implements ISides {
         side = 0;
     }
 
+    @Override
+    public void setHeight(float side) {
+        setSides(side);
+    }
+
     public void setSides(float side) {
         if(isMeasurementValid(side)) {
             this.side = side;
