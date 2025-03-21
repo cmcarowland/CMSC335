@@ -98,11 +98,7 @@ public class ShapeDataMenu extends Menu {
         float height = parseUserFloat();
         
         try{
-            if (shape instanceof ISides) {
-                ((ISides)shape).setSides(height);
-            } else {
-                ((IHeight)shape).setHeight(height);
-            }
+            ((IHeight)shape).setHeight(height);
         } catch (IllegalArgumentException e) {
             System.err.println(e.getMessage());
             return false;
@@ -128,9 +124,7 @@ public class ShapeDataMenu extends Menu {
         System.out.println("Enter the Base :");
         float base = parseUserFloat();
         try{
-            if (shape instanceof Triangle) {
-                ((Triangle)shape).setBase(base);
-            } 
+            ((Triangle)shape).setBase(base);
         } catch (IllegalArgumentException e) {
             System.err.println(e.getMessage());
             return false;
