@@ -212,7 +212,7 @@ public class Project1Tests {
     @Test
     public void CreateCube() {
         Cube shape = new Cube();
-        shape.setSide(27);
+        shape.setSides(27);
         shape.calculate();
         assertEquals(19683, shape.getVolume(), 0f);
     }
@@ -220,7 +220,7 @@ public class Project1Tests {
     @Test
     public void CreateCubeWithFloat() {
         Cube shape = new Cube();
-        shape.setSide(15.7f);
+        shape.setSides(15.7f);
         shape.calculate();
         assertEquals(3869.89f, shape.getVolume(), 0.01f);
     }
@@ -228,7 +228,7 @@ public class Project1Tests {
     @Test
     public void CreateCubeInvalid() {
         Cube shape = new Cube();
-        Exception e = assertThrows(IllegalArgumentException.class, () -> shape.setSide(-1f));
+        Exception e = assertThrows(IllegalArgumentException.class, () -> shape.setSides(-1f));
         assertTrue(e.getMessage().contains("Invalid side"));
     }
    

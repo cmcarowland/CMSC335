@@ -8,7 +8,7 @@ package main;
  * FILE: Rectangle.java
  */
 
-public class Rectangle extends TwoDimensionalShape {
+public class Rectangle extends TwoDimensionalShape implements IHeight {
     protected float height;
     protected float width;
   
