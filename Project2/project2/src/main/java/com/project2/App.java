@@ -28,28 +28,12 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        Pane p = new Pane();
-        BackgroundFill bgf = new BackgroundFill(Color.valueOf("#141414"), null, p.getInsets());
-        Background bg = new Background(bgf);
-        p.setBackground(bg);
-        
-        mp = new MyPane();
-        p.getChildren().add(mp);
-        p.getChildren().add(createLabel("2D Shapes", 20, 10));
-        p.getChildren().add(createButton("Circle", 20, 30, this::Clicked));
-        p.getChildren().add(createButton("Square", 20, 70, this::Clicked));
-        p.getChildren().add(createButton("Triangle", 20, 110, this::Clicked));
-        p.getChildren().add(createButton("Rectangle", 20, 150, this::Clicked));
+        Parent root = FXMLLoader.load(getClass().getResource("primary.fxml"));
 
-        p.getChildren().add(createLabel("3D Shapes", 20, 240));
-        p.getChildren().add(createButton("Sphere", 20, 260, this::Clicked));
-        p.getChildren().add(createButton("Cube", 20, 300, this::Clicked));
-        p.getChildren().add(createButton("Cone", 20, 340, this::Clicked));
-        p.getChildren().add(createButton("Cylinder", 20, 380, this::Clicked));
-        p.getChildren().add(createButton("Torus", 20, 420, this::Clicked));
-
-        scene = new Scene(p, 500, 500);
+        scene = new Scene(root, 500, 550);
         scene.getRoot().setStyle("-fx-font-family: 'serif'");
+        stage.setMinWidth(500);
+        stage.setMinHeight(550);
         this.stage = stage;
         stage.setTitle("Raymond Rowland Project 2");
         stage.setScene(scene);
