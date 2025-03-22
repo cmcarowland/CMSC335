@@ -19,9 +19,9 @@ import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
+import javafx.scene.shape.Circle;
 
 // import javafx.scene.control.Label;
-// import javafx.scene.shape.Circle;
 // import javafx.scene.shape.Line;
 
 public class MyPane extends Pane {
@@ -37,7 +37,14 @@ public class MyPane extends Pane {
 
    private void reactToMouseClick(MouseEvent e) {
        if(e.getButton() == MouseButton.PRIMARY) {
-          
-       }
-   }   
+            if(App.shapeType.equals("circle")) {
+                Circle circle = new Circle(e.getX(), e.getY(), CircleController.getRadius(), Color.YELLOW);
+                getChildren().add(circle);
+            }
+        }
+   }
+   
+   public void clear() {
+       getChildren().clear();
+   }
 }
