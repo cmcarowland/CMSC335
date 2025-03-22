@@ -45,7 +45,7 @@
                   <Button fx:id="sphereButton" text="Create Torus" />
                </children>
             </VBox>
-            <Button alignment="CENTER" fx:id="clear" text="Clear Canvas" />
+            <Button alignment="CENTER" fx:id="clear" text="Clear Canvas" onAction="#clearClicked" />
          </children>
       </VBox>
       <MyPane fx:id="myPane" GridPane.columnIndex="1" GridPane.rowIndex="0" />

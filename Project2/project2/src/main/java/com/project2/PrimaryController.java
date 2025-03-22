@@ -6,18 +6,10 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.layout.Background;
-import javafx.scene.layout.BackgroundFill;
-import javafx.scene.layout.Pane;
 import javafx.scene.layout.GridPane;
-import javafx.scene.paint.Color;
-import javafx.stage.Modality;
-import javafx.stage.Stage;
 
 public class PrimaryController {
-    @FXML  
+    /* @FXML  
     void Clicked(ActionEvent event) {
         System.out.println(event);
 
@@ -34,7 +26,7 @@ public class PrimaryController {
         stage.initModality(Modality.WINDOW_MODAL);
         stage.initOwner(((Node)event.getSource()).getScene().getWindow());
         stage.show();
-    }
+    } */
 
     @FXML
     void circleClicked(ActionEvent ae) {
@@ -70,5 +62,11 @@ public class PrimaryController {
         // Add the additional content to the main layout
         GridPane mainLayout = (GridPane) ((Node) ae.getSource()).getScene().getRoot();
         mainLayout.getChildren().add(additionalContent);
+    }
+
+    @FXML
+    void clearClicked(ActionEvent ae) {
+        MyPane mp = (MyPane)((Node)ae.getSource()).getScene().lookup("#myPane");
+        mp.clear();
     }
 }

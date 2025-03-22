@@ -1,5 +1,6 @@
 .root {
-    -fx-font-family:"serif";
+    font-family: "serif";
+    -fx-font-family: "serif";
 }
 
 .label {
