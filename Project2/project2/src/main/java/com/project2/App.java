@@ -5,17 +5,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.layout.Background;
-import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.Pane;
-import javafx.scene.paint.Color;
-import javafx.stage.Modality;
 import javafx.stage.Stage;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
-import javafx.scene.input.MouseEvent;
 import java.io.IOException;
 
 /**
@@ -24,8 +15,7 @@ import java.io.IOException;
 public class App extends Application {
 
     private Stage stage;
-    private static Scene scene;
-    private static MyPane mp;
+    public static String shapeType = "";
 
     @Override
     public void start(Stage stage) throws IOException {
@@ -42,8 +32,7 @@ public class App extends Application {
 
         ((GridPane)root).getChildren().add(additionalContent);
 
-        scene = new Scene(root, 500, 600);
-        //scene.getRoot().setStyle("-fx-font-family: 'serif'");
+        var scene = new Scene(root, 500, 600);
         scene.getStylesheets().add(getClass().getResource("styles.css").toExternalForm());
         stage.setMinWidth(500);
         stage.setMinHeight(600);
