@@ -8,6 +8,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.stage.Modality;
@@ -30,56 +31,25 @@ public class App extends Application {
     public void start(Stage stage) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("primary.fxml"));
 
-        scene = new Scene(root, 500, 550);
-        scene.getRoot().setStyle("-fx-font-family: 'serif'");
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("baseSettings.fxml"));
+        Node additionalContent;
+        try {
+            additionalContent = loader.load();
+        } catch (IOException e) {
+            e.printStackTrace();
+            return;
+        }
+
+        ((GridPane)root).getChildren().add(additionalContent);
+
+        scene = new Scene(root, 500, 600);
+        //scene.getRoot().setStyle("-fx-font-family: 'serif'");
+        scene.getStylesheets().add(getClass().getResource("styles.css").toExternalForm());
         stage.setMinWidth(500);
-        stage.setMinHeight(550);
+        stage.setMinHeight(600);
         this.stage = stage;
         stage.setTitle("Raymond Rowland Project 2");
         stage.setScene(scene);
-        stage.show();
-    }
-
-    Button createButton(String title, double x, double y, MouseClickedInterface mci) {
-        var b1 = new Button(title);
-        b1.setLayoutX(x);
-        b1.setLayoutY(y);
-        b1.setOnMouseClicked(e -> mci.execute(e));
-        return b1;
-    }
-
-    TextField createTextField(double x, double y, double width) {
-        var tf = new TextField();
-        tf.setLayoutX(x);
-        tf.setLayoutY(y);
-        tf.setMinWidth(width);
-        tf.setMaxWidth(width);
-        return tf;
-    }
-
-    Label createLabel(String title, double x, double y) {
-        var label = new Label(title);
-        label.setTextFill(Color.WHITE);
-        label.setLayoutX(x);
-        label.setLayoutY(y);
-        return label;
-    }
-
-    void Clicked(MouseEvent me) {
-        System.out.println(me);
-
-        Pane p = new Pane();
-        BackgroundFill bgf = new BackgroundFill(Color.valueOf("#141414"), null, p.getInsets());
-        Background bg = new Background(bgf);
-        p.setBackground(bg);
-
-        Scene scene = new Scene(p, 200, 200);
-        scene.getRoot().setStyle("-fx-font-family: 'serif'");
-        Stage stage = new Stage();
-        stage.setScene(scene);
-        stage.setTitle(((Button)me.getSource()).textProperty().getValue());
-        stage.initModality(Modality.WINDOW_MODAL);
-        stage.initOwner(((Node)me.getSource()).getScene().getWindow());
         stage.show();
     }
 

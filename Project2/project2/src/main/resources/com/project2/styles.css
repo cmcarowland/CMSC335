@@ -1,0 +1,7 @@
+.root {
+    -fx-font-family:"serif";
+}
+
+.label {
+    -fx-text-fill:"white";
+}

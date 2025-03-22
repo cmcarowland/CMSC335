@@ -9,8 +9,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.event.ActionEvent?>
 
-<GridPane gridLinesVisible="true" style="-fx-background-color:rgb(30, 27, 206);" minWidth="100" minHeight="300"
+<GridPane gridLinesVisible="true" minWidth="100" minHeight="300"
          xmlns="http://javafx.com/javafx/8.0.171" 
          xmlns:fx="http://javafx.com/fxml/1" 
          fx:controller="com.project2.PrimaryController">
@@ -23,12 +24,12 @@
       <RowConstraints percentHeight="20" vgrow="ALWAYS" />
    </rowConstraints>
    <children>
-      <VBox spacing="50.0" GridPane.columnIndex="0" GridPane.rowIndex="0" >
+      <VBox spacing="30.0" GridPane.columnIndex="0" GridPane.rowIndex="0" style="-fx-background-color:rgb(20, 20, 20);">
          <children>
             <VBox alignment="CENTER" spacing="10.0" >
                <children>
                   <Label text="2D Shapes" />
-                  <Button fx:id="circleButton" text="Create Circle" />
+                  <Button fx:id="circleButton" text="Create Circle" onAction="#circleClicked" />
                   <Button fx:id="circleButton" text="Create Square" />
                   <Button fx:id="circleButton" text="Create Triangle" />
                   <Button fx:id="circleButton" text="Create Rectangle" />
@@ -44,6 +45,7 @@
                   <Button fx:id="sphereButton" text="Create Torus" />
                </children>
             </VBox>
+            <Button alignment="CENTER" fx:id="clear" text="Clear Canvas" />
          </children>
       </VBox>
       <MyPane fx:id="myPane" GridPane.columnIndex="1" GridPane.rowIndex="0" />
