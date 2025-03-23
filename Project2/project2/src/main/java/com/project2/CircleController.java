@@ -10,26 +10,34 @@ import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
 import javafx.scene.layout.GridPane;
 
+import com.shapes.Circle;
+
 public class CircleController {
     @FXML
     private Slider slider1;
     @FXML
     private Label radiusLabel;
 
-    private static double radius;
+    static private Circle circle;
 
     public void initialize() {
+        circle = new Circle();
         slider1.valueProperty().addListener((observable, oldValue, newValue) -> {
-            radiusLabel.setText(String.format("%.2f", newValue));
-            radius = newValue.doubleValue();
+            setLabel(newValue.floatValue());
         });
 
-        radius = slider1.getValue();
+        setLabel((float)slider1.getValue());
+        
         App.shapeType = "circle";
     }
 
+    public void setLabel(float newValue) {
+        circle.setRadius(newValue);
+        radiusLabel.setText(String.format("%.2f", newValue));
+    }
+
     static public double getRadius() {
-        return radius;
+        return circle.getRadius();
     }
 
     @FXML

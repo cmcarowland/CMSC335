@@ -36,4 +36,8 @@ public class Circle extends TwoDimensionalShape {
             throw new IllegalArgumentException("Invalid radius");
         }
     }
+
+    public float getRadius() {
+        return radius;
+    }
 }
