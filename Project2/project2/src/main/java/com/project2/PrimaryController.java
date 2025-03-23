@@ -43,25 +43,13 @@ public class PrimaryController {
 
     @FXML
     void circleClicked(ActionEvent ae) {
-        System.out.println(ae);
         // Load an additional FXML file
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("circle.fxml"));
-        Node additionalContent;
-        try {
-            additionalContent = loader.load();
-        } catch (IOException e) {
-            e.printStackTrace();
-            return;
-        }
-
-        // Add the additional content to the main layout
         GridPane mainLayout = (GridPane) ((Node) ae.getSource()).getScene().getRoot();
-        mainLayout.getChildren().add(additionalContent);
+        mainLayout.getChildren().add(getNode("circle.fxml"));
     }
     
     @FXML
     void rectClicked(ActionEvent ae) {
-        System.out.println(ae);
         // Load an additional FXML file
         GridPane mainLayout = (GridPane) ((Node) ae.getSource()).getScene().getRoot();
         mainLayout.getChildren().add(getNode("rectangle.fxml"));
