@@ -22,17 +22,18 @@ public class RectangleController {
     @FXML
     private Label widthLabel;
 
-    private static Rectangle rectangle = new Rectangle();
+    private static Rectangle rectangle;
 
     public void initialize() {
+        rectangle = new Rectangle()
         slider1.valueProperty().addListener((observable, oldValue, newValue) -> {
             heightLabel.setText(String.format("%.2f", newValue));
-            rectangle.setHeight((float)slider1.getValue());
+            rectangle.setHeight(newValue.floatValue());
         });
         
         slider2.valueProperty().addListener((observable, oldValue, newValue) -> {
             widthLabel.setText(String.format("%.2f", newValue));
-            rectangle.setWidth((float)slider2.getValue());
+            rectangle.setWidth(newValue.floatValue());
         });
 
         rectangle.setHeight((float)slider1.getValue());
