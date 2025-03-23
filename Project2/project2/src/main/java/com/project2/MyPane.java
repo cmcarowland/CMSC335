@@ -20,6 +20,7 @@ import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
+import javafx.scene.shape.Rectangle;
 
 // import javafx.scene.control.Label;
 // import javafx.scene.shape.Line;
@@ -40,6 +41,12 @@ public class MyPane extends Pane {
             if(App.shapeType.equals("circle")) {
                 Circle circle = new Circle(e.getX(), e.getY(), CircleController.getRadius(), Color.YELLOW);
                 getChildren().add(circle);
+            }
+            if(App.shapeType.equals("rectangle")) {
+                Rectangle rect = new Rectangle(RectangleController.getWidth(), RectangleController.getHeight(), Color.YELLOW);
+                rect.setX(e.getX() - RectangleController.getWidth() / 2);
+                rect.setY(e.getY() - RectangleController.getHeight() / 2);
+                getChildren().add(rect);
             }
         }
    }

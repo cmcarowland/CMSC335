@@ -28,6 +28,19 @@ public class PrimaryController {
         stage.show();
     } */
 
+    Node getNode(String fxml) {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource(fxml));
+        Node additionalContent;
+        try {
+            additionalContent = loader.load();
+        } catch (IOException e) {
+            e.printStackTrace();
+            return null;
+        }
+
+        return additionalContent;
+    }
+
     @FXML
     void circleClicked(ActionEvent ae) {
         System.out.println(ae);
@@ -44,6 +57,14 @@ public class PrimaryController {
         // Add the additional content to the main layout
         GridPane mainLayout = (GridPane) ((Node) ae.getSource()).getScene().getRoot();
         mainLayout.getChildren().add(additionalContent);
+    }
+    
+    @FXML
+    void rectClicked(ActionEvent ae) {
+        System.out.println(ae);
+        // Load an additional FXML file
+        GridPane mainLayout = (GridPane) ((Node) ae.getSource()).getScene().getRoot();
+        mainLayout.getChildren().add(getNode("rectangle.fxml"));
     }
 
     @FXML
