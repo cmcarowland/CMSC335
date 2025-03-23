@@ -13,6 +13,7 @@ package com.project2;
 * lines connecting the corresponding vertex positions in the pane.
 */
 
+
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Background;
@@ -46,6 +47,12 @@ public class MyPane extends Pane {
                 Rectangle rect = new Rectangle(RectangleController.getWidth(), RectangleController.getHeight(), Color.YELLOW);
                 rect.setX(e.getX() - RectangleController.getWidth() / 2);
                 rect.setY(e.getY() - RectangleController.getHeight() / 2);
+                getChildren().add(rect);
+            }
+            if(App.shapeType.equals("square")) {
+                Rectangle rect = new Rectangle(SquareController.getSides(), SquareController.getSides(), Color.YELLOW);
+                rect.setX(e.getX() - SquareController.getSides() / 2);
+                rect.setY(e.getY() - SquareController.getSides() / 2);
                 getChildren().add(rect);
             }
         }

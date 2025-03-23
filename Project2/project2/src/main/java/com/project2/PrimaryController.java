@@ -54,6 +54,13 @@ public class PrimaryController {
         GridPane mainLayout = (GridPane) ((Node) ae.getSource()).getScene().getRoot();
         mainLayout.getChildren().add(getNode("rectangle.fxml"));
     }
+    
+    @FXML
+    void squareClicked(ActionEvent ae) {
+        // Load an additional FXML file
+        GridPane mainLayout = (GridPane) ((Node) ae.getSource()).getScene().getRoot();
+        mainLayout.getChildren().add(getNode("square.fxml"));
+    }
 
     @FXML
     void cancelClicked(ActionEvent ae) {

@@ -10,46 +10,33 @@ import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
 import javafx.scene.layout.GridPane;
 
-import com.shapes.Rectangle;
+import com.shapes.Square;
 
-public class RectangleController {
+public class SquareController {
     @FXML
     private Slider slider1;
     @FXML
-    private Label heightLabel;
-    @FXML
-    private Slider slider2;
-    @FXML
-    private Label widthLabel;
-
-    private static Rectangle rectangle;
+    private Label sideLabel;
+    
+    private static Square square;
 
     public void initialize() {
-        rectangle = new Rectangle();
+        square = new Square();
         slider1.valueProperty().addListener((observable, oldValue, newValue) -> {
-            heightLabel.setText(String.format("%.2f", newValue));
-            rectangle.setHeight(newValue.floatValue());
+            sideLabel.setText(String.format("%.2f", newValue));
+            square.setSides(newValue.floatValue());
         });
+
+        square.setSides((float)slider1.getValue());
+        sideLabel.setText(String.format("%.2f", square.getHeight()));
         
-        slider2.valueProperty().addListener((observable, oldValue, newValue) -> {
-            widthLabel.setText(String.format("%.2f", newValue));
-            rectangle.setWidth(newValue.floatValue());
-        });
-
-        rectangle.setHeight((float)slider1.getValue());
-        heightLabel.setText(String.format("%.2f", rectangle.getHeight()));
-        rectangle.setWidth((float)slider2.getValue());
-        widthLabel.setText(String.format("%.2f", rectangle.getWidth()));
-        App.shapeType = "rectangle";
+        App.shapeType = "square";
     }
 
-    static public float getWidth() {
-        return rectangle.getWidth();
+    static public float getSides() {
+        return square.getWidth();
     }
 
-    static public float getHeight() {
-        return rectangle.getHeight();
-    }
 
     @FXML
     void cancelClicked(ActionEvent ae) {

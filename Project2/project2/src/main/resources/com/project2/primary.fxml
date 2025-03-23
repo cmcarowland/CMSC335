@@ -30,7 +30,7 @@
                <children>
                   <Label text="2D Shapes" />
                   <Button text="Create Circle" onAction="#circleClicked" />
-                  <Button text="Create Square"  />
+                  <Button text="Create Square" onAction="#squareClicked" />
                   <Button text="Create Triangle" />
                   <Button text="Create Rectangle" onAction="#rectClicked" />
                </children>
