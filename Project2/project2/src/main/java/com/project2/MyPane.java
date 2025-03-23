@@ -22,6 +22,7 @@ import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
+import javafx.scene.shape.Polygon;
 
 // import javafx.scene.control.Label;
 // import javafx.scene.shape.Line;
@@ -54,6 +55,20 @@ public class MyPane extends Pane {
                 rect.setX(e.getX() - SquareController.getSides() / 2);
                 rect.setY(e.getY() - SquareController.getSides() / 2);
                 getChildren().add(rect);
+            }
+            if(App.shapeType.equals("triangle")) {
+                System.out.println("Triangle");
+                Polygon triangle = new Polygon();
+                triangle.setFill(Color.YELLOW);
+                double side = TriangleController.getBase() / 2;
+                double height = TriangleController.getHeight() / 2;
+                triangle.getPoints().addAll(
+                    e.getX(), e.getY()-height,
+                    e.getX()-side, e.getY()+height,
+                    e.getX()+side, e.getY()+height
+                );
+                
+                getChildren().add(triangle);
             }
         }
    }

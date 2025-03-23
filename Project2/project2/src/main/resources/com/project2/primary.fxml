@@ -31,7 +31,7 @@
                   <Label text="2D Shapes" />
                   <Button text="Create Circle" onAction="#circleClicked" />
                   <Button text="Create Square" onAction="#squareClicked" />
-                  <Button text="Create Triangle" />
+                  <Button text="Create Triangle" onAction="#triClicked" />
                   <Button text="Create Rectangle" onAction="#rectClicked" />
                </children>
             </VBox>

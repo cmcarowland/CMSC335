@@ -41,6 +41,10 @@ public class Triangle extends TwoDimensionalShape {
         }
     }
 
+    public float getBase() {
+        return base;
+    }
+
     public void setHeight(float height) {
         if (isMeasurementValid(height)) {
             this.height = height;
@@ -48,5 +52,9 @@ public class Triangle extends TwoDimensionalShape {
         } else {
             throw new IllegalArgumentException("Invalid height length");
         }
+    }
+
+    public float getHeight() {
+        return height;
     }
 }

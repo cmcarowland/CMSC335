@@ -63,6 +63,13 @@ public class PrimaryController {
     }
 
     @FXML
+    void triClicked(ActionEvent ae) {
+        // Load an additional FXML file
+        GridPane mainLayout = (GridPane) ((Node) ae.getSource()).getScene().getRoot();
+        mainLayout.getChildren().add(getNode("triangle.fxml"));
+    }
+
+    @FXML
     void cancelClicked(ActionEvent ae) {
         System.out.println(ae);
         // Load an additional FXML file
