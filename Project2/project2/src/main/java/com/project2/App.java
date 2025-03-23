@@ -14,7 +14,7 @@ import java.io.IOException;
  */
 public class App extends Application {
 
-    private Stage stage;
+    // private Stage stage;
     public static String shapeType = "";
 
     @Override
@@ -36,7 +36,7 @@ public class App extends Application {
         scene.getStylesheets().add(getClass().getResource("styles.css").toExternalForm());
         stage.setMinWidth(500);
         stage.setMinHeight(600);
-        this.stage = stage;
+        // this.stage = stage;
         stage.setTitle("Raymond Rowland Project 2");
         stage.setScene(scene);
         stage.show();
