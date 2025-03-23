@@ -35,6 +35,7 @@ public class PrimaryController {
             additionalContent = loader.load();
         } catch (IOException e) {
             e.printStackTrace();
+            System.err.println("Error loading " + fxml);
             return null;
         }
 
@@ -67,6 +68,13 @@ public class PrimaryController {
         // Load an additional FXML file
         GridPane mainLayout = (GridPane) ((Node) ae.getSource()).getScene().getRoot();
         mainLayout.getChildren().add(getNode("triangle.fxml"));
+    }
+
+    @FXML
+    void sphereClicked(ActionEvent ae) {
+        // Load an additional FXML file
+        GridPane mainLayout = (GridPane) ((Node) ae.getSource()).getScene().getRoot();
+        mainLayout.getChildren().add(getNode("sphere.fxml"));
     }
 
     @FXML

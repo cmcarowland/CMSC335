@@ -14,6 +14,8 @@ package com.project2;
 */
 
 
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Background;
@@ -69,6 +71,16 @@ public class MyPane extends Pane {
                 );
                 
                 getChildren().add(triangle);
+            }
+            if(App.shapeType.equals("sphere")) {
+                Image image = new Image(getClass().getResource("Shapes/Sphere1.png").toExternalForm());
+                var iv = new ImageView(image);
+                Integer radius = (int)SphereController.getRadius() * 2;
+                iv.setX(e.getX()-radius/2);
+                iv.setY(e.getY()-radius/2);
+                iv.setFitHeight(radius);
+                iv.setFitWidth(radius);
+                getChildren().add(iv);
             }
         }
    }

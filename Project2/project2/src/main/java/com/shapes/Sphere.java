@@ -25,6 +25,10 @@ public class Sphere extends ThreeDimensionalShape {
         }
     }
 
+    public float getRadius() {
+        return radius;
+    }
+
     @Override
     public void calculate() {
         volume = (float) (4.0 / 3.0 * Math.PI * Math.pow(radius, 3));

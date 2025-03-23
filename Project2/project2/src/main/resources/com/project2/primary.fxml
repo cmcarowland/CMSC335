@@ -38,7 +38,7 @@
             <VBox alignment="CENTER" spacing="10.0" >
                <children>
                   <Label text="3D Shapes" />
-                  <Button text="Create Sphere" />
+                  <Button text="Create Sphere" onAction="#sphereClicked" />
                   <Button text="Create Cube" />
                   <Button text="Create Cone" />
                   <Button text="Create Cylinder" />
