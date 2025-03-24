@@ -30,7 +30,7 @@
       <Label text="Click to place shape" GridPane.halignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="0" />
       <Button fx:id="cancelButton" text="Cancel" GridPane.halignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="0" onAction="#cancelClicked"/>
 
-      <ComboBox fx:id="box1" value="10" GridPane.columnIndex="0" GridPane.rowIndex="1" >
+      <ComboBox fx:id="box1" value="10" GridPane.halignment="CENTER" GridPane.columnIndex="0" GridPane.rowIndex="1" >
             <items>
                 <FXCollections fx:factory="observableArrayList">
                     <String fx:value="5"/>
