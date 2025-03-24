@@ -35,6 +35,11 @@ public class TriangleController {
             baseLabel.setText(String.format("%.2f", newValue));
             triangle.setBase(newValue.floatValue());
         });
+
+        triangle.setHeight((float)slider1.getValue());
+        triangle.setBase((float)slider2.getValue());
+        heightLabel.setText(String.format("%.2f", triangle.getHeight()));
+        baseLabel.setText(String.format("%.2f", triangle.getBase()));
         
         App.shapeType = "triangle";
     }
