@@ -39,10 +39,10 @@
                <children>
                   <Label text="3D Shapes" />
                   <Button text="Create Sphere" onAction="#sphereClicked" />
-                  <Button text="Create Cube" />
-                  <Button text="Create Cone" />
-                  <Button text="Create Cylinder" />
-                  <Button text="Create Torus" />
+                  <Button text="Create Cube" onAction="#cubeClicked" />
+                  <Button text="Create Cone" onAction="#coneClicked" />
+                  <Button text="Create Cylinder" onAction="#cylinderClicked" />
+                  <Button text="Create Torus" onAction="#torusClicked" />
                </children>
             </VBox>
             <Button alignment="CENTER" fx:id="clear" text="Clear Canvas" onAction="#clearClicked" />

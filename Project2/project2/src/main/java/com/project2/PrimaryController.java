@@ -78,6 +78,34 @@ public class PrimaryController {
     }
 
     @FXML
+    void cubeClicked(ActionEvent ae) {
+        // Load an additional FXML file
+        GridPane mainLayout = (GridPane) ((Node) ae.getSource()).getScene().getRoot();
+        mainLayout.getChildren().add(getNode("cube.fxml"));
+    }
+
+    @FXML
+    void coneClicked(ActionEvent ae) {
+        // Load an additional FXML file
+        GridPane mainLayout = (GridPane) ((Node) ae.getSource()).getScene().getRoot();
+        mainLayout.getChildren().add(getNode("cone.fxml"));
+    }
+
+    @FXML
+    void cylinderClicked(ActionEvent ae) {
+        // Load an additional FXML file
+        GridPane mainLayout = (GridPane) ((Node) ae.getSource()).getScene().getRoot();
+        mainLayout.getChildren().add(getNode("cylinder.fxml"));
+    }
+
+    @FXML
+    void torusClicked(ActionEvent ae) {
+        // Load an additional FXML file
+        GridPane mainLayout = (GridPane) ((Node) ae.getSource()).getScene().getRoot();
+        mainLayout.getChildren().add(getNode("torus.fxml"));
+    }
+
+    @FXML
     void cancelClicked(ActionEvent ae) {
         System.out.println(ae);
         // Load an additional FXML file

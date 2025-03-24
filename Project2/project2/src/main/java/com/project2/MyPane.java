@@ -74,15 +74,35 @@ public class MyPane extends Pane {
             }
             if(App.shapeType.equals("sphere")) {
                 Image image = new Image(getClass().getResource("Shapes/Sphere1.png").toExternalForm());
-                var iv = new ImageView(image);
-                Integer radius = (int)SphereController.getRadius() * 2;
-                iv.setX(e.getX()-radius/2);
-                iv.setY(e.getY()-radius/2);
-                iv.setFitHeight(radius);
-                iv.setFitWidth(radius);
-                getChildren().add(iv);
+                createImageResizeAndInsert(image, SphereController.getRadius(), e);
+            }
+            if(App.shapeType.equals("cube")) {
+                Image image = new Image(getClass().getResource("Shapes/Cube.png").toExternalForm());
+                createImageResizeAndInsert(image, CubeController.getSide(), e);
+            }
+            if(App.shapeType.equals("cone")) {
+                Image image = new Image(getClass().getResource("Shapes/Cone_" + ConeController.getDimensions() + ".png").toExternalForm());
+                createImageResizeAndInsert(image, 50, e);
+            }
+            if(App.shapeType.equals("cylinder")) {
+                Image image = new Image(getClass().getResource("Shapes/Cylinder_" + CylinderController.getDimensions() + ".png").toExternalForm());
+                createImageResizeAndInsert(image, 50, e);
+            }
+            if(App.shapeType.equals("torus")) {
+                System.out.println("Shapes/Torus_" + TorusController.getDimensions() + ".png");
+                Image image = new Image(getClass().getResource("Shapes/Torus_" + TorusController.getDimensions() + ".png").toExternalForm());
+                createImageResizeAndInsert(image, 50, e);
             }
         }
+   }
+
+   private void createImageResizeAndInsert(Image image, double size, MouseEvent e) {
+        var iv = new ImageView(image);
+        iv.setX(e.getX()-size/2);
+        iv.setY(e.getY()-size/2);
+        iv.setFitHeight(size);
+        iv.setFitWidth(size);
+        getChildren().add(iv);
    }
    
    public void clear() {
