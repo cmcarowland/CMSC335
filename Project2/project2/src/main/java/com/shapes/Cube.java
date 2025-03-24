@@ -28,6 +28,10 @@ public class Cube extends ThreeDimensionalShape {
         }
     }
 
+    public float getSide() {
+        return side;
+    }
+
     @Override
     public void calculate() {
         volume = (float) Math.pow(side, 3);

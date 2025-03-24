@@ -25,6 +25,10 @@ public class Cylinder extends ThreeDimensionalShape {
         }
     }
 
+    public float getRadius() {
+        return radius;
+    }
+
     public void setHeight(float height) {
         if (isMeasurementValid(height)) {
             this.height = height;
@@ -32,6 +36,10 @@ public class Cylinder extends ThreeDimensionalShape {
         } else {
             throw new IllegalArgumentException("Height must be greater than 0");
         }
+    }
+
+    public float getHeight() {
+        return height;
     }
 
     @Override
