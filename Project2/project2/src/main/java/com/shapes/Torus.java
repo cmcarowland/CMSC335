@@ -16,10 +16,6 @@ public class Torus extends ThreeDimensionalShape {
         super();
     }
 
-    public float getMajorRadius() {
-        return majorRadius;
-    }
-
     public void setMajorRadius(float majorRadius) {
         if (isMeasurementValid(majorRadius)) {
             this.majorRadius = majorRadius;
@@ -27,6 +23,10 @@ public class Torus extends ThreeDimensionalShape {
         } else {
             throw new IllegalArgumentException("Major Radius must be greater than 0");
         }
+    }
+    
+    public float getMajorRadius() {
+        return majorRadius;
     }
 
     public void setMinorRadius(float minorRadius) {
@@ -39,6 +39,10 @@ public class Torus extends ThreeDimensionalShape {
         } else {
             throw new IllegalArgumentException("Minor Radius must be greater than 0");
         }
+    }
+
+    public float getMinorRadius() {
+        return minorRadius;
     }
 
     @Override
