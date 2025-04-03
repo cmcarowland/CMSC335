@@ -11,7 +11,7 @@ package main;
  * and provide a string representation of the cube's properties.
  */
 
-public class Cube extends ThreeDimensionalShape {
+public class Cube extends ThreeDimensionalShape implements ISides {
     private float side;
 
     public Cube() {
@@ -19,7 +19,12 @@ public class Cube extends ThreeDimensionalShape {
         side = 0;
     }
 
-    public void setSide(float side) {
+    @Override
+    public void setHeight(float side) {
+        setSides(side);
+    }
+
+    public void setSides(float side) {
         if(isMeasurementValid(side)) {
             this.side = side;
             System.out.println("All sides of the Cube have been set to " + side);
