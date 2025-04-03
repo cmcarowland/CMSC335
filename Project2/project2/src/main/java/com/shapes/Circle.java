@@ -8,7 +8,7 @@ package com.shapes;
  * FILE: Circle.java
  */
 
-public class Circle extends TwoDimensionalShape {
+public class Circle extends TwoDimensionalShape implements IRadius{
     private float radius;
 
     public Circle() {

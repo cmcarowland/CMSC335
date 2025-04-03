@@ -8,7 +8,7 @@ package com.shapes;
  * FILE: Sphere.java
  */
 
-public class Sphere extends ThreeDimensionalShape {
+public class Sphere extends ThreeDimensionalShape implements IRadius {
     private float radius;
 
     public Sphere() {

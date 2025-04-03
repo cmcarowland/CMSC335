@@ -8,7 +8,7 @@ package com.shapes;
  * FILE: Cylinder.java
  */
 
-public class Cylinder extends ThreeDimensionalShape {
+public class Cylinder extends ThreeDimensionalShape implements IRadius, IHeight {
     protected float radius;
     protected float height;
 

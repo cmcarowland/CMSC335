@@ -24,11 +24,11 @@ public class CubeController {
         cube = new Cube();
 
         box1.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
-            cube.setSide(Integer.parseInt(newValue));
+            cube.setSides(Integer.parseInt(newValue));
             setLabel();
         });
 
-        cube.setSide(Integer.parseInt(box1.getValue()));
+        cube.setSides(Integer.parseInt(box1.getValue()));
         setLabel();
         App.shapeType = "cube";
     }

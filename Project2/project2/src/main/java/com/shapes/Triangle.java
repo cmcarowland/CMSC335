@@ -8,7 +8,7 @@ package com.shapes;
  * FILE: Triangle.java
  */
 
-public class Triangle extends TwoDimensionalShape {
+public class Triangle extends TwoDimensionalShape implements IHeight {
     private float base;
     private float height;
 
