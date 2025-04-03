@@ -9,7 +9,7 @@
 <?import javafx.event.ActionEvent?>
 <?import javafx.scene.control.Slider?>
 
-<GridPane gridLinesVisible="false" style="-fx-background-color:rgb(20, 20, 20);"
+<GridPane gridLinesVisible="false" style="-fx-background-color:rgb(20, 29, 23);"
          xmlns="http://javafx.com/javafx/8.0.171" 
          xmlns:fx="http://javafx.com/fxml/1" 
          GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="1">
