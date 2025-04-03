@@ -1,18 +1,12 @@
 package com.project2;
 
-import java.io.IOException;
-
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
-import javafx.scene.layout.GridPane;
 
 import com.shapes.Triangle;
 
-public class TriangleController {
+public class TriangleController extends BaseController {
     @FXML
     private Slider slider1;
     @FXML
@@ -50,23 +44,5 @@ public class TriangleController {
 
     static public float getBase() {
         return triangle.getBase();
-    }
-
-    @FXML
-    void cancelClicked(ActionEvent ae) {
-        // Load an additional FXML file
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("baseSettings.fxml"));
-        Node additionalContent;
-        try {
-            additionalContent = loader.load();
-        } catch (IOException e) {
-            e.printStackTrace();
-            return;
-        }
-
-        // Add the additional content to the main layout
-        GridPane mainLayout = (GridPane) ((Node) ae.getSource()).getScene().getRoot();
-        mainLayout.getChildren().add(additionalContent);
-        App.shapeType = "";
     }
 }
