@@ -44,7 +44,6 @@ public class Cube extends ThreeDimensionalShape implements ISides {
 
     @Override
     public void setHeight(float h) {
-        // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'setHeight'");
     }
 }
