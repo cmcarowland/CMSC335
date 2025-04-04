@@ -1,5 +1,10 @@
 package com.project2;
-
+/**
+ * DATE: April 1, 2025
+ * AUTHOR: Raymond Rowland
+ * PURPOSE: This file serves as the main entry point for the JavaFX application.
+ * FILE: App.java
+ */
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;

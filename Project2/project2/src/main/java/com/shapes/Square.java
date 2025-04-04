@@ -1,12 +1,14 @@
 package com.shapes;
-
 /**
- * DATE: March 14, 2025
+ * DATE: April 1, 2025
  * AUTHOR: Raymond Rowland
- * PURPOSE: This class represents a Square, which is a type of Rectangle.
- *          It includes methods to set the sides of the square and to provide a string representation of the square.
+ * PURPOSE: This class represents a Square, which is a specific type of Rectangle
+ *          where all sides are of equal length. It provides functionality to set
+ *          the sides of the square and overrides the toString method to display
+ *          square-specific details.
  * FILE: Square.java
  */
+
 
 public class Square extends Rectangle implements ISides {
     public void setSides(float side) {

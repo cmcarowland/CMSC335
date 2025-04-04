@@ -1,5 +1,10 @@
 package com.project2;
-
+/**
+ * DATE: April 1, 2025
+ * AUTHOR: Raymond Rowland
+ * PURPOSE: This file contains the controller logic for managing the Cone shape in the application.
+ * FILE: ConeController.java
+ */
 import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;

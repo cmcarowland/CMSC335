@@ -1,10 +1,8 @@
 package com.shapes;
-
 /**
- * DATE: March 14, 2025
+ * DATE: April 1, 2025
  * AUTHOR: Raymond Rowland
- * PURPOSE: This class represents a Sphere, which is a type of ThreeDimensionalShape.
- *          It includes methods to set the radius of the sphere, and to calculate its volume.
+ * PURPOSE: This file defines the Sphere class, which represents a three-dimensional shape with a radius and calculates its volume.
  * FILE: Sphere.java
  */
 

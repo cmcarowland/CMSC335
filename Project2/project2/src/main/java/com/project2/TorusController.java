@@ -1,4 +1,11 @@
 package com.project2;
+/**
+ * DATE: April 1, 2025
+ * AUTHOR: Raymond Rowland
+ * PURPOSE: Controller class for managing the Torus shape in the application. 
+ *          Handles user interactions, updates the Torus dimensions, and displays them.
+ * FILE: TorusController.java
+ */
 
 import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;

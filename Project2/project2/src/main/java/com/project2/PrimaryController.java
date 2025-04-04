@@ -1,4 +1,12 @@
 package com.project2;
+/**
+ * DATE: April 1, 2025
+ * AUTHOR: Raymond Rowland
+ * PURPOSE: This file serves as the primary controller for handling user interactions 
+ *          and dynamically loading additional FXML components into the main layout 
+ *          based on user actions.
+ * FILE: PrimaryController.java
+ */
 
 import java.io.IOException;
 

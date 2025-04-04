@@ -1,4 +1,13 @@
 package com.project2;
+/**
+ * DATE: April 1, 2025
+ * AUTHOR: Raymond Rowland
+ * PURPOSE: This file defines the SquareController class, which manages the interaction 
+ *          between the user interface and the Square model. It handles user input 
+ *          through a slider to dynamically update the side length of a square and 
+ *          displays the updated value in a label.
+ * FILE: SquareController.java
+ */
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;

@@ -1,5 +1,10 @@
 package com.project2;
-
+/**
+ * DATE: April 1, 2025
+ * AUTHOR: Raymond Rowland
+ * PURPOSE: Controller class for managing Cylinder shape data and UI interactions.
+ * FILE: CylinderController.java
+ */
 import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;

@@ -1,17 +1,13 @@
 package com.project2;
-/*
-* Raymond Rowland
-* Project 4
-* 10/6/24
-* 
-*
-* The MyPane class extends Pane to create a custom drawing area for a 
-* JavaFX application. It sets a dark background and handles mouse click 
-* events to add vertices to the graph. When a vertex is added, it 
-* visually represents it as a yellow circle with a label. The class also 
-* provides a method to draw edges between vertices, represented as white 
-* lines connecting the corresponding vertex positions in the pane.
-*/
+/**
+ * DATE: April 1, 2025
+ * AUTHOR: Raymond Rowland
+ * PURPOSE: This class represents a custom JavaFX Pane that allows users to dynamically 
+ *          create and display various shapes (e.g., circles, rectangles, squares, triangles) 
+ *          and 3D shape representations (e.g., spheres, cubes, cones, cylinders, toruses) 
+ *          on mouse clicks. The shapes are determined by the current selection in the application.
+ * FILE: MyPane.java
+ */
 
 
 import javafx.scene.image.Image;
@@ -25,9 +21,6 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Polygon;
-
-// import javafx.scene.control.Label;
-// import javafx.scene.shape.Line;
 
 public class MyPane extends Pane {
    public MyPane () {

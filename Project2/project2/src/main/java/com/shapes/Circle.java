@@ -1,10 +1,10 @@
 package com.shapes;
-
 /**
- * DATE: March 14, 2025
+ * DATE: April 1, 2025
  * AUTHOR: Raymond Rowland
- * PURPOSE: This class represents a Circle, which is a type of TwoDimensionalShape.
- *          It includes methods to calculate the area of the circle and to set its radius.
+ * PURPOSE: This file defines the Circle class, which represents a two-dimensional 
+ *          circular shape. It includes methods for setting and validating the radius, 
+ *          calculating the area, and generating a string representation of the circle.
  * FILE: Circle.java
  */
 

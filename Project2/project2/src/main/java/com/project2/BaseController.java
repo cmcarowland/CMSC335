@@ -1,5 +1,10 @@
 package com.project2;
-
+/**
+ * DATE: April 1, 2025
+ * AUTHOR: Raymond Rowland
+ * PURPOSE: This file contains the base controller class for handling common UI actions.
+ * FILE: BaseController.java
+ */
 import java.io.IOException;
 
 import javafx.event.ActionEvent;

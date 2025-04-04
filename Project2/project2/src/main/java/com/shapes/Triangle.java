@@ -1,10 +1,8 @@
 package com.shapes;
-
 /**
- * DATE: March 14, 2025
+ * DATE: April 1, 2025
  * AUTHOR: Raymond Rowland
- * PURPOSE: This class represents a Triangle, which is a type of TwoDimensionalShape.
- *          It includes methods to set the base and height of the triangle, and to calculate its area.
+ * PURPOSE: This file defines the Triangle class, which represents a two-dimensional triangle shape.
  * FILE: Triangle.java
  */
 

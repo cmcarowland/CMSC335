@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+ * DATE: April 1, 2025
+ * AUTHOR: Raymond Rowland
+ * PURPOSE: This file defines the layout and structure of the JavaFX user interface.
+ * FILE: base.fxml
+-->
 
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.control.Label?>

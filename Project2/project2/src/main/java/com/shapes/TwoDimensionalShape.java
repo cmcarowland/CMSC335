@@ -1,10 +1,8 @@
 package com.shapes;
-
 /**
- * DATE: March 14, 2025
+ * DATE: April 1, 2025
  * AUTHOR: Raymond Rowland
- * PURPOSE: This class represents a TwoDimensionalShape, which is an abstract base class for all 2D shapes.
- *          It includes a method to calculate the area of the shape.
+ * PURPOSE: This file defines an abstract class for two-dimensional shapes.
  * FILE: TwoDimensionalShape.java
  */
 

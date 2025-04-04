@@ -1,10 +1,8 @@
 package com.shapes;
-
 /**
- * DATE: March 14, 2025
+ * DATE: April 1, 2025
  * AUTHOR: Raymond Rowland
- * PURPOSE: This class represents a Shape, which is an abstract base class for all shapes.
- *          It includes methods to get the number of dimensions and to validate measurements.
+ * PURPOSE: This file defines the abstract Shape class, which serves as a base for all shape types.
  * FILE: Shape.java
  */
 

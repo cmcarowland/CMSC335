@@ -1,5 +1,11 @@
 package com.project2;
-
+/**
+ * DATE: April 1, 2025
+ * AUTHOR: Raymond Rowland
+ * PURPOSE: This file serves as the controller for handling the logic and interactions 
+ *          related to the Sphere component in the application.
+ * FILE: SphereController.java
+ */
 import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;

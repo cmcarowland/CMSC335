@@ -1,4 +1,11 @@
-.root {
+/*
+ * DATE: April 1, 2025
+ * AUTHOR: Raymond Rowland
+ * PURPOSE: This CSS file defines the styles for the JavaFX application, including font settings and label text color.
+ * FILE: styles.css
+ */
+
+* {
     font-family: "Arial";
     -fx-font-family: "Arial";
 }

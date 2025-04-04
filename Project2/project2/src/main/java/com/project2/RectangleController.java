@@ -1,4 +1,13 @@
 package com.project2;
+/**
+ * DATE: April 1, 2025
+ * AUTHOR: Raymond Rowland
+ * PURPOSE: This file defines the RectangleController class, which manages the interaction 
+ *          between the user interface and the Rectangle model. It handles user input 
+ *          through sliders to dynamically update the dimensions of a rectangle and 
+ *          displays the updated values in the UI.
+ * FILE: RectangleController.java
+ */
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;

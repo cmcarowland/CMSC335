@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
+<!--
+ * DATE: April 1, 2025
+ * AUTHOR: Raymond Rowland
+ * PURPOSE: This file defines the FXML layout for configuring a rectangle's dimensions and placement.
+ * FILE NAME: rectangle.fxml
+-->
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.GridPane?>

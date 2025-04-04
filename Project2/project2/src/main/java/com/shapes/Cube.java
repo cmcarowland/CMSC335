@@ -1,14 +1,10 @@
 package com.shapes;
 
 /**
- * FILE: Cube.java
- * DATE: March 14, 2025
+ * DATE: April 1, 2025
  * AUTHOR: Raymond Rowland
- * 
- * PURPOSE:
- * This class represents a Cube, which is a type of ThreeDimensionalShape.
- * It includes methods to set the side length of the cube, calculate its volume,
- * and provide a string representation of the cube's properties.
+ * PURPOSE: This file defines the Cube class, which represents a three-dimensional cube shape.
+ * FILE: Cube.java
  */
 
 public class Cube extends ThreeDimensionalShape implements ISides {

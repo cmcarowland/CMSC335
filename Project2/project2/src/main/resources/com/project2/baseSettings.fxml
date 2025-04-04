@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
+<!--
+ * DATE: April 1, 2025
+ * AUTHOR: Raymond Rowland
+ * PURPOSE: This file defines the base settings layout for the JavaFX application. 
+            It shows when no shape is selected.
+ * FILE: baseSettings.fxml
+-->
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.GridPane?>
 

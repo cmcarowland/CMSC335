@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
+<!--
+ * DATE: April 1, 2025
+ * AUTHOR: Raymond Rowland
+ * PURPOSE: This file defines the layout for the primary user interface of the application, 
+ *          including buttons for creating 2D and 3D shapes and a canvas for displaying them.
+ * FILE NAME: primary.fxml
+-->
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Button?>

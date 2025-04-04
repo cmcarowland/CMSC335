@@ -1,10 +1,8 @@
 package com.shapes;
-
 /**
- * DATE: March 14, 2025
+ * DATE: April 1, 2025
  * AUTHOR: Raymond Rowland
- * PURPOSE: This class represents a ThreeDimensionalShape, which is an abstract base class for all 3D shapes.
- *          It includes a method to calculate the volume of the shape.
+ * PURPOSE: This file defines an abstract class for three-dimensional shapes.
  * FILE: ThreeDimensionalShape.java
  */
 

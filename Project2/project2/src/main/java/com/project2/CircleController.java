@@ -3,7 +3,12 @@ package com.project2;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
-
+/**
+ * DATE: April 1, 2025
+ * AUTHOR: Raymond Rowland
+ * PURPOSE: Controller for managing Circle shape interactions in the application.
+ * FILE: CircleController.java
+ */
 import com.shapes.Circle;
 
 public class CircleController extends BaseController {
