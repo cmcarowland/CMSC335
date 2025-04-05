@@ -35,20 +35,20 @@
             <VBox alignment="CENTER" spacing="10.0" >
                <children>
                   <Label text="2D Shapes" />
-                  <Button text="Create Circle" onAction="#circleClicked" />
-                  <Button text="Create Square" onAction="#squareClicked" />
-                  <Button text="Create Triangle" onAction="#triClicked" />
-                  <Button text="Create Rectangle" onAction="#rectClicked" />
+                  <Button text="Create Circle" onAction="#shapeClicked" />
+                  <Button text="Create Square" onAction="#shapeClicked" />
+                  <Button text="Create Triangle" onAction="#shapeClicked" />
+                  <Button text="Create Rectangle" onAction="#shapeClicked" />
                </children>
             </VBox>
             <VBox alignment="CENTER" spacing="10.0" >
                <children>
                   <Label text="3D Shapes" />
-                  <Button text="Create Sphere" onAction="#sphereClicked" />
-                  <Button text="Create Cube" onAction="#cubeClicked" />
-                  <Button text="Create Cone" onAction="#coneClicked" />
-                  <Button text="Create Cylinder" onAction="#cylinderClicked" />
-                  <Button text="Create Torus" onAction="#torusClicked" />
+                  <Button text="Create Sphere" onAction="#shapeClicked" />
+                  <Button text="Create Cube" onAction="#shapeClicked" />
+                  <Button text="Create Cone" onAction="#shapeClicked" />
+                  <Button text="Create Cylinder" onAction="#shapeClicked" />
+                  <Button text="Create Torus" onAction="#shapeClicked" />
                </children>
             </VBox>
             <Button alignment="CENTER" fx:id="clear" text="Clear Canvas" onAction="#clearClicked" />
