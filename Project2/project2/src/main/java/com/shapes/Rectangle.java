@@ -25,7 +25,7 @@ public class Rectangle extends TwoDimensionalShape implements IHeight {
         sb.append("    -Height: %.2f\n");
         sb.append("    -Width : %.2f\n");
         sb.append("    -Area  : %.2f\n");
-        return String.format(sb.toString(), this.getClass().getSimpleName(), width, height, area);
+        return String.format(sb.toString(), this.getClass().getSimpleName(), height, width, area);
     }
 
     public void setHeight(float side) {
