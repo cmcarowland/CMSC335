@@ -32,8 +32,6 @@ public class ConeController extends BaseController {
         });
 
         var measurements = box1.getValue().split("x");
-        System.out.println(measurements[0]);
-        System.out.println(measurements[1]);
         cone.setRadius(Integer.parseInt(measurements[0]));
         cone.setHeight(Integer.parseInt(measurements[1]));
         setLabel();
