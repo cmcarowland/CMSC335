@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ * DATE: April 1, 2025
+ * AUTHOR: Raymond Rowland
+ * PURPOSE: This file defines the FXML layout for configuring a rectangle's dimensions and placement.
+ * FILE NAME: rectangle.fxml
+-->
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Slider?>
+
+<fx:include source="base.fxml" fx:id="base" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" 
+            fx:controller="com.project2.RectangleController" >
+   <children>
+      <Label text="Rectangle Configuration" GridPane.halignment="CENTER" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+      <Label text="Click to place shape" GridPane.halignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+      <Button fx:id="cancelButton" text="Cancel" GridPane.halignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="0" onAction="#cancelClicked"/>
+
+      <Slider fx:id="slider1" GridPane.halignment="CENTER" GridPane.columnIndex="0" GridPane.rowIndex="1" min="5" max="50" />
+      <Label text="Height" GridPane.halignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1"  />
+      <Label fx:id="heightLabel" text="1" GridPane.halignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+      
+      <Slider fx:id="slider2" GridPane.halignment="CENTER" GridPane.columnIndex="0" GridPane.rowIndex="2" min="5" max="50" />
+      <Label text="Width" GridPane.halignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2"  />
+      <Label fx:id="widthLabel" text="1" GridPane.halignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+   </children>
+</fx:include>
