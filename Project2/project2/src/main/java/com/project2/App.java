@@ -21,13 +21,15 @@ public class App extends Application {
 
     // private Stage stage;
     public static String shapeType = "";
+    public static GridPane mainLayout;
+    public static Node additionalContent;
 
     @Override
     public void start(Stage stage) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("primary.fxml"));
+        mainLayout = (GridPane) root;
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("baseSettings.fxml"));
-        Node additionalContent;
         try {
             additionalContent = loader.load();
         } catch (IOException e) {

@@ -14,27 +14,9 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
-import javafx.scene.layout.GridPane;
+import javafx.scene.control.Button;
 
 public class PrimaryController {
-    /* @FXML  
-    void Clicked(ActionEvent event) {
-        System.out.println(event);
-
-        Pane p = new Pane();
-        BackgroundFill bgf = new BackgroundFill(Color.valueOf("#141414"), null, p.getInsets());
-        Background bg = new Background(bgf);
-        p.setBackground(bg);
-
-        Scene scene = new Scene(p, 200, 200);
-        scene.getRoot().setStyle("-fx-font-family: 'serif'");
-        Stage stage = new Stage();
-        stage.setScene(scene);
-        stage.setTitle(((Button)event.getSource()).textProperty().getValue());
-        stage.initModality(Modality.WINDOW_MODAL);
-        stage.initOwner(((Node)event.getSource()).getScene().getWindow());
-        stage.show();
-    } */
 
     Node getNode(String fxml) {
         FXMLLoader loader = new FXMLLoader(getClass().getResource(fxml));
@@ -51,66 +33,14 @@ public class PrimaryController {
     }
 
     @FXML
-    void circleClicked(ActionEvent ae) {
+    void shapeClicked(ActionEvent ae) {
         // Load an additional FXML file
-        GridPane mainLayout = (GridPane) ((Node) ae.getSource()).getScene().getRoot();
-        mainLayout.getChildren().add(getNode("circle.fxml"));
-    }
-    
-    @FXML
-    void rectClicked(ActionEvent ae) {
-        // Load an additional FXML file
-        GridPane mainLayout = (GridPane) ((Node) ae.getSource()).getScene().getRoot();
-        mainLayout.getChildren().add(getNode("rectangle.fxml"));
-    }
-    
-    @FXML
-    void squareClicked(ActionEvent ae) {
-        // Load an additional FXML file
-        GridPane mainLayout = (GridPane) ((Node) ae.getSource()).getScene().getRoot();
-        mainLayout.getChildren().add(getNode("square.fxml"));
-    }
+        if (App.mainLayout.getChildren().size() > 1) {
+            App.mainLayout.getChildren().removeIf(x -> x == App.additionalContent);
+        }
 
-    @FXML
-    void triClicked(ActionEvent ae) {
-        // Load an additional FXML file
-        GridPane mainLayout = (GridPane) ((Node) ae.getSource()).getScene().getRoot();
-        mainLayout.getChildren().add(getNode("triangle.fxml"));
-    }
-
-    @FXML
-    void sphereClicked(ActionEvent ae) {
-        // Load an additional FXML file
-        GridPane mainLayout = (GridPane) ((Node) ae.getSource()).getScene().getRoot();
-        mainLayout.getChildren().add(getNode("sphere.fxml"));
-    }
-
-    @FXML
-    void cubeClicked(ActionEvent ae) {
-        // Load an additional FXML file
-        GridPane mainLayout = (GridPane) ((Node) ae.getSource()).getScene().getRoot();
-        mainLayout.getChildren().add(getNode("cube.fxml"));
-    }
-
-    @FXML
-    void coneClicked(ActionEvent ae) {
-        // Load an additional FXML file
-        GridPane mainLayout = (GridPane) ((Node) ae.getSource()).getScene().getRoot();
-        mainLayout.getChildren().add(getNode("cone.fxml"));
-    }
-
-    @FXML
-    void cylinderClicked(ActionEvent ae) {
-        // Load an additional FXML file
-        GridPane mainLayout = (GridPane) ((Node) ae.getSource()).getScene().getRoot();
-        mainLayout.getChildren().add(getNode("cylinder.fxml"));
-    }
-
-    @FXML
-    void torusClicked(ActionEvent ae) {
-        // Load an additional FXML file
-        GridPane mainLayout = (GridPane) ((Node) ae.getSource()).getScene().getRoot();
-        mainLayout.getChildren().add(getNode("torus.fxml"));
+        App.additionalContent = getNode(((Button)ae.getSource()).getText().split(" ")[1].toLowerCase() + ".fxml");
+        App.mainLayout.getChildren().add(App.additionalContent);
     }
 
     @FXML

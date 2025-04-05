@@ -11,7 +11,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
-import javafx.scene.layout.GridPane;
 
 abstract class BaseController {
     @FXML
@@ -26,9 +25,13 @@ abstract class BaseController {
             return;
         }
 
+        if (App.mainLayout.getChildren().size() > 1) {
+            App.mainLayout.getChildren().removeIf(x -> x == App.additionalContent);
+        }
+
         // Add the additional content to the main layout
-        GridPane mainLayout = (GridPane) ((Node) ae.getSource()).getScene().getRoot();
-        mainLayout.getChildren().add(additionalContent);
+        App.additionalContent = additionalContent;
+        App.mainLayout.getChildren().add(App.additionalContent);
         App.shapeType = "";
     }
 }
