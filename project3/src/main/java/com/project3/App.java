@@ -15,6 +15,7 @@ public class App extends Application {
 
     private static Scene scene;
     public static IState currentState = new Stopped();
+    public static GridPane mainLayout;
 
     public static void setCurrentState(IState state) {
         if(currentState != null) {
@@ -33,14 +34,9 @@ public class App extends Application {
         TimeTickedListener listener = new PrimaryController();
         Time.addListener(listener);
         fxmlLoader.setController(listener);
-        Physics.addListener(new PhysicsTickListener() {
-            @Override
-            public void onPhysicsTicked() {
-                // Handle physics tick
-            }   
-        });
-           
-        scene = new Scene((GridPane)fxmlLoader.load(), 640, 480);
+        
+        mainLayout = (GridPane)fxmlLoader.load();
+        scene = new Scene(mainLayout, 640, 640);
         scene.getStylesheets().add(getClass().getResource("styles.css").toExternalForm());
         stage.setTitle("Project 3");
         stage.setScene(scene);
