@@ -1,12 +1,21 @@
 package com.project3;
 
-import java.io.IOException;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
+import javafx.scene.control.Label;
 
-public class PrimaryController {
-
+public class PrimaryController implements TimeTickedListener {
     @FXML
-    private void switchToSecondary() throws IOException {
-        App.setRoot("secondary");
+    private Label timeLabel;
+
+    @Override
+    public void onTimeTicked(String time) {
+        Platform.runLater(() -> {
+            updateTimeLabel(time);
+        });
+    }
+
+    private void updateTimeLabel(String time) {
+        timeLabel.setText(time);
     }
 }
