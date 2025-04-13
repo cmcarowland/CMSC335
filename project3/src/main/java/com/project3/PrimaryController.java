@@ -24,6 +24,7 @@ public class PrimaryController implements TimeTickedListener {
     private void addCar(ActionEvent ae) {
         Car car = new Car();
         App.mainLayout.add(car.getCircle(), 0, 2 + (car.isToRight() ? 2 : 0));
+        Physics.getCarsGoingX(car);
         Physics.addListener(car);
     }
 }

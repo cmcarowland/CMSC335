@@ -20,7 +20,7 @@ class Time {
     private static void tick() {
         while(App.currentState != null) {
             try {
-                System.out.println("Time Tick");
+                // System.out.println("Time Tick");
                 if(App.currentState.getStateName().equals("Running")) {
                     currentTime = currentTime.plusSeconds(1);
                     notifyListeners();

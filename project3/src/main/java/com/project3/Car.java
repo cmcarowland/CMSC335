@@ -15,26 +15,33 @@ public class Car implements PhysicsTickListener {
     private float x;
     private boolean toRight = true;
     private Circle circle;
+    private Car nextCar;
+    private PhysicsState state = PhysicsState.MOVING;
 
     static private int idCounter = 0;
     static private Random random = new Random();
     static private float random(float min, float max) {
         return random.nextFloat(max - min) + min;
     }
+    static private int random(int min, int max) {
+        return random.nextInt(max - min) + min;
+    }
     
     public Car() {
         this.id = idCounter++;
         this.maxSpeed = random(15.6f, 24.6f);
         this.currentSpeed = maxSpeed;
-        if(random(0, 1) > 0.5) {
+        if(random(0f, 1.0f) > 0.5) {
             this.toRight = false;
-            x = 10000;
+            x = 9725;
+        } else {
+            x = -175;
         }
 
         circle = new Circle();
         circle.setRadius(10);
         circle.setTranslateX(x / 10000 * App.mainLayout.getWidth());
-        Color c = Color.rgb((int)Math.floor(random(0, 255)),(int)Math.floor(random(0, 255)),(int)Math.floor(random(0, 255)));
+        Color c = Color.rgb(random(128, 255),random(128, 255),random(128, 255));
         circle.setFill(c);
     }
 
@@ -47,8 +54,21 @@ public class Car implements PhysicsTickListener {
         return id;
     }
 
+    public Car getNextCar() {
+        return nextCar;
+    }
+
+    public void setNextCar(Car nextCar) {
+        this.nextCar = nextCar;
+    }
+
     public float getMaxSpeed() {
         return maxSpeed;
+    }
+    
+    public void setMaxSpeed(float ms) {
+        maxSpeed = ms;
+        currentSpeed = maxSpeed;
     }
 
     public float getCurrentSpeed() {
@@ -69,24 +89,36 @@ public class Car implements PhysicsTickListener {
 
     @Override
     public void onPhysicsTicked() {
-        // System.out.println("Car " + id + " Physics Tick " + x);
         if (toRight) {
-            x += currentSpeed;
+            x += currentSpeed;// * Physics.getTimeDelta();
         } else {
-            x -= currentSpeed;
+            x -= currentSpeed;// * Physics.getTimeDelta();
         }
+
+        if (nextCar != null && nextCar.state == PhysicsState.MOVING) {
+            float distance = Math.abs(nextCar.getX() - x);
+            // System.out.println("Car " + id + " distance to next car " + nextCar.getId() + " is " + distance);
+            if (distance < 350) {
+                currentSpeed = nextCar.getCurrentSpeed();
+                // System.out.println("Car " + id + " slowed down to " + currentSpeed);
+            }
+        } else {
+            currentSpeed = maxSpeed;
+        }
+        // System.out.println("Car " + id + " Physics Tick " + x);
 
         Platform.runLater(() -> {
             circle.setTranslateX(x / 10000 * App.mainLayout.getWidth());
         });
 
-        if (x > 10000 || x < -200) {
+        if (x > 10000 || x < -350) {
+            state = PhysicsState.COMPLETE;
             Physics.removeListener(this);
-            System.out.println("Car " + id + " removed from physics " + App.mainLayout.getChildren().size());
+            // System.out.println("Car " + id + " removed from physics " + App.mainLayout.getChildren().size());
             ObservableList<Node> circles = App.mainLayout.getChildren();
             for (Node circle : circles) {
                 if (circle == this.circle) {
-                    System.out.println("Car " + circle.hashCode() + " removed from layout " + this.circle.hashCode());
+                    // System.out.println("Car " + circle.hashCode() + " removed from layout " + this.circle.hashCode());
                     Platform.runLater(() -> {
                         App.mainLayout.getChildren().remove(circle);
                     });
