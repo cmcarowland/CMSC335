@@ -7,6 +7,8 @@ import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * JavaFX App
@@ -16,6 +18,8 @@ public class App extends Application {
     private static Scene scene;
     public static IState currentState = new Stopped();
     public static GridPane mainLayout;
+
+    public static List<Intersection> intersections = new ArrayList<>();
 
     public static void setCurrentState(IState state) {
         if(currentState != null) {
@@ -45,7 +49,37 @@ public class App extends Application {
     }
 
     public static void main(String[] args) {
+        for (int i = 1; i <= 9; i++) {
+            Intersection in = new Intersection(i * 1000, 10);
+            in.enable();
+            intersections.add(in);
+            try {
+            Thread.sleep(100);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
         launch();
         currentState = null;
+    }
+
+    public static Intersection findNextIntersection(Car c) {
+        Intersection nextIntersection = null;
+        float nextDist = Float.MAX_VALUE;
+        for (Intersection i : intersections) {
+            if(c.isToRight() && i.getState() != LightState.OFF) {
+                if (i.getX() > c.getX() && i.getX() - c.getX() < nextDist) {
+                    nextDist = i.getX() - c.getX();
+                    nextIntersection = i;
+                }
+            } else if (!c.isToRight() && i.getState() != LightState.OFF) {
+                if (c.getX() > i.getX() && c.getX() - i.getX() < nextDist) {
+                    nextDist = c.getX() - i.getX();
+                    nextIntersection = i;
+                }
+            }
+        }
+
+        return nextIntersection;
     }
 }

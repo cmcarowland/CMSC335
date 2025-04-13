@@ -17,6 +17,7 @@ public class Car implements PhysicsTickListener {
     private Circle circle;
     private Car nextCar;
     private PhysicsState state = PhysicsState.MOVING;
+    private Intersection nexIntersection = null;
 
     static private int idCounter = 0;
     static private Random random = new Random();
@@ -87,16 +88,38 @@ public class Car implements PhysicsTickListener {
         return toRight;
     }
 
-    @Override
-    public void onPhysicsTicked() {
-        if (toRight) {
-            x += currentSpeed;// * Physics.getTimeDelta();
-        } else {
-            x -= currentSpeed;// * Physics.getTimeDelta();
+    private float getDistance(Intersection i) {
+        return Math.abs(i.getX() - x);
+    }
+
+    private float getDistance() {
+        if(nextCar == null) {
+            return 10000;
         }
 
-        if (nextCar != null && nextCar.state == PhysicsState.MOVING) {
-            float distance = Math.abs(nextCar.getX() - x);
+        return Math.abs(nextCar.getX() - x);
+    }
+
+    @Override
+    public void onPhysicsTicked() {
+        nexIntersection = App.findNextIntersection(this);
+        if (nexIntersection != null) {
+            float distance = getDistance(nexIntersection);
+            if (nexIntersection.getState() == LightState.RED && distance > 350 && distance < 375) {
+                currentSpeed = 0;
+                state = PhysicsState.STOPPED;
+                // System.out.println("Car " + id + " stopped at intersection " + nexIntersection.getId());
+            } else if (nexIntersection.getState() == LightState.GREEN) {
+                currentSpeed = maxSpeed;
+                state = PhysicsState.MOVING;
+                // System.out.println("Car " + id + " passed intersection " + nexIntersection.getId());
+            }
+        }
+        if (state == PhysicsState.STOPPED) 
+            return;
+            
+        if (nextCar != null && nextCar.state != PhysicsState.COMPLETE) {
+            float distance = getDistance();
             // System.out.println("Car " + id + " distance to next car " + nextCar.getId() + " is " + distance);
             if (distance < 350) {
                 currentSpeed = nextCar.getCurrentSpeed();
@@ -105,8 +128,14 @@ public class Car implements PhysicsTickListener {
         } else {
             currentSpeed = maxSpeed;
         }
-        // System.out.println("Car " + id + " Physics Tick " + x);
 
+        if (toRight) {
+            x += currentSpeed;// * Physics.getTimeDelta();
+        } else {
+            x -= currentSpeed;// * Physics.getTimeDelta();
+        }
+
+        // System.out.println("Car " + id + " Physics Tick " + x);
         Platform.runLater(() -> {
             circle.setTranslateX(x / 10000 * App.mainLayout.getWidth());
         });
@@ -125,7 +154,6 @@ public class Car implements PhysicsTickListener {
                     break;
                 }
             }
-            
         }
     } 
 }
