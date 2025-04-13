@@ -4,14 +4,20 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
+import java.time.Duration;
+import java.time.LocalTime;
 
 class Physics {
     private static List<PhysicsTickListener> listeners;
     private static List<PhysicsTickListener> addingListeners;
     private static List<PhysicsTickListener> removingListeners;
     private static Lock lock = new ReentrantLock();
+    private static final int tickTime = 16; // 16ms
+    private static double deltaTime = 0;
+    private static LocalTime time = null;
 
     static {
+        time = LocalTime.now();
         listeners = new ArrayList<>();
         addingListeners = new ArrayList<>();
         removingListeners = new ArrayList<>();
@@ -23,7 +29,10 @@ class Physics {
     private static void tick() {
         while(App.currentState != null) {
             try {
-                Thread.sleep(16);
+                Thread.sleep(tickTime);
+                deltaTime = Duration.between(time, LocalTime.now()).toNanos() / 1000000000.0;
+                time = LocalTime.now();
+                // System.out.println("Delta time: " + deltaTime);
                 notifyListeners();
                 processWaitingListeners();
                 // System.out.println("Physics Tick");
@@ -82,5 +91,38 @@ class Physics {
                 removeListener(listener);
             }
         }
+    }
+
+    public static double getTimeDelta() {
+        return deltaTime;
+    }
+
+    public static void getCarsGoingX(Car c) {
+        Car closestCar = null;
+        float distance = 10000;
+        
+        for (PhysicsTickListener listener : listeners) {
+            if (listener instanceof Car) {
+                Car car = (Car) listener;
+                if (car.getId() != c.getId()) {
+                    if (car.isToRight() == c.isToRight()) {
+                        System.out.println("Car " + c.getId() + " is going in the same direction as car " + car.getId());
+                        float d = Math.abs(car.getX() - c.getX());
+                        if (d < distance) {
+                            distance = d;
+                            closestCar = car;
+                        }
+                    }
+                }
+            }
+        }
+
+        if(closestCar != null) {
+            System.out.println("Closest car to " + c.getId() + " is " + closestCar.getId());
+        } else {
+            System.out.println("No cars going in the same direction as " + c.getId());
+        }
+
+        c.setNextCar(closestCar);
     }
 }
