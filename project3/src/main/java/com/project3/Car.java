@@ -19,6 +19,8 @@ public class Car implements PhysicsTickListener {
     private PhysicsState state = PhysicsState.MOVING;
     private Intersection nexIntersection = null;
 
+    private final static int SAFETY_DISTANCE = 100;
+
     static private int idCounter = 0;
     static private Random random = new Random();
     static private float random(float min, float max) {
@@ -34,13 +36,13 @@ public class Car implements PhysicsTickListener {
         this.currentSpeed = maxSpeed;
         if(random(0f, 1.0f) > 0.5) {
             this.toRight = false;
-            x = 9725;
+            x = 9900;
         } else {
-            x = -175;
+            x = 50;
         }
 
         circle = new Circle();
-        circle.setRadius(10);
+        circle.setRadius(3);
         circle.setTranslateX(x / 10000 * App.mainLayout.getWidth());
         Color c = Color.rgb(random(128, 255),random(128, 255),random(128, 255));
         circle.setFill(c);
@@ -105,7 +107,7 @@ public class Car implements PhysicsTickListener {
         nexIntersection = App.findNextIntersection(this);
         if (nexIntersection != null) {
             float distance = getDistance(nexIntersection);
-            if (nexIntersection.getState() == LightState.RED && distance > 350 && distance < 375) {
+            if (nexIntersection.getState() == LightState.RED && distance > SAFETY_DISTANCE / 2.0f && distance < SAFETY_DISTANCE) {
                 currentSpeed = 0;
                 state = PhysicsState.STOPPED;
                 // System.out.println("Car " + id + " stopped at intersection " + nexIntersection.getId());
@@ -121,7 +123,7 @@ public class Car implements PhysicsTickListener {
         if (nextCar != null && nextCar.state != PhysicsState.COMPLETE) {
             float distance = getDistance();
             // System.out.println("Car " + id + " distance to next car " + nextCar.getId() + " is " + distance);
-            if (distance < 350) {
+            if (distance < SAFETY_DISTANCE) {
                 currentSpeed = nextCar.getCurrentSpeed();
                 // System.out.println("Car " + id + " slowed down to " + currentSpeed);
             }
@@ -132,7 +134,7 @@ public class Car implements PhysicsTickListener {
         if (toRight) {
             x += currentSpeed;// * Physics.getTimeDelta();
         } else {
-            x -= currentSpeed;// * Physics.getTimeDelta();
+            x -= currentSpeed * Physics.getTimeDelta();
         }
 
         // System.out.println("Car " + id + " Physics Tick " + x);
@@ -140,7 +142,7 @@ public class Car implements PhysicsTickListener {
             circle.setTranslateX(x / 10000 * App.mainLayout.getWidth());
         });
 
-        if (x > 10000 || x < -350) {
+        if (x > 10000 || x < -100) {
             state = PhysicsState.COMPLETE;
             Physics.removeListener(this);
             // System.out.println("Car " + id + " removed from physics " + App.mainLayout.getChildren().size());

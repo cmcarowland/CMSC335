@@ -18,9 +18,9 @@
    <rowConstraints>
       <RowConstraints maxHeight="30" minHeight="30.0" prefHeight="30.0" />
       <RowConstraints maxHeight="30" minHeight="30.0" prefHeight="30.0" />
-      <RowConstraints maxHeight="30" minHeight="30" prefHeight="30"/>
-      <RowConstraints maxHeight="15" minHeight="15" prefHeight="15" />
-      <RowConstraints maxHeight="30" minHeight="30" prefHeight="30"/>
+      <RowConstraints maxHeight="10" minHeight="10" prefHeight="10"/>
+      <RowConstraints maxHeight="7" minHeight="7" prefHeight="7" />
+      <RowConstraints maxHeight="10" minHeight="10" prefHeight="10"/>
       <RowConstraints maxHeight="30" minHeight="30.0" prefHeight="30.0" />
       <RowConstraints maxHeight="30" minHeight="30.0" prefHeight="30.0" />
       <RowConstraints percentHeight="100" vgrow="ALWAYS" />
@@ -35,10 +35,10 @@
       <Button fx:id="pauseBtn" alignment="CENTER" text="Pause" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
       <Button fx:id="playBtn" alignment="CENTER" text="Play" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
       <Button fx:id="contBtn" alignment="CENTER" text="Continue" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
-      <Separator style="-fx-background-color: rgb(255, 255, 255); -fx-border-color: null; -fx-pref-height: 5;" GridPane.valignment="TOP" GridPane.columnSpan="4" GridPane.rowIndex="2" />
-      <Separator style="-fx-background-color: rgb(200, 255, 0); -fx-border-color: null; -fx-pref-height: 5;" GridPane.valignment="TOP" GridPane.columnSpan="4" GridPane.rowIndex="3" />
-      <Separator style="-fx-background-color: rgb(200, 255, 0); -fx-border-color: null; -fx-pref-height: 5;" GridPane.valignment="BOTTOM" GridPane.columnSpan="4" GridPane.rowIndex="3" />
-      <Separator style="-fx-background-color: rgb(255, 255, 255); -fx-border-color: null; -fx-pref-height: 5;" GridPane.valignment="BOTTOM" GridPane.columnSpan="4" GridPane.rowIndex="4" />
+      <Separator style="-fx-background-color: rgb(255, 255, 255); -fx-border-color: null; -fx-pref-height: 2;" GridPane.valignment="TOP" GridPane.columnSpan="4" GridPane.rowIndex="2" />
+      <Separator style="-fx-background-color: rgb(200, 255, 0); -fx-border-color: null; -fx-pref-height: 0.2;" GridPane.valignment="TOP" GridPane.columnSpan="4" GridPane.rowIndex="3" />
+      <Separator style="-fx-background-color: rgb(200, 255, 0); -fx-border-color: null; -fx-pref-height: 0.2;" GridPane.valignment="BOTTOM" GridPane.columnSpan="4" GridPane.rowIndex="3" />
+      <Separator style="-fx-background-color: rgb(255, 255, 255); -fx-border-color: null; -fx-pref-height: 2;" GridPane.valignment="BOTTOM" GridPane.columnSpan="4" GridPane.rowIndex="4" />
       <Button fx:id="addCarBtn" alignment="CENTER" text="Add Car" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="5" onAction="#addCar" />
       <Button fx:id="addIntBtn" alignment="CENTER" text="Add Intersection" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
       <Label text="Intersection Data" GridPane.columnIndex="0" GridPane.columnSpan="4" GridPane.halignment="CENTER" GridPane.rowIndex="6" />
