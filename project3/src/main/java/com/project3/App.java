@@ -35,7 +35,7 @@ public class App extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("primary.fxml"));
-        TimeTickedListener listener = new PrimaryController();
+        PrimaryController listener = new PrimaryController();
         Time.addListener(listener);
         fxmlLoader.setController(listener);
         
@@ -47,19 +47,14 @@ public class App extends Application {
         stage.setResizable(false);
         setCurrentState(new Running());
         stage.show();
+        int[] intersectionMap = {5, 1, 9, 3, 7, 4, 6, 2, 8};
+        for (int i : intersectionMap) {
+            Intersection in = new Intersection(i * 1000, scene.lookup("#i" + i + "Top"), scene.lookup("#i" + i + "Bottom"));
+            intersections.add(in);
+        }
     }
 
     public static void main(String[] args) {
-        for (int i = 1; i <= 9; i++) {
-            Intersection in = new Intersection(i * 1000, 10);
-            in.enable();
-            intersections.add(in);
-            try {
-            Thread.sleep(100);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        }
         launch();
         currentState = null;
     }

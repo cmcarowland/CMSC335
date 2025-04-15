@@ -42,32 +42,32 @@
       <Separator style="-fx-background-color: rgb(200, 255, 0); -fx-border-color: null; -fx-pref-height: 0.2;" GridPane.columnSpan="4" GridPane.rowIndex="3" GridPane.valignment="BOTTOM" />
       <Separator style="-fx-background-color: rgb(255, 255, 255); -fx-border-color: null; -fx-pref-height: 2;" GridPane.columnSpan="4" GridPane.rowIndex="4" GridPane.valignment="BOTTOM" />
       <Button fx:id="addCarBtn" alignment="CENTER" onAction="#addCar" text="Add Car" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
-      <Button fx:id="addIntBtn" alignment="CENTER" text="Add Intersection" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
+      <Button fx:id="addIntBtn" alignment="CENTER" onAction="#addIntersection" text="Add Intersection" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
       <Label text="Intersection Data" GridPane.columnIndex="0" GridPane.columnSpan="4" GridPane.halignment="CENTER" GridPane.rowIndex="6" />
       <Pane GridPane.columnSpan="4" GridPane.rowIndex="2">
          <children>
-            <Line fx:id="i1Top" endX="65.0" endY="8.0" startX="65.0" startY="2.0" stroke="WHITE" />
-            <Line fx:id="i2Top" endX="129.0" endY="8.0" startX="129.0" startY="2.0" stroke="WHITE" />
-            <Line fx:id="i3Top" endX="193.0" endY="8.0" startX="193.0" startY="2.0" stroke="WHITE" />
-            <Line fx:id="i4Top" endX="257.0" endY="8.0" startX="257.0" startY="2.0" stroke="WHITE" />
-            <Line fx:id="i5Top" endX="321.0" endY="8.0" startX="321.0" startY="2.0" stroke="WHITE" />
-            <Line fx:id="i6Top" endX="385.0" endY="8.0" startX="385.0" startY="2.0" stroke="WHITE" />
-            <Line fx:id="i7Top" endX="449.0" endY="8.0" startX="449.0" startY="2.0" stroke="WHITE" />
-            <Line fx:id="i8Top" endX="513.0" endY="8.0" startX="513.0" startY="2.0" stroke="WHITE" />
-            <Line fx:id="i9Top" endX="577.0" endY="8.0" startX="577.0" startY="2.0" stroke="WHITE" />
+            <Line fx:id="i1Top" endX="65.0" endY="8.0" startX="65.0" startY="2.0" stroke="WHITE" visible="false" />
+            <Line fx:id="i2Top" endX="129.0" endY="8.0" startX="129.0" startY="2.0" stroke="WHITE" visible="false" />
+            <Line fx:id="i3Top" endX="193.0" endY="8.0" startX="193.0" startY="2.0" stroke="WHITE" visible="false" />
+            <Line fx:id="i4Top" endX="257.0" endY="8.0" startX="257.0" startY="2.0" stroke="WHITE" visible="false" />
+            <Line fx:id="i5Top" endX="321.0" endY="8.0" startX="321.0" startY="2.0" stroke="WHITE" visible="false" />
+            <Line fx:id="i6Top" endX="385.0" endY="8.0" startX="385.0" startY="2.0" stroke="WHITE" visible="false" />
+            <Line fx:id="i7Top" endX="449.0" endY="8.0" startX="449.0" startY="2.0" stroke="WHITE" visible="false" />
+            <Line fx:id="i8Top" endX="513.0" endY="8.0" startX="513.0" startY="2.0" stroke="WHITE" visible="false" />
+            <Line fx:id="i9Top" endX="577.0" endY="8.0" startX="577.0" startY="2.0" stroke="WHITE" visible="false" />
          </children>
       </Pane>
       <Pane GridPane.columnSpan="4" GridPane.rowIndex="4">
          <children>
-            <Line fx:id="i1Bottom" endX="63.0" endY="8.0" startX="63.0" startY="2.0" stroke="WHITE" />
-            <Line fx:id="i2Bottom" endX="127.0" endY="8.0" startX="127.0" startY="2.0" stroke="WHITE" />
-            <Line fx:id="i3Bottom" endX="191.0" endY="8.0" startX="191.0" startY="2.0" stroke="WHITE" />
-            <Line fx:id="i4Bottom" endX="255.0" endY="8.0" startX="255.0" startY="2.0" stroke="WHITE" />
-            <Line fx:id="i5Bottom" endX="319.0" endY="8.0" startX="319.0" startY="2.0" stroke="WHITE" />
-            <Line fx:id="i6Bottom" endX="383.0" endY="8.0" startX="383.0" startY="2.0" stroke="WHITE" />
-            <Line fx:id="i7Bottom" endX="447.0" endY="8.0" startX="447.0" startY="2.0" stroke="WHITE" />
-            <Line fx:id="i8Bottom" endX="511.0" endY="8.0" startX="511.0" startY="2.0" stroke="WHITE" />
-            <Line fx:id="i9Bottom" endX="575.0" endY="8.0" startX="575.0" startY="2.0" stroke="WHITE" />         
+            <Line fx:id="i1Bottom" endX="63.0" endY="8.0" startX="63.0" startY="2.0" stroke="WHITE" visible="false" />
+            <Line fx:id="i2Bottom" endX="127.0" endY="8.0" startX="127.0" startY="2.0" stroke="WHITE" visible="false" />
+            <Line fx:id="i3Bottom" endX="191.0" endY="8.0" startX="191.0" startY="2.0" stroke="WHITE" visible="false" />
+            <Line fx:id="i4Bottom" endX="255.0" endY="8.0" startX="255.0" startY="2.0" stroke="WHITE" visible="false" />
+            <Line fx:id="i5Bottom" endX="319.0" endY="8.0" startX="319.0" startY="2.0" stroke="WHITE" visible="false" />
+            <Line fx:id="i6Bottom" endX="383.0" endY="8.0" startX="383.0" startY="2.0" stroke="WHITE" visible="false" />
+            <Line fx:id="i7Bottom" endX="447.0" endY="8.0" startX="447.0" startY="2.0" stroke="WHITE" visible="false" />
+            <Line fx:id="i8Bottom" endX="511.0" endY="8.0" startX="511.0" startY="2.0" stroke="WHITE" visible="false" />
+            <Line fx:id="i9Bottom" endX="575.0" endY="8.0" startX="575.0" startY="2.0" stroke="WHITE" visible="false" />         
          </children>
       </Pane>
 

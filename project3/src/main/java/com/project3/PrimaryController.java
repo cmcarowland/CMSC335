@@ -27,4 +27,14 @@ public class PrimaryController implements TimeTickedListener {
         Physics.getCarsGoingX(car);
         Physics.addListener(car);
     }
+
+    @FXML
+    private void addIntersection(ActionEvent ae) {
+        for (Intersection i : App.intersections) {
+            if(i.getState() == LightState.OFF) {
+                i.enable();
+                break;
+            }
+        }
+    }
 }
