@@ -44,6 +44,7 @@ public class App extends Application {
         scene.getStylesheets().add(getClass().getResource("styles.css").toExternalForm());
         stage.setTitle("Project 3");
         stage.setScene(scene);
+        stage.setResizable(false);
         setCurrentState(new Running());
         stage.show();
     }

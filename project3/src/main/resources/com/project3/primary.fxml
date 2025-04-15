@@ -5,10 +5,12 @@
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<GridPane gridLinesVisible="true" style="-fx-background-color:rgb(32, 32, 32);" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<GridPane gridLinesVisible="true" style="-fx-background-color:rgb(32, 32, 32);" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" maxHeight="640" maxWidth="640" minHeight="640" minWidth="640" prefHeight="640" prefWidth="640">
    <columnConstraints>
       <ColumnConstraints hgrow="ALWAYS" percentWidth="25" />
       <ColumnConstraints hgrow="ALWAYS" percentWidth="25" />
@@ -18,9 +20,9 @@
    <rowConstraints>
       <RowConstraints maxHeight="30" minHeight="30.0" prefHeight="30.0" />
       <RowConstraints maxHeight="30" minHeight="30.0" prefHeight="30.0" />
-      <RowConstraints maxHeight="10" minHeight="10" prefHeight="10"/>
+      <RowConstraints maxHeight="10" minHeight="10" prefHeight="10" />
       <RowConstraints maxHeight="7" minHeight="7" prefHeight="7" />
-      <RowConstraints maxHeight="10" minHeight="10" prefHeight="10"/>
+      <RowConstraints maxHeight="10" minHeight="10" prefHeight="10" />
       <RowConstraints maxHeight="30" minHeight="30.0" prefHeight="30.0" />
       <RowConstraints maxHeight="30" minHeight="30.0" prefHeight="30.0" />
       <RowConstraints percentHeight="100" vgrow="ALWAYS" />
@@ -35,12 +37,39 @@
       <Button fx:id="pauseBtn" alignment="CENTER" text="Pause" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
       <Button fx:id="playBtn" alignment="CENTER" text="Play" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
       <Button fx:id="contBtn" alignment="CENTER" text="Continue" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
-      <Separator style="-fx-background-color: rgb(255, 255, 255); -fx-border-color: null; -fx-pref-height: 2;" GridPane.valignment="TOP" GridPane.columnSpan="4" GridPane.rowIndex="2" />
-      <Separator style="-fx-background-color: rgb(200, 255, 0); -fx-border-color: null; -fx-pref-height: 0.2;" GridPane.valignment="TOP" GridPane.columnSpan="4" GridPane.rowIndex="3" />
-      <Separator style="-fx-background-color: rgb(200, 255, 0); -fx-border-color: null; -fx-pref-height: 0.2;" GridPane.valignment="BOTTOM" GridPane.columnSpan="4" GridPane.rowIndex="3" />
-      <Separator style="-fx-background-color: rgb(255, 255, 255); -fx-border-color: null; -fx-pref-height: 2;" GridPane.valignment="BOTTOM" GridPane.columnSpan="4" GridPane.rowIndex="4" />
-      <Button fx:id="addCarBtn" alignment="CENTER" text="Add Car" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="5" onAction="#addCar" />
+      <Separator style="-fx-background-color: rgb(255, 255, 255); -fx-border-color: null; -fx-pref-height: 2;" GridPane.columnSpan="4" GridPane.rowIndex="2" GridPane.valignment="TOP" />
+      <Separator style="-fx-background-color: rgb(200, 255, 0); -fx-border-color: null; -fx-pref-height: 0.2;" GridPane.columnSpan="4" GridPane.rowIndex="3" GridPane.valignment="TOP" />
+      <Separator style="-fx-background-color: rgb(200, 255, 0); -fx-border-color: null; -fx-pref-height: 0.2;" GridPane.columnSpan="4" GridPane.rowIndex="3" GridPane.valignment="BOTTOM" />
+      <Separator style="-fx-background-color: rgb(255, 255, 255); -fx-border-color: null; -fx-pref-height: 2;" GridPane.columnSpan="4" GridPane.rowIndex="4" GridPane.valignment="BOTTOM" />
+      <Button fx:id="addCarBtn" alignment="CENTER" onAction="#addCar" text="Add Car" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
       <Button fx:id="addIntBtn" alignment="CENTER" text="Add Intersection" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
       <Label text="Intersection Data" GridPane.columnIndex="0" GridPane.columnSpan="4" GridPane.halignment="CENTER" GridPane.rowIndex="6" />
+      <Pane GridPane.columnSpan="4" GridPane.rowIndex="2">
+         <children>
+            <Line fx:id="i1Top" endX="65.0" endY="8.0" startX="65.0" startY="2.0" stroke="WHITE" />
+            <Line fx:id="i2Top" endX="129.0" endY="8.0" startX="129.0" startY="2.0" stroke="WHITE" />
+            <Line fx:id="i3Top" endX="193.0" endY="8.0" startX="193.0" startY="2.0" stroke="WHITE" />
+            <Line fx:id="i4Top" endX="257.0" endY="8.0" startX="257.0" startY="2.0" stroke="WHITE" />
+            <Line fx:id="i5Top" endX="321.0" endY="8.0" startX="321.0" startY="2.0" stroke="WHITE" />
+            <Line fx:id="i6Top" endX="385.0" endY="8.0" startX="385.0" startY="2.0" stroke="WHITE" />
+            <Line fx:id="i7Top" endX="449.0" endY="8.0" startX="449.0" startY="2.0" stroke="WHITE" />
+            <Line fx:id="i8Top" endX="513.0" endY="8.0" startX="513.0" startY="2.0" stroke="WHITE" />
+            <Line fx:id="i9Top" endX="577.0" endY="8.0" startX="577.0" startY="2.0" stroke="WHITE" />
+         </children>
+      </Pane>
+      <Pane GridPane.columnSpan="4" GridPane.rowIndex="4">
+         <children>
+            <Line fx:id="i1Bottom" endX="63.0" endY="8.0" startX="63.0" startY="2.0" stroke="WHITE" />
+            <Line fx:id="i2Bottom" endX="127.0" endY="8.0" startX="127.0" startY="2.0" stroke="WHITE" />
+            <Line fx:id="i3Bottom" endX="191.0" endY="8.0" startX="191.0" startY="2.0" stroke="WHITE" />
+            <Line fx:id="i4Bottom" endX="255.0" endY="8.0" startX="255.0" startY="2.0" stroke="WHITE" />
+            <Line fx:id="i5Bottom" endX="319.0" endY="8.0" startX="319.0" startY="2.0" stroke="WHITE" />
+            <Line fx:id="i6Bottom" endX="383.0" endY="8.0" startX="383.0" startY="2.0" stroke="WHITE" />
+            <Line fx:id="i7Bottom" endX="447.0" endY="8.0" startX="447.0" startY="2.0" stroke="WHITE" />
+            <Line fx:id="i8Bottom" endX="511.0" endY="8.0" startX="511.0" startY="2.0" stroke="WHITE" />
+            <Line fx:id="i9Bottom" endX="575.0" endY="8.0" startX="575.0" startY="2.0" stroke="WHITE" />         
+         </children>
+      </Pane>
+
    </children>
 </GridPane>
