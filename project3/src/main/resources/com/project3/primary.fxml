@@ -53,65 +53,65 @@
          <children>
             <Group fx:id="i1" layoutX="64.0" layoutY="14.0" visible="false" >
                <children>
-                  <Text fill="WHITE" layoutX="-3.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1" textAlignment="CENTER" />
-                  <Line endX="1.0" endY="-33.0" startX="1.0" startY="-39.0" stroke="WHITE" />
-                  <Line endX="-1.0" endY="-15.0" startX="-1.0" startY="-22.0" stroke="WHITE" />
+                  <Text fill="WHITE" layoutX="0" strokeType="OUTSIDE" strokeWidth="0.0" text="2" textAlignment="CENTER" />
+                  <Line endX="6" endY="-33.0" startX="6" startY="-39.0" stroke="WHITE" />
+                  <Line endX="0" endY="-15.0" startX="0" startY="-22.0" stroke="WHITE" />
                </children>
             </Group>
             <Group fx:id="i2" layoutX="128.0" layoutY="14.0" visible="false" >
                <children>
-                  <Text fill="WHITE" layoutX="-3.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2" textAlignment="CENTER" />
-                  <Line endX="1.0" endY="-33.0" startX="1.0" startY="-39.0" stroke="WHITE" />
-                  <Line endX="-1.0" endY="-15.0" startX="-1.0" startY="-22.0" stroke="WHITE" />
+                  <Text fill="WHITE" layoutX="0" strokeType="OUTSIDE" strokeWidth="0.0" text="8" textAlignment="CENTER" />
+                  <Line endX="6" endY="-33.0" startX="6" startY="-39.0" stroke="WHITE" />
+                  <Line endX="0" endY="-15.0" startX="0" startY="-22.0" stroke="WHITE" />
                </children>
             </Group>
             <Group fx:id="i3" layoutX="192.0" layoutY="14.0" visible="false" >
                <children>
-                  <Text fill="WHITE" layoutX="-3.0" strokeType="OUTSIDE" strokeWidth="0.0" text="3" textAlignment="CENTER" />
-                  <Line endX="1.0" endY="-33.0" startX="1.0" startY="-39.0" stroke="WHITE" />
-                  <Line endX="-1.0" endY="-15.0" startX="-1.0" startY="-22.0" stroke="WHITE" />
+                  <Text fill="WHITE" layoutX="0" strokeType="OUTSIDE" strokeWidth="0.0" text="4" textAlignment="CENTER" />
+                  <Line endX="6" endY="-33.0" startX="6" startY="-39.0" stroke="WHITE" />
+                  <Line endX="0" endY="-15.0" startX="0" startY="-22.0" stroke="WHITE" />
                </children>
             </Group>
             <Group fx:id="i4" layoutX="256.0" layoutY="14.0" visible="false" >
                <children>
-                  <Text fill="WHITE" layoutX="-3.0" strokeType="OUTSIDE" strokeWidth="0.0" text="4" textAlignment="CENTER" />
-                  <Line endX="1.0" endY="-33.0" startX="1.0" startY="-39.0" stroke="WHITE" />
-                  <Line endX="-1.0" endY="-15.0" startX="-1.0" startY="-22.0" stroke="WHITE" />
+                  <Text fill="WHITE" layoutX="0" strokeType="OUTSIDE" strokeWidth="0.0" text="6" textAlignment="CENTER" />
+                  <Line endX="6" endY="-33.0" startX="6" startY="-39.0" stroke="WHITE" />
+                  <Line endX="0" endY="-15.0" startX="0" startY="-22.0" stroke="WHITE" />
                </children>
             </Group>
             <Group fx:id="i5" layoutX="320.0" layoutY="14.0" visible="false">
                <children>
-                  <Text fill="WHITE" layoutX="-3.0" strokeType="OUTSIDE" strokeWidth="0.0" text="5" textAlignment="CENTER" />
-                  <Line endX="1.0" endY="-33.0" startX="1.0" startY="-39.0" stroke="WHITE" />
-                  <Line endX="-1.0" endY="-15.0" startX="-1.0" startY="-22.0" stroke="WHITE" />
+                  <Text fill="WHITE" layoutX="0" strokeType="OUTSIDE" strokeWidth="0.0" text="1" textAlignment="CENTER" />
+                  <Line endX="6" endY="-33.0" startX="6" startY="-39.0" stroke="WHITE" />
+                  <Line endX="0" endY="-15.0" startX="0" startY="-22.0" stroke="WHITE" />
                </children>
             </Group>
             <Group fx:id="i6" layoutX="384.0" layoutY="14.0" visible="false" >
                <children>
-                  <Text fill="WHITE" layoutX="-3.0" strokeType="OUTSIDE" strokeWidth="0.0" text="6" textAlignment="CENTER" />
-                  <Line endX="1.0" endY="-33.0" startX="1.0" startY="-39.0" stroke="WHITE" />
-                  <Line endX="-1.0" endY="-15.0" startX="-1.0" startY="-22.0" stroke="WHITE" />
+                  <Text fill="WHITE" layoutX="0" strokeType="OUTSIDE" strokeWidth="0.0" text="7" textAlignment="CENTER" />
+                  <Line endX="6" endY="-33.0" startX="6" startY="-39.0" stroke="WHITE" />
+                  <Line endX="0" endY="-15.0" startX="0" startY="-22.0" stroke="WHITE" />
                </children>
             </Group>
             <Group fx:id="i7" layoutX="448.0" layoutY="14.0" visible="false" >
                <children>
-                  <Text fill="WHITE" layoutX="-3.0" strokeType="OUTSIDE" strokeWidth="0.0" text="7" textAlignment="CENTER" />
-                  <Line endX="1.0" endY="-33.0" startX="1.0" startY="-39.0" stroke="WHITE" />
-                  <Line endX="-1.0" endY="-15.0" startX="-1.0" startY="-22.0" stroke="WHITE" />
+                  <Text fill="WHITE" layoutX="0" strokeType="OUTSIDE" strokeWidth="0.0" text="5" textAlignment="CENTER" />
+                  <Line endX="6" endY="-33.0" startX="6" startY="-39.0" stroke="WHITE" />
+                  <Line endX="0" endY="-15.0" startX="0" startY="-22.0" stroke="WHITE" />
                </children>
             </Group>
             <Group fx:id="i8" layoutX="512.0" layoutY="14.0" visible="false" >
                <children>
-                  <Text fill="WHITE" layoutX="-3.0" strokeType="OUTSIDE" strokeWidth="0.0" text="8" textAlignment="CENTER" />
-                  <Line endX="1.0" endY="-33.0" startX="1.0" startY="-39.0" stroke="WHITE" />
-                  <Line endX="-1.0" endY="-15.0" startX="-1.0" startY="-22.0" stroke="WHITE" />
+                  <Text fill="WHITE" layoutX="0" strokeType="OUTSIDE" strokeWidth="0.0" text="9" textAlignment="CENTER" />
+                  <Line endX="6" endY="-33.0" startX="6" startY="-39.0" stroke="WHITE" />
+                  <Line endX="0" endY="-15.0" startX="0" startY="-22.0" stroke="WHITE" />
                </children>
             </Group>
             <Group fx:id="i9" layoutX="576.0" layoutY="14.0" visible="false" >
                <children>
-                  <Text fill="WHITE" layoutX="-3.0" strokeType="OUTSIDE" strokeWidth="0.0" text="9" textAlignment="CENTER" />
-                  <Line endX="1.0" endY="-33.0" startX="1.0" startY="-39.0" stroke="WHITE" />
-                  <Line endX="-1.0" endY="-15.0" startX="-1.0" startY="-22.0" stroke="WHITE" />
+                  <Text fill="WHITE" layoutX="0" strokeType="OUTSIDE" strokeWidth="0.0" text="3" textAlignment="CENTER" />
+                  <Line endX="6" endY="-33.0" startX="6" startY="-39.0" stroke="WHITE" />
+                  <Line endX="0" endY="-15.0" startX="0" startY="-22.0" stroke="WHITE" />
                </children>
             </Group>
          </children>
