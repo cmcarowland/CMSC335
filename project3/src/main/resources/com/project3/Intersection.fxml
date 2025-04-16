@@ -7,7 +7,7 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Text?>
 
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="640.0" style="-fx-background-color: #808080;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/23.0.1">
+<GridPane prefHeight="150.0" prefWidth="640.0" style="-fx-background-color: #808080FF;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project3.IntersectionController">
   <columnConstraints>
       <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="0.0" minWidth="0.0" percentWidth="25.0" prefWidth="0.0" />
     <ColumnConstraints hgrow="SOMETIMES" maxWidth="0.0" minWidth="0.0" percentWidth="25.0" prefWidth="0.0" />
@@ -21,9 +21,9 @@
       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
   </rowConstraints>
    <children>
-      <Circle fx:id="redLight" fill="#cc3232" opacity="0.2" radius="15.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
-      <Circle fx:id="yellowLight" fill="#f7b500" opacity="0.2" radius="15.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="3.0" GridPane.rowIndex="1" />
-      <Circle fx:id="greenLight" fill="#2dc937" opacity="0.2" radius="15.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="3.0" GridPane.rowIndex="2" />
+      <Circle fx:id="redLight" fill="#cc3232" opacity="0.2" radius="15.0" />
+      <Circle fx:id="yellowLight" fill="#f7b500" opacity="0.2" radius="15.0" GridPane.rowIndex="1" />
+      <Circle fx:id="greenLight" fill="#2dc937" opacity="0.2" radius="15.0" GridPane.rowIndex="2" />
       <Circle fill="#cc333300" layoutX="70.0" layoutY="44.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="3.0" />
       <Circle fill="#cc333300" layoutX="70.0" layoutY="44.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="3.0" GridPane.rowIndex="1" />
       <Circle fill="#cc333300" layoutX="70.0" layoutY="44.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="3.0" GridPane.rowIndex="2" />
