@@ -20,9 +20,11 @@ public class Intersection {
         thread.start();
         ui = t;
     }
-
+    
     public void setIntersectionData(IntersectionController intersectionData) {
         this.intersectionData = intersectionData;
+        intersectionData.setIDLabel("Intersection ID: " + id);
+        intersectionData.setLocLabel("Location: " + x + " m");;
     }
 
     public LightState getState() {
