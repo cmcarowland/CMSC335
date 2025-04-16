@@ -1,20 +1,28 @@
 package com.project3;
 
+import javafx.scene.Node;
+
 public class Intersection {
-    static int idCounter = 0;
+    static int idCounter = 1;
 
     private int id;
     private int x;
-    private int width;
+    private final int width = 10;
     private LightState lightState = LightState.OFF;
+    Node ui = null;
+    private IntersectionController intersectionData = null;
 
-    public Intersection(int x, int width) {
+    public Intersection(int x, Node t) {
         this.id = idCounter++;
-        this.x = x;
-        this.width = width;
+        this.x = x * 1000;
         Thread thread = new Thread(() -> lightThread());
         thread.setDaemon(true);
         thread.start();
+        ui = t;
+    }
+
+    public void setIntersectionData(IntersectionController intersectionData) {
+        this.intersectionData = intersectionData;
     }
 
     public LightState getState() {
@@ -35,19 +43,25 @@ public class Intersection {
                         continue;
                     }
                     lightState = LightState.GREEN;
-                    System.out.println("Light is green");
+                    intersectionData.setGreenLightVisible(true);
+                    intersectionData.setRedLightVisible(false);
+                    // System.out.println("Light is green");
                     Thread.sleep(5000);
                     if(lightState == LightState.OFF) {
                         continue;
                     }
                     lightState = LightState.YELLOW;
-                    System.out.println("Light is yellow");
+                    intersectionData.setGreenLightVisible(false);
+                    intersectionData.setYellowLightVisible(true);
+                    // System.out.println("Light is yellow");
                     Thread.sleep(2000);
                     if(lightState == LightState.OFF) {
                         continue;
                     }
                     lightState = LightState.RED;
-                    System.out.println("Light is red");
+                    intersectionData.setYellowLightVisible(false);
+                    intersectionData.setRedLightVisible(true);
+                    // System.out.println("Light is red");
                     Thread.sleep(5000);
 
                 } catch (InterruptedException e) {
@@ -59,10 +73,12 @@ public class Intersection {
 
     public void enable() {
         lightState = LightState.GREEN;
+        ui.setVisible(true);
     }
     
     public void disable() {
         lightState = LightState.OFF;
+        ui.setVisible(false);
     }
 
     public int getId() {
