@@ -49,7 +49,7 @@ public class App extends Application {
         stage.show();
         int[] intersectionMap = {5, 1, 9, 3, 7, 4, 6, 2, 8};
         for (int i : intersectionMap) {
-            Intersection in = new Intersection(i * 1000, scene.lookup("#i" + i + "Top"), scene.lookup("#i" + i + "Bottom"));
+            Intersection in = new Intersection(i, scene.lookup("#i" + i));
             intersections.add(in);
         }
     }
