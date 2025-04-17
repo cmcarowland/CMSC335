@@ -44,8 +44,16 @@ public class PrimaryController implements TimeTickedListener {
     }
 
     @FXML
-    private void addCar(ActionEvent ae) {
-        Car car = new Car();
+    private void addCarBottom(ActionEvent ae) {
+        Car car = new Car(true);
+        App.mainLayout.add(car.getCircle(), 0, 2 + (car.isToRight() ? 2 : 0));
+        Physics.getCarsGoingX(car);
+        Physics.addListener(car);
+    }
+    
+    @FXML
+    private void addCarTop(ActionEvent ae) {
+        Car car = new Car(false);
         App.mainLayout.add(car.getCircle(), 0, 2 + (car.isToRight() ? 2 : 0));
         Physics.getCarsGoingX(car);
         Physics.addListener(car);

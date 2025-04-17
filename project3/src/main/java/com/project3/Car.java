@@ -32,17 +32,17 @@ public class Car implements PhysicsTickListener {
         return random.nextInt(max - min) + min;
     }
     
-    public Car() {
+    public Car(boolean isToRight) {
         this.id = idCounter++;
         this.maxSpeed = random(15.6f, 24.6f);
         this.currentSpeed = maxSpeed;
-        if(random(0f, 1.0f) > 0.5) {
-            this.toRight = false;
-            y = -10;
-            x = 9900;
-        } else {
+        this.toRight = isToRight;
+        if(isToRight) {
             x = 50;
             y = 10;
+        } else {
+            y = -10;
+            x = 9900;
         }
 
         circle = new Circle();
@@ -59,7 +59,7 @@ public class Car implements PhysicsTickListener {
 
     @Override
     public String toString() {
-        return "Car " + id + " at X: " + String.format("%.1f", x) + " Y: " + y + " at " + String.format("%.1f", currentSpeed * MPS_TO_MPH) + " MPH";
+        return "Car " + id + " at X: " + String.format("%.0f", x) + " Y: " + y + " at " + String.format("%.0f", currentSpeed * MPS_TO_MPH) + " MPH";
     }
 
     public int getId() {

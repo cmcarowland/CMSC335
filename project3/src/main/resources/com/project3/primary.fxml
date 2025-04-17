@@ -46,7 +46,8 @@
       <Separator style="-fx-background-color: rgb(200, 255, 0); -fx-border-color: null; -fx-pref-height: 0.2;" GridPane.columnSpan="4" GridPane.rowIndex="3" GridPane.valignment="TOP" />
       <Separator style="-fx-background-color: rgb(200, 255, 0); -fx-border-color: null; -fx-pref-height: 0.2;" GridPane.columnSpan="4" GridPane.rowIndex="3" GridPane.valignment="BOTTOM" />
       <Separator style="-fx-background-color: rgb(255, 255, 255); -fx-border-color: null; -fx-pref-height: 2;" GridPane.columnSpan="4" GridPane.rowIndex="4" GridPane.valignment="BOTTOM" />
-      <Button fx:id="addCarBtn" alignment="CENTER" onAction="#addCar" text="Add Car" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="6" />
+      <Button fx:id="addCarBtmBtn" alignment="CENTER" onAction="#addCarBottom" text="Add Car Bottom Lane" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="6" />
+      <Button fx:id="addCarBtmBtn" alignment="CENTER" onAction="#addCarTop" text="Add Car Top Lane" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="6" />
       <Button fx:id="addIntBtn" alignment="CENTER" onAction="#addIntersection" text="Add Intersection" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="6" />
       <Pane fx:id="lights" GridPane.columnSpan="4" GridPane.rowIndex="5" >
          <children>
