@@ -47,7 +47,6 @@ public class LightController {
     }
     
     public void setVisible(boolean visible) {
-        System.out.println("Set visible: " + visible + " " + group);
         Platform.runLater(() -> group.setVisible(visible));
     }
 
