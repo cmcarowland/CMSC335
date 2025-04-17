@@ -1,17 +1,19 @@
 package com.project3;
 
-import java.io.IOException;
-
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
+import java.util.List;
 
 public class PrimaryController implements TimeTickedListener {
     @FXML
     private Label timeLabel;
+    @FXML
+    private VBox leftLane;
+    @FXML
+    private VBox rightLane;
 
     @Override
     public void onTimeTicked(String time) {
@@ -24,6 +26,23 @@ public class PrimaryController implements TimeTickedListener {
         timeLabel.setText(time);
     }
 
+    public void processCars(List<PhysicsTickListener> cars) {
+        leftLane.getChildren().clear();
+        rightLane.getChildren().clear();
+        for (PhysicsTickListener ptl : cars) {
+            if (!(ptl instanceof Car)) {
+                continue;
+            }
+            Car car = (Car) ptl;
+            Label carText = new Label(car.toString());
+            if (car.isToRight()) {
+                rightLane.getChildren().add(carText);
+            } else {
+                leftLane.getChildren().add(carText);
+            }
+        }
+    }
+
     @FXML
     private void addCar(ActionEvent ae) {
         Car car = new Car();
@@ -34,17 +53,8 @@ public class PrimaryController implements TimeTickedListener {
 
     @FXML
     private void addIntersection(ActionEvent ae) {
-        for (Intersection i : App.intersections) {
+        for (Intersection i : App.intersectionList) {
             if(i.getState() == LightState.OFF) {
-                VBox vbox = (VBox)App.mainLayout.lookup("#intersections");
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("Intersection.fxml"));
-                try {
-                    vbox.getChildren().add(loader.load());
-                } catch (IOException e) {
-                    e.printStackTrace();
-                    return;
-                }
-                i.setIntersectionData(loader.getController());
                 i.enable();
                 break;
             }
