@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.project3.CustomGroup?>
+
+<?import javafx.scene.Group?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Text?>
+
+<CustomGroup fx:id="group" visible="false" xmlns="http://javafx.com/javafx/20" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <Text fx:id="idLabel" fill="WHITE" layoutX="0" layoutY="0" textAlignment="CENTER" />
+        <Line endX="6" endY="-33.0" startX="6" startY="-39.0" stroke="WHITE" />
+        <Line endX="0" endY="-15.0" startX="0" startY="-22.0" stroke="WHITE" />
+        <GridPane layoutX="-3">
+            <rowConstraints>
+                <RowConstraints prefHeight="15" />
+                <RowConstraints prefHeight="15" />
+                <RowConstraints prefHeight="15" />
+            </rowConstraints>
+            <children>
+                <Rectangle fill="#4f4f00" width="15" height="45" stroke="BLACK" strokeType="INSIDE" strokeWidth="1.5" GridPane.rowSpan="3" />
+                <Circle fx:id="redLight" fill="#cc3232" opacity="0.2" radius="5" GridPane.rowIndex="0" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                <Circle fx:id="yellowLight" fill="#f7b500" opacity="0.2" radius="5" GridPane.rowIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                <Circle fx:id="greenLight" fill="#00AA00" opacity="0.2" radius="5" GridPane.rowIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                <Circle fill="#cc333300" radius="5.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="1.0" GridPane.rowIndex="0" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                <Circle fill="#cc333300" radius="5.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="1.0" GridPane.rowIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                <Circle fill="#cc333300" radius="5.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="1.0" GridPane.rowIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+            </children>
+        </GridPane>
+    </children>
+</CustomGroup>
