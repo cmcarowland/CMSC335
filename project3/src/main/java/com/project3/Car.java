@@ -13,6 +13,7 @@ public class Car implements PhysicsTickListener {
     private float maxSpeed;
     private float currentSpeed;
     private float x;
+    private short y;
     private boolean toRight = true;
     private Circle circle;
     private Car nextCar;
@@ -20,6 +21,7 @@ public class Car implements PhysicsTickListener {
     private Intersection nexIntersection = null;
 
     private final static int SAFETY_DISTANCE = 100;
+    private final static float MPS_TO_MPH = 2.23694f;
 
     static private int idCounter = 0;
     static private Random random = new Random();
@@ -36,9 +38,11 @@ public class Car implements PhysicsTickListener {
         this.currentSpeed = maxSpeed;
         if(random(0f, 1.0f) > 0.5) {
             this.toRight = false;
+            y = -10;
             x = 9900;
         } else {
             x = 50;
+            y = 10;
         }
 
         circle = new Circle();
@@ -51,6 +55,11 @@ public class Car implements PhysicsTickListener {
     @Override
     protected void finalize() throws Throwable {
         System.out.println("Object is being garbage collected: " + this);
+    }
+
+    @Override
+    public String toString() {
+        return "Car " + id + " at X: " + String.format("%.1f", x) + " Y: " + y + " at " + String.format("%.1f", currentSpeed * MPS_TO_MPH) + " MPH";
     }
 
     public int getId() {
@@ -132,7 +141,7 @@ public class Car implements PhysicsTickListener {
         }
 
         if (toRight) {
-            x += currentSpeed;// * Physics.getTimeDelta();
+            x += currentSpeed * Physics.getTimeDelta();
         } else {
             x -= currentSpeed * Physics.getTimeDelta();
         }
