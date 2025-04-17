@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
+import javafx.application.Platform;
 import java.time.Duration;
 import java.time.LocalTime;
 
@@ -35,6 +36,9 @@ class Physics {
                 // System.out.println("Delta time: " + deltaTime);
                 notifyListeners();
                 processWaitingListeners();
+                Platform.runLater(() -> {
+                    App.primaryController.processCars(listeners);
+                });
                 // System.out.println("Physics Tick");
             } catch (InterruptedException e) {
                 e.printStackTrace();
