@@ -10,21 +10,20 @@ public class Intersection {
     private final int width = 10;
     private LightState lightState = LightState.OFF;
     Node ui = null;
-    private IntersectionController intersectionData = null;
+    private LightController lightController = null;
 
-    public Intersection(int x, Node t) {
+    public Intersection(int x, LightController lc) {
         this.id = idCounter++;
         this.x = x * 1000;
         Thread thread = new Thread(() -> lightThread());
         thread.setDaemon(true);
         thread.start();
-        ui = t;
+        this.lightController = lc;
     }
     
-    public void setIntersectionData(IntersectionController intersectionData) {
-        this.intersectionData = intersectionData;
-        intersectionData.setIDLabel("Intersection ID: " + id);
-        intersectionData.setLocLabel("Location: " + x + " m");;
+    public void setLightController(LightController lc) {
+        System.out.println("Set: " + lc);
+        this.lightController = lc;
     }
 
     public LightState getState() {
@@ -45,24 +44,24 @@ public class Intersection {
                         continue;
                     }
                     lightState = LightState.GREEN;
-                    intersectionData.setGreenLightVisible(true);
-                    intersectionData.setRedLightVisible(false);
+                    lightController.setGreenLightVisible(true);
+                    lightController.setRedLightVisible(false);
                     // System.out.println("Light is green");
                     Thread.sleep(5000);
                     if(lightState == LightState.OFF) {
                         continue;
                     }
                     lightState = LightState.YELLOW;
-                    intersectionData.setGreenLightVisible(false);
-                    intersectionData.setYellowLightVisible(true);
+                    lightController.setGreenLightVisible(false);
+                    lightController.setYellowLightVisible(true);
                     // System.out.println("Light is yellow");
                     Thread.sleep(2000);
                     if(lightState == LightState.OFF) {
                         continue;
                     }
                     lightState = LightState.RED;
-                    intersectionData.setYellowLightVisible(false);
-                    intersectionData.setRedLightVisible(true);
+                    lightController.setYellowLightVisible(false);
+                    lightController.setRedLightVisible(true);
                     // System.out.println("Light is red");
                     Thread.sleep(5000);
 
@@ -75,12 +74,12 @@ public class Intersection {
 
     public void enable() {
         lightState = LightState.GREEN;
-        ui.setVisible(true);
+        lightController.setVisible(true);
     }
     
     public void disable() {
         lightState = LightState.OFF;
-        ui.setVisible(false);
+        lightController.setVisible(false);
     }
 
     public int getId() {
