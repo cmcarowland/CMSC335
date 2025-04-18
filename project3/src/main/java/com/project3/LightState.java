@@ -4,5 +4,6 @@ public enum LightState {
     RED,
     GREEN,
     YELLOW,
-    OFF
+    OFF,
+    STARTING
 }
