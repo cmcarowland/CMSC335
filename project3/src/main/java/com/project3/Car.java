@@ -141,9 +141,9 @@ public class Car implements PhysicsTickListener {
         }
 
         if (toRight) {
-            x += currentSpeed * Physics.getTimeDelta();
+            x += currentSpeed * Physics.getDeltaTime();
         } else {
-            x -= currentSpeed * Physics.getTimeDelta();
+            x -= currentSpeed * Physics.getDeltaTime();
         }
 
         // System.out.println("Car " + id + " Physics Tick " + x);
@@ -154,17 +154,20 @@ public class Car implements PhysicsTickListener {
         if (x > 10000 || x < -100) {
             state = PhysicsState.COMPLETE;
             Physics.removeListener(this);
-            // System.out.println("Car " + id + " removed from physics " + App.mainLayout.getChildren().size());
-            ObservableList<Node> circles = App.mainLayout.getChildren();
-            for (Node circle : circles) {
-                if (circle == this.circle) {
-                    // System.out.println("Car " + circle.hashCode() + " removed from layout " + this.circle.hashCode());
-                    Platform.runLater(() -> {
-                        App.mainLayout.getChildren().remove(circle);
-                    });
-                    break;
-                }
+            cleanUp();
+        }
+    }
+
+    public void cleanUp() {
+        ObservableList<Node> circles = App.mainLayout.getChildren();
+        for (Node circle : circles) {
+            if (circle == this.circle) {
+                // System.out.println("Car " + circle.hashCode() + " removed from layout " + this.circle.hashCode());
+                Platform.runLater(() -> {
+                    App.mainLayout.getChildren().remove(circle);
+                });
+                break;
             }
         }
-    } 
+    }
 }
