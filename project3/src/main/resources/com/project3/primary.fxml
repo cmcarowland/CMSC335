@@ -33,15 +33,15 @@
       <RowConstraints vgrow="ALWAYS" />
    </rowConstraints>
    <children>
-      <Label fx:id="timeLabel" text="Project 3" GridPane.columnIndex="0" GridPane.columnSpan="4" GridPane.halignment="CENTER" GridPane.rowIndex="0">
+      <Label fx:id="timeLabel" text="00:00:00" GridPane.columnIndex="0" GridPane.columnSpan="4" GridPane.halignment="CENTER" GridPane.rowIndex="0">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Button fx:id="stopBtn" alignment="CENTER" text="Stop" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
-      <Button fx:id="pauseBtn" alignment="CENTER" text="Pause" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
-      <Button fx:id="playBtn" alignment="CENTER" text="Play" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
-      <Button fx:id="contBtn" alignment="CENTER" text="Continue" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+      <Button fx:id="stopBtn" disable="true" alignment="CENTER" onAction="#stop" text="Stop" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+      <Button fx:id="pauseBtn" disable="true" onAction="#pause" alignment="CENTER" text="Pause" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+      <Button fx:id="playBtn" alignment="CENTER" onAction="#play" text="Play" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+      <Button fx:id="contBtn" disable="true" onAction="#continueClicked" alignment="CENTER" text="Continue" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
       <Separator style="-fx-background-color: rgb(255, 255, 255); -fx-border-color: null; -fx-pref-height: 2;" GridPane.columnSpan="4" GridPane.rowIndex="2" GridPane.valignment="TOP" />
       <Separator style="-fx-background-color: rgb(200, 255, 0); -fx-border-color: null; -fx-pref-height: 0.2;" GridPane.columnSpan="4" GridPane.rowIndex="3" GridPane.valignment="TOP" />
       <Separator style="-fx-background-color: rgb(200, 255, 0); -fx-border-color: null; -fx-pref-height: 0.2;" GridPane.columnSpan="4" GridPane.rowIndex="3" GridPane.valignment="BOTTOM" />
@@ -54,7 +54,6 @@
             
          </children>
       </Pane>
-      <Label text="Car Data" GridPane.columnIndex="0" GridPane.columnSpan="4" GridPane.halignment="CENTER" GridPane.rowIndex="7" />
       <ScrollPane fitToWidth="true" GridPane.columnSpan="4" GridPane.rowIndex="8" style="-fx-background: rgb(32, 32, 32); -fx-background-color: rgb(32, 32, 32);" >
          <content>
             <GridPane>
@@ -62,12 +61,20 @@
                   <ColumnConstraints hgrow="ALWAYS" percentWidth="50" />
                   <ColumnConstraints hgrow="ALWAYS" percentWidth="50" />
                </columnConstraints>
+                <rowConstraints>
+                  <RowConstraints maxHeight="30" minHeight="30.0" prefHeight="30.0" />
+                  <RowConstraints maxHeight="30" minHeight="30.0" prefHeight="30.0" />
+                  <RowConstraints vgrow="ALWAYS" minHeight="30" />
+               </rowConstraints>
                <children>
-                  <VBox fx:id="leftLane" spacing="5.0" GridPane.columnIndex="0">
+                  <Label text="Car Data" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="0" />
+                  <Label text="Top Lane" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                  <Label text="Bottom Lane" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                  <VBox fx:id="leftLane" spacing="5.0" GridPane.columnIndex="0" GridPane.rowIndex="2">
                      <children>
                      </children>
                   </VBox>
-                  <VBox fx:id="rightLane" spacing="5.0" GridPane.columnIndex="1">
+                  <VBox fx:id="rightLane" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
                      <children>
                      </children>
                   </VBox>
