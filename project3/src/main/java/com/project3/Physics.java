@@ -31,14 +31,19 @@ class Physics {
         while(App.currentState != null) {
             try {
                 Thread.sleep(tickTime);
-                deltaTime = Duration.between(time, LocalTime.now()).toNanos() / 1000000000.0;
+                if(App.currentState == SimulationState.RUNNING) {
+                    deltaTime = Duration.between(time, LocalTime.now()).toNanos() / 1000000000.0;
+                    // System.out.println("Delta time: " + deltaTime);
+                    notifyListeners();
+                    processWaitingListeners();
+                    Platform.runLater(() -> {
+                        App.primaryController.processCars(listeners);
+                    });
+                }else {
+                    deltaTime = 0;
+                }
+
                 time = LocalTime.now();
-                // System.out.println("Delta time: " + deltaTime);
-                notifyListeners();
-                processWaitingListeners();
-                Platform.runLater(() -> {
-                    App.primaryController.processCars(listeners);
-                });
                 // System.out.println("Physics Tick");
             } catch (InterruptedException e) {
                 e.printStackTrace();
@@ -97,7 +102,7 @@ class Physics {
         }
     }
 
-    public static double getTimeDelta() {
+    public static double getDeltaTime() {
         return deltaTime;
     }
 
