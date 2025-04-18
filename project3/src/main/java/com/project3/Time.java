@@ -7,7 +7,7 @@ import java.util.List;
 
 class Time {
     private static List<TimeTickedListener> listeners = new ArrayList<>();
-    private static LocalTime currentTime = LocalTime.now();
+    private static LocalTime currentTime = LocalTime.of(0, 0, 0);
     private static DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss");
 
     static {
@@ -20,11 +20,14 @@ class Time {
     private static void tick() {
         while(App.currentState != null) {
             try {
-                // System.out.println("Time Tick");
-                if(App.currentState.getStateName().equals("Running")) {
+                if(App.currentState == SimulationState.RUNNING) {
                     currentTime = currentTime.plusSeconds(1);
                     notifyListeners();
-                }
+                } else if (App.currentState == SimulationState.STOPPED && currentTime.compareTo(LocalTime.of(0, 0, 0)) > 0) {
+                    currentTime = LocalTime.of(0, 0, 0);
+                    notifyListeners();
+                } 
+
                 Thread.sleep(1000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
