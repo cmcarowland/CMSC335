@@ -1,6 +1,7 @@
 package com.project3;
 
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.GridPane;
@@ -17,21 +18,14 @@ import java.util.List;
 public class App extends Application {
 
     private static Scene scene;
-    public static IState currentState = new Stopped();
+    public static SimulationState currentState = SimulationState.STOPPED;
     public static GridPane mainLayout;
     public static PrimaryController primaryController;
 
     public static List<Intersection> intersectionList = new ArrayList<>();
 
-    public static void setCurrentState(IState state) {
-        if(currentState != null) {
-            currentState.onExit();
-        }
+    public static void setCurrentState(SimulationState state) {
         currentState = state;
-
-        if(currentState != null) {
-            currentState.onEnter();
-        }
     }
 
     @Override
@@ -47,7 +41,6 @@ public class App extends Application {
         stage.setTitle("Project 3");
         stage.setScene(scene);
         stage.setResizable(false);
-        setCurrentState(new Running());
         stage.show();
         int[] intersectionMap = {5, 1, 9, 3, 7, 4, 6, 2, 8};
         Pane pane = (Pane)scene.lookup("#lights");
@@ -95,5 +88,13 @@ public class App extends Application {
         }
 
         return nextIntersection;
+    }
+
+    public static void resetScene() {
+        for(Intersection i : intersectionList) {
+            i.disable();
+        }
+
+        Platform.runLater(() -> primaryController.clearCars());
     }
 }
