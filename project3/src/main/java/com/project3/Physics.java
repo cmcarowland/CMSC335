@@ -134,4 +134,20 @@ class Physics {
 
         c.setNextCar(closestCar);
     }
+
+    public static void reset() {
+        lock.lock();
+        try {
+            for (PhysicsTickListener listener : listeners) {
+                if (listener instanceof Car) {
+                    removingListeners.add(listener);
+                    ((Car) listener).cleanUp();
+                }
+            }
+        } finally {
+            lock.unlock();
+        }
+
+        time = LocalTime.now();
+    }
 }
