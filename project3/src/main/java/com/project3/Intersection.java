@@ -2,7 +2,7 @@ package com.project3;
 
 import javafx.scene.Node;
 
-public class Intersection {
+public class Intersection implements PhysicsTickListener {
     static int idCounter = 1;
 
     private int id;
@@ -11,14 +11,16 @@ public class Intersection {
     private LightState lightState = LightState.OFF;
     Node ui = null;
     private LightController lightController = null;
+    private double currentTime = 0;
+    private float greenLightTime = 3;
+    private float yellowLightTime = 2;
+    private float redLightTime = 3;
 
     public Intersection(int x, LightController lc) {
         this.id = idCounter++;
         this.x = x * 1000;
-        Thread thread = new Thread(() -> lightThread());
-        thread.setDaemon(true);
-        thread.start();
         this.lightController = lc;
+        Physics.addListener(this);
     }
     
     public void setLightController(LightController lc) {
@@ -30,56 +32,18 @@ public class Intersection {
         return lightState;
     }
 
-    private void lightThread() {
-        while(App.currentState != null) {
-            if(lightState == LightState.OFF) {
-                try {
-                    Thread.sleep(1000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-            } else {
-                try {
-                    if(lightState == LightState.OFF) {
-                        continue;
-                    }
-                    lightState = LightState.GREEN;
-                    lightController.setGreenLightVisible(true);
-                    lightController.setRedLightVisible(false);
-                    // System.out.println("Light is green");
-                    Thread.sleep(5000);
-                    if(lightState == LightState.OFF) {
-                        continue;
-                    }
-                    lightState = LightState.YELLOW;
-                    lightController.setGreenLightVisible(false);
-                    lightController.setYellowLightVisible(true);
-                    // System.out.println("Light is yellow");
-                    Thread.sleep(2000);
-                    if(lightState == LightState.OFF) {
-                        continue;
-                    }
-                    lightState = LightState.RED;
-                    lightController.setYellowLightVisible(false);
-                    lightController.setRedLightVisible(true);
-                    // System.out.println("Light is red");
-                    Thread.sleep(5000);
-
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
-    }
-
     public void enable() {
-        lightState = LightState.GREEN;
+        currentTime = 0;
+        lightState = LightState.STARTING;
         lightController.setVisible(true);
     }
     
     public void disable() {
         lightState = LightState.OFF;
         lightController.setVisible(false);
+        lightController.setGreenLightVisible(false);
+        lightController.setYellowLightVisible(false);
+        lightController.setRedLightVisible(false);
     }
 
     public int getId() {
@@ -92,5 +56,30 @@ public class Intersection {
 
     public int getWidth() {
         return width;
-    }    
+    }
+
+    @Override
+    public void onPhysicsTicked() {
+        if(lightState == LightState.OFF) {
+            return;
+        }
+
+        currentTime += Physics.getDeltaTime();
+        if(currentTime < greenLightTime && lightState != LightState.GREEN) {
+            lightState = LightState.GREEN;
+            lightController.setGreenLightVisible(true);
+            lightController.setRedLightVisible(false);
+        } else if(currentTime > greenLightTime && lightState == LightState.GREEN) {
+            lightState = LightState.YELLOW;
+            lightController.setGreenLightVisible(false);
+            lightController.setYellowLightVisible(true);
+        } else if(currentTime > greenLightTime + yellowLightTime && lightState == LightState.YELLOW) {
+            lightState = LightState.RED;
+            lightController.setYellowLightVisible(false);
+            lightController.setRedLightVisible(true);
+        }
+        if(currentTime > greenLightTime + yellowLightTime + redLightTime) {
+            currentTime = 0;
+        }
+    }
 }
