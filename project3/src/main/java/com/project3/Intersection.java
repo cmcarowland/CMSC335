@@ -3,8 +3,6 @@ package com.project3;
 import javafx.scene.Node;
 
 public class Intersection implements PhysicsTickListener {
-    static int idCounter = 1;
-
     private int id;
     private int x;
     private final int width = 10;
@@ -12,12 +10,12 @@ public class Intersection implements PhysicsTickListener {
     Node ui = null;
     private LightController lightController = null;
     private double currentTime = 0;
-    private float greenLightTime = 3;
-    private float yellowLightTime = 2;
-    private float redLightTime = 3;
+    private float greenLightTime = 37;
+    private float yellowLightTime = 4.5f;
+    private float redLightTime = 48.5f;
 
     public Intersection(int x, LightController lc) {
-        this.id = idCounter++;
+        this.id = 5;
         this.x = x * 1000;
         this.lightController = lc;
         Physics.addListener(this);
@@ -81,5 +79,29 @@ public class Intersection implements PhysicsTickListener {
         if(currentTime > greenLightTime + yellowLightTime + redLightTime) {
             currentTime = 0;
         }
+    }
+
+    public float getGreenLightTime() {
+        return greenLightTime;
+    }
+
+    public void setGreenLightTime(float greenLightTime) {
+        this.greenLightTime = greenLightTime;
+    }
+
+    public float getYellowLightTime() {
+        return yellowLightTime;
+    }
+
+    public void setYellowLightTime(float yellowLightTime) {
+        this.yellowLightTime = yellowLightTime;
+    }
+
+    public float getRedLightTime() {
+        return redLightTime;
+    }
+
+    public void setRedLightTime(float redLightTime) {
+        this.redLightTime = redLightTime;
     }
 }
