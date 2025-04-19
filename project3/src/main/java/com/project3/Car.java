@@ -13,7 +13,6 @@ public class Car implements PhysicsTickListener {
     private float maxSpeed;
     private float currentSpeed;
     private float x;
-    private short y;
     private boolean toRight = true;
     private Circle circle;
     private Car nextCar;
@@ -39,9 +38,7 @@ public class Car implements PhysicsTickListener {
         this.toRight = isToRight;
         if(isToRight) {
             x = 50;
-            y = 10;
         } else {
-            y = -10;
             x = 9900;
         }
 
@@ -59,7 +56,7 @@ public class Car implements PhysicsTickListener {
 
     @Override
     public String toString() {
-        return "Car " + id + " at X: " + String.format("%.0f", x) + " Y: " + y + " at " + String.format("%.0f", currentSpeed * MPS_TO_MPH) + " MPH";
+        return "Car " + id + " at X: " + String.format("%.0f", x) + " at " + String.format("%.0f", currentSpeed * MPS_TO_MPH) + " MPH";
     }
 
     public int getId() {
