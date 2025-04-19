@@ -22,7 +22,7 @@ public class Intersection implements PhysicsTickListener {
     }
     
     public void setLightController(LightController lc) {
-        System.out.println("Set: " + lc);
+        // System.out.println("Set: " + lc);
         this.lightController = lc;
     }
 

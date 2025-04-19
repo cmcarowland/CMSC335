@@ -70,7 +70,7 @@ class Physics {
     public static void removeListener(PhysicsTickListener listener) {
         lock.lock();
         try {
-            System.out.println("Removing listener: " + listener);
+            // System.out.println("Removing listener: " + listener);
             removingListeners.add(listener);
         } finally {
             lock.unlock();
@@ -130,7 +130,7 @@ class Physics {
                 Car car = (Car) listener;
                 if (car.getId() != c.getId()) {
                     if (car.isToRight() == c.isToRight()) {
-                        System.out.println("Car " + c.getId() + " is going in the same direction as car " + car.getId());
+                        // System.out.println("Car " + c.getId() + " is going in the same direction as car " + car.getId());
                         float d = Math.abs(car.getX() - c.getX());
                         if (d < distance) {
                             distance = d;
@@ -139,12 +139,6 @@ class Physics {
                     }
                 }
             }
-        }
-
-        if(closestCar != null) {
-            System.out.println("Closest car to " + c.getId() + " is " + closestCar.getId());
-        } else {
-            System.out.println("No cars going in the same direction as " + c.getId());
         }
 
         c.setNextCar(closestCar);

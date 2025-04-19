@@ -51,7 +51,7 @@ public class Car implements PhysicsTickListener {
 
     @Override
     protected void finalize() throws Throwable {
-        System.out.println("Object is being garbage collected: " + this);
+        // System.out.println("Object is being garbage collected: " + this);
     }
 
     @Override
