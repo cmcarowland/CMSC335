@@ -5,6 +5,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 import java.util.List;
@@ -26,6 +27,8 @@ public class PrimaryController implements TimeTickedListener {
     private Button pauseBtn;
     @FXML
     private Label fpsLabel;
+    @FXML
+    private CheckBox autoAddCheckbox;
 
     private float lastCarAdded = 0;
     private int nextCar = 5;
@@ -36,18 +39,20 @@ public class PrimaryController implements TimeTickedListener {
             updateTimeLabel(time);
         });
 
-        if(lastCarAdded > nextCar) {
-            lastCarAdded = 0;
-            nextCar = (int) (2 + Math.random() * (5 - 2));
-            Platform.runLater(() -> {
-                if(Math.random() > 0.5) {
-                    addCarTop(new ActionEvent());
-                } else {
-                    addCarBottom(new ActionEvent());
-                }                
-            });
-        } else {
-            lastCarAdded++;
+        if(autoAddCheckbox.isSelected()) { 
+            if(lastCarAdded > nextCar) {
+                lastCarAdded = 0;
+                nextCar = (int) (2 + Math.random() * (5 - 2));
+                Platform.runLater(() -> {
+                    if(Math.random() > 0.5) {
+                        addCarTop(new ActionEvent());
+                    } else {
+                        addCarBottom(new ActionEvent());
+                    }                
+                });
+            } else {
+                lastCarAdded++;
+            }
         }
     }
 

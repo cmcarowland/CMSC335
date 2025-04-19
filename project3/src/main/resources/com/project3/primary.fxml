@@ -13,6 +13,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.CheckBox?>
 
 <GridPane gridLinesVisible="false" maxHeight="640" maxWidth="640" minHeight="640" minWidth="640" prefHeight="640" prefWidth="640" style="-fx-background-color:rgb(32, 32, 32);" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <columnConstraints>
@@ -53,6 +54,7 @@
       <Button fx:id="addCarBtmBtn" alignment="CENTER" onAction="#addCarBottom" text="Add Car Bottom Lane" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="6" />
       <Button fx:id="addCarBtmBtn" alignment="CENTER" onAction="#addCarTop" text="Add Car Top Lane" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="6" />
       <Button fx:id="addIntBtn" alignment="CENTER" onAction="#addIntersection" text="Add Intersection" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="6" />
+      <CheckBox fx:id="autoAddCheckbox" alignment="CENTER" text="Auto Add" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="6" selected="true" />
       <Pane fx:id="lights" GridPane.columnSpan="4" GridPane.rowIndex="5" >
          <children>
             

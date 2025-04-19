@@ -13,3 +13,8 @@
 .label {
     -fx-text-fill:"white";
 }
+
+.check-box .text {
+    fill: white;
+    -fx-fill: white;
+}
