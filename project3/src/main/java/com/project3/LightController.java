@@ -1,10 +1,15 @@
 package com.project3;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.GridPane;
 import javafx.scene.shape.Circle;
 import javafx.scene.text.Text;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 import javafx.application.Platform;
 
 public class LightController {
@@ -29,9 +34,31 @@ public class LightController {
 
     @FXML
     public void onClicked(MouseEvent me) {
+        if(me.getButton() == MouseButton.PRIMARY) {
+            if(me.getClickCount() == 2) {
+                FXMLLoader fxmll = new FXMLLoader(App.class.getResource("light_settings.fxml"));
+                try {
+                    LightSettingController controller = new LightSettingController();
+                    fxmll.setController(controller);
+                    GridPane node = (GridPane)fxmll.load();
+                    controller.setIntersection(intersection);
+                    
+                    Stage stage = new Stage();
+                    stage.setTitle("Intersection " + intersection.getId());
+                    stage.initModality(Modality.APPLICATION_MODAL);
+                    stage.initOwner(group.getScene().getWindow());
+                    stage.setScene(new Scene(node));
+                    stage.setResizable(false);
+                    stage.showAndWait();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                
+            }
+        } else
         if(me.getButton() == MouseButton.SECONDARY) {
             intersection.disable();
-        }
+        } 
     }
 
     public void setRedLightVisible(boolean visible) {
