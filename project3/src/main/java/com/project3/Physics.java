@@ -16,6 +16,8 @@ class Physics {
     private static final int tickTime = 16; // 16ms
     private static double deltaTime = 0;
     private static LocalTime time = null;
+    private static double[] fps = {60, 60, 60, 60, 60, 60, 60, 60, 60, 60};
+    private static int fpsIndex = 0;
 
     static {
         time = LocalTime.now();
@@ -33,6 +35,10 @@ class Physics {
                 Thread.sleep(tickTime);
                 if(App.currentState == SimulationState.RUNNING) {
                     deltaTime = Duration.between(time, LocalTime.now()).toNanos() / 1000000000.0;
+                    fps[fpsIndex++] = deltaTime;
+                    if (fpsIndex >= fps.length) {
+                        fpsIndex = 0;
+                    }
                     // System.out.println("Delta time: " + deltaTime);
                     notifyListeners();
                     processWaitingListeners();
@@ -104,6 +110,15 @@ class Physics {
 
     public static double getDeltaTime() {
         return deltaTime;
+    }
+
+    public static int getFPS() {
+        double sum = 0;
+        for (double d : fps) {
+            sum += d;
+        }
+     
+        return (int)(1 / (sum / fps.length));
     }
 
     public static void getCarsGoingX(Car c) {
