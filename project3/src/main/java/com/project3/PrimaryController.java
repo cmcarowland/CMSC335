@@ -24,12 +24,31 @@ public class PrimaryController implements TimeTickedListener {
     private Button contBtn;
     @FXML
     private Button pauseBtn;
+    @FXML
+    private Label fpsLabel;
+
+    private float lastCarAdded = 0;
+    private int nextCar = 5;
 
     @Override
     public void onTimeTicked(String time) {
         Platform.runLater(() -> {
             updateTimeLabel(time);
         });
+
+        if(lastCarAdded > nextCar) {
+            lastCarAdded = 0;
+            nextCar = (int) (2 + Math.random() * (5 - 2));
+            Platform.runLater(() -> {
+                if(Math.random() > 0.5) {
+                    addCarTop(new ActionEvent());
+                } else {
+                    addCarBottom(new ActionEvent());
+                }                
+            });
+        } else {
+            lastCarAdded++;
+        }
     }
 
     private void updateTimeLabel(String time) {
@@ -42,6 +61,7 @@ public class PrimaryController implements TimeTickedListener {
     }
 
     public void processCars(List<PhysicsTickListener> cars) {
+        fpsLabel.setText("FPS: " + Physics.getFPS());
         clearCars();
         for (PhysicsTickListener ptl : cars) {
             if (!(ptl instanceof Car)) {
@@ -109,7 +129,7 @@ public class PrimaryController implements TimeTickedListener {
             showDialog("Error", "Simulation is not running, press play to start it and then add cars.");
             return;
         }
-        
+
         Car car = new Car(true);
         App.mainLayout.add(car.getCircle(), 0, 2 + (car.isToRight() ? 2 : 0));
         Physics.getCarsGoingX(car);
