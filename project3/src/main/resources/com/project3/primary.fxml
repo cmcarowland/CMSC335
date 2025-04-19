@@ -27,10 +27,12 @@
       <RowConstraints maxHeight="10" minHeight="10" prefHeight="10" />
       <RowConstraints maxHeight="7" minHeight="7" prefHeight="7" />
       <RowConstraints maxHeight="10" minHeight="10" prefHeight="10" />
-      <RowConstraints prefHeight="60" />
+      <RowConstraints prefHeight="60" minHeight="60" />
       <RowConstraints maxHeight="30" minHeight="30.0" prefHeight="30.0" />
       <RowConstraints maxHeight="30" minHeight="30.0" prefHeight="30.0" />
-      <RowConstraints vgrow="ALWAYS" />
+      <RowConstraints prefHeight="15" minHeight="15" />
+      <RowConstraints prefHeight="15" minHeight="15" />
+      <RowConstraints minHeight="30" vgrow="ALWAYS" />
    </rowConstraints>
    <children>
       <Label fx:id="timeLabel" text="00:00:00" GridPane.columnIndex="0" GridPane.columnSpan="4" GridPane.halignment="CENTER" GridPane.rowIndex="0">
@@ -38,6 +40,8 @@
             <Font size="24.0" />
          </font>
       </Label>
+      <Label fx:id="fpsLabel" text="FPS : 0" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.rowIndex="0" />
+
       <Button fx:id="stopBtn" disable="true" alignment="CENTER" onAction="#stop" text="Stop" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
       <Button fx:id="pauseBtn" disable="true" onAction="#pause" alignment="CENTER" text="Pause" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
       <Button fx:id="playBtn" alignment="CENTER" onAction="#play" text="Play" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
@@ -54,7 +58,11 @@
             
          </children>
       </Pane>
-      <ScrollPane fitToWidth="true" GridPane.columnSpan="4" GridPane.rowIndex="8" style="-fx-background: rgb(32, 32, 32); -fx-background-color: rgb(32, 32, 32);" >
+      <Label text="Car Data" GridPane.columnIndex="0" GridPane.columnSpan="4" GridPane.halignment="CENTER" GridPane.rowIndex="8" />
+      <Label text="Bottom Lane Y POS:   10" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="9" style="-fx-underline: true;" />
+      <Label text="Top Lane    Y POS:  -10" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="9" style="-fx-underline: true;" />
+   
+      <ScrollPane fitToWidth="true" GridPane.columnSpan="4" GridPane.rowIndex="10" style="-fx-background: rgb(32, 32, 32); -fx-background-color: rgb(32, 32, 32);" >
          <content>
             <GridPane>
                <columnConstraints>
@@ -62,19 +70,14 @@
                   <ColumnConstraints hgrow="ALWAYS" percentWidth="50" />
                </columnConstraints>
                 <rowConstraints>
-                  <RowConstraints maxHeight="30" minHeight="30.0" prefHeight="30.0" />
-                  <RowConstraints maxHeight="30" minHeight="30.0" prefHeight="30.0" />
-                  <RowConstraints vgrow="ALWAYS" minHeight="30" />
+                  <RowConstraints minHeight="30" vgrow="ALWAYS" />
                </rowConstraints>
                <children>
-                  <Label text="Car Data" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="0" />
-                  <Label text="Top Lane" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
-                  <Label text="Bottom Lane" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
-                  <VBox fx:id="leftLane" spacing="5.0" GridPane.columnIndex="0" GridPane.rowIndex="2">
+                  <VBox fx:id="rightLane" spacing="5.0" GridPane.columnIndex="0" >
                      <children>
                      </children>
                   </VBox>
-                  <VBox fx:id="rightLane" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                  <VBox fx:id="leftLane" spacing="5.0" GridPane.columnIndex="1" >
                      <children>
                      </children>
                   </VBox>
