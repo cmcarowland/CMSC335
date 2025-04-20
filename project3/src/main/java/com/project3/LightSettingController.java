@@ -60,4 +60,10 @@ public class LightSettingController {
     private void onCancel() {
         ((Stage) redSlider.getScene().getWindow()).close();
     }
+    
+    @FXML
+    private void onRemove() {
+        intersection.disable();
+        onCancel();
+    }
 }

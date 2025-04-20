@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="500.0" style="-fx-background-color: #808080FF;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="500.0" style="-fx-background-color: #808080FF;" xmlns="http://javafx.com/javafx/20" xmlns:fx="http://javafx.com/fxml/1">
   <columnConstraints>
     <ColumnConstraints hgrow="SOMETIMES" maxWidth="295.0" minWidth="10.0" prefWidth="130.0" />
     <ColumnConstraints hgrow="SOMETIMES" maxWidth="466.0" minWidth="10.0" prefWidth="329.0" />
@@ -26,10 +26,11 @@
       <Label fx:id="redLabel" text="3" GridPane.columnIndex="2" GridPane.halignment="CENTER" />
       <Label fx:id="yellowLabel" text="3" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
       <Label fx:id="greenLabel" text="3" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
-      <Slider fx:id="redSlider" GridPane.columnIndex="1" blockIncrement="1.0" majorTickUnit="10.0" max="60.0" min="30.0" minorTickCount="5" showTickMarks="true" />
-      <Slider fx:id="yellowSlider" GridPane.columnIndex="1" GridPane.rowIndex="1" blockIncrement="1.0" majorTickUnit="10.0" max="12.0" min="1.0" minorTickCount="5" showTickMarks="true" />
-      <Slider fx:id="greenSlider"  GridPane.columnIndex="1" GridPane.rowIndex="2" blockIncrement="1.0" majorTickUnit="10.0" max="60.0" min="20.0" minorTickCount="5" showTickMarks="true" />
-      <Button fx:id="okBtn" onAction="#onSave" text="Save" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-      <Button fx:id="cancelBtn" onAction="#onCancel" text="Cancel" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+      <Slider fx:id="redSlider" blockIncrement="1.0" majorTickUnit="10.0" max="60.0" min="30.0" minorTickCount="5" showTickMarks="true" GridPane.columnIndex="1" />
+      <Slider fx:id="yellowSlider" blockIncrement="1.0" majorTickUnit="10.0" max="12.0" min="1.0" minorTickCount="5" showTickMarks="true" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+      <Slider fx:id="greenSlider" blockIncrement="1.0" majorTickUnit="10.0" max="60.0" min="20.0" minorTickCount="5" showTickMarks="true" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+      <Button fx:id="okBtn" onAction="#onSave" text="Save" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+      <Button fx:id="cancelBtn" onAction="#onCancel" text="Cancel" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+      <Button fx:id="removeButton" layoutX="265.0" layoutY="85.0" onAction="#onRemove" text="Remove" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
    </children>
 </GridPane>
