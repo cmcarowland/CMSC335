@@ -3,10 +3,9 @@ package com.project3;
 import java.util.Random;
 
 import javafx.application.Platform;
-import javafx.collections.ObservableList;
-import javafx.scene.Node;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
+import javafx.scene.control.Label;
 
 public class Car implements PhysicsTickListener {
     private int id;
@@ -16,11 +15,13 @@ public class Car implements PhysicsTickListener {
     private boolean toRight = true;
     private Circle circle;
     private Car nextCar;
+    private Label label;
     private PhysicsState state = PhysicsState.MOVING;
     private Intersection nexIntersection = null;
 
     private final static int SAFETY_DISTANCE = 100;
     private final static float MPS_TO_MPH = 2.23694f;
+    private final static short ROAD_END = 10000;
 
     static private int idCounter = 0;
     static private Random random = new Random();
@@ -31,7 +32,7 @@ public class Car implements PhysicsTickListener {
         return random.nextInt(max - min) + min;
     }
     
-    public Car(boolean isToRight) {
+    public Car(boolean isToRight, Label label) {
         this.id = idCounter++;
         this.maxSpeed = random(15.6f, 24.6f);
         this.currentSpeed = maxSpeed;
@@ -44,9 +45,11 @@ public class Car implements PhysicsTickListener {
 
         circle = new Circle();
         circle.setRadius(3);
-        circle.setTranslateX(x / 10000 * App.mainLayout.getWidth());
+        circle.setTranslateX(x / ROAD_END * App.mainLayout.getWidth());
         Color c = Color.rgb(random(128, 255),random(128, 255),random(128, 255));
         circle.setFill(c);
+        this.label = label;
+        label.setText(toString());
     }
 
     @Override
@@ -92,6 +95,10 @@ public class Car implements PhysicsTickListener {
         return circle;
     } 
 
+    public Label getLabel() {
+        return label;
+    } 
+
     public boolean isToRight() {
         return toRight;
     }
@@ -102,7 +109,7 @@ public class Car implements PhysicsTickListener {
 
     private float getDistance() {
         if(nextCar == null) {
-            return 10000;
+            return ROAD_END;
         }
 
         return Math.abs(nextCar.getX() - x);
@@ -145,10 +152,11 @@ public class Car implements PhysicsTickListener {
 
         // System.out.println("Car " + id + " Physics Tick " + x);
         Platform.runLater(() -> {
-            circle.setTranslateX(x / 10000 * App.mainLayout.getWidth());
+            circle.setTranslateX(x / ROAD_END * App.mainLayout.getWidth());
+            label.setText(toString());
         });
 
-        if (x > 10000 || x < -100) {
+        if (x > ROAD_END || x < -100) {
             state = PhysicsState.COMPLETE;
             Physics.removeListener(this);
             cleanUp();
@@ -156,15 +164,8 @@ public class Car implements PhysicsTickListener {
     }
 
     public void cleanUp() {
-        ObservableList<Node> circles = App.mainLayout.getChildren();
-        for (Node circle : circles) {
-            if (circle == this.circle) {
-                // System.out.println("Car " + circle.hashCode() + " removed from layout " + this.circle.hashCode());
-                Platform.runLater(() -> {
-                    App.mainLayout.getChildren().remove(circle);
-                });
-                break;
-            }
-        }
+        Platform.runLater(() -> {
+            App.primaryController.removeCar(this);
+        });
     }
 }

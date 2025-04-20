@@ -8,7 +8,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
-import java.util.List;
 
 public class PrimaryController implements TimeTickedListener {
     @FXML
@@ -65,23 +64,6 @@ public class PrimaryController implements TimeTickedListener {
         rightLane.getChildren().clear();
     }
 
-    public void processCars(List<PhysicsTickListener> cars) {
-        fpsLabel.setText("FPS: " + Physics.getFPS());
-        clearCars();
-        for (PhysicsTickListener ptl : cars) {
-            if (!(ptl instanceof Car)) {
-                continue;
-            }
-            Car car = (Car) ptl;
-            Label carText = new Label(car.toString());
-            if (car.isToRight()) {
-                rightLane.getChildren().add(carText);
-            } else {
-                leftLane.getChildren().add(carText);
-            }
-        }
-    }
-
     @FXML
     private void stop(ActionEvent ae) {
         contBtn.setDisable(true);
@@ -135,20 +117,25 @@ public class PrimaryController implements TimeTickedListener {
             return;
         }
 
-        Car car = new Car(true);
+        Label carText = new Label();
+        rightLane.getChildren().add(carText);
+        
+        Car car = new Car(true, carText);
         App.mainLayout.add(car.getCircle(), 0, 2 + (car.isToRight() ? 2 : 0));
         Physics.getCarsGoingX(car);
         Physics.addListener(car);
     }
-    
+
     @FXML
     private void addCarTop(ActionEvent ae) {
         if(App.currentState != SimulationState.RUNNING) {
             showDialog("Error", "Simulation is not running, press play to start it and then add cars.");
             return;
         }
-
-        Car car = new Car(false);
+            
+        Label carText = new Label();
+        leftLane.getChildren().add(carText);
+        Car car = new Car(false, carText);
         App.mainLayout.add(car.getCircle(), 0, 2 + (car.isToRight() ? 2 : 0));
         Physics.getCarsGoingX(car);
         Physics.addListener(car);
@@ -166,6 +153,24 @@ public class PrimaryController implements TimeTickedListener {
                 i.enable();
                 break;
             }
+        }
+    }
+
+    public void updateFPSLabel() {
+        fpsLabel.setText("FPS: " + Physics.getFPS());
+    }
+
+    public void removeCar(Car car) {
+        if(App.currentState != SimulationState.RUNNING) {
+            showDialog("Error", "Simulation is not running, press play to start it and then remove cars.");
+            return;
+        }
+     
+        App.mainLayout.getChildren().remove(car.getCircle());
+        if(car.isToRight()) {
+            rightLane.getChildren().remove(car.getLabel());
+        } else {
+            leftLane.getChildren().remove(car.getLabel());
         }
     }
 }

@@ -4,7 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
+
 import javafx.application.Platform;
+
 import java.time.Duration;
 import java.time.LocalTime;
 
@@ -43,7 +45,7 @@ class Physics {
                     notifyListeners();
                     processWaitingListeners();
                     Platform.runLater(() -> {
-                        App.primaryController.processCars(listeners);
+                        App.primaryController.updateFPSLabel();
                     });
                 }else {
                     deltaTime = 0;
