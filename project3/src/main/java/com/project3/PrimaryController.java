@@ -160,12 +160,7 @@ public class PrimaryController implements TimeTickedListener {
         fpsLabel.setText("FPS: " + Physics.getFPS());
     }
 
-    public void removeCar(Car car) {
-        if(App.currentState != SimulationState.RUNNING) {
-            showDialog("Error", "Simulation is not running, press play to start it and then remove cars.");
-            return;
-        }
-     
+    public void removeCar(Car car) {    
         App.mainLayout.getChildren().remove(car.getCircle());
         if(car.isToRight()) {
             rightLane.getChildren().remove(car.getLabel());
