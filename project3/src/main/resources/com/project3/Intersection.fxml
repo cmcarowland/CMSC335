@@ -7,7 +7,7 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Text?>
 
-<GridPane prefHeight="150.0" prefWidth="640.0" style="-fx-background-color: #808080FF;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project3.IntersectionController">
+<GridPane prefHeight="150.0" prefWidth="640.0" style="-fx-background-color: #808080FF;" xmlns="http://javafx.com/javafx/20" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project3.IntersectionController">
   <columnConstraints>
       <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="0.0" minWidth="0.0" percentWidth="25.0" prefWidth="0.0" />
     <ColumnConstraints hgrow="SOMETIMES" maxWidth="0.0" minWidth="0.0" percentWidth="25.0" prefWidth="0.0" />

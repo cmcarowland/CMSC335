@@ -15,7 +15,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.control.CheckBox?>
 
-<GridPane gridLinesVisible="false" maxHeight="640" maxWidth="640" minHeight="640" minWidth="640" prefHeight="640" prefWidth="640" style="-fx-background-color:rgb(32, 32, 32);" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<GridPane gridLinesVisible="false" maxHeight="640" maxWidth="640" minHeight="640" minWidth="640" prefHeight="640" prefWidth="640" style="-fx-background-color:rgb(32, 32, 32);" xmlns="http://javafx.com/javafx/20" xmlns:fx="http://javafx.com/fxml/1">
    <columnConstraints>
       <ColumnConstraints hgrow="ALWAYS" percentWidth="25" />
       <ColumnConstraints hgrow="ALWAYS" percentWidth="25" />
