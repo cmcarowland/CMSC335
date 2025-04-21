@@ -26,6 +26,9 @@ public class LightSettingController {
         redSlider.setValue(intersection.getRedLightTime());
         yellowSlider.setValue(intersection.getYellowLightTime());
         greenSlider.setValue(intersection.getGreenLightTime());
+        setLabel(redLabel, intersection.getRedLightTime());
+        setLabel(yellowLabel, intersection.getYellowLightTime());
+        setLabel(greenLabel, intersection.getGreenLightTime());
     }
 
     @FXML
