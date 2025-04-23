@@ -1,3 +1,13 @@
+/**
+ * CMSC 335
+ * IntersectionController.java
+ * DATE: 22 APR 25
+ * AUTHOR: Raymond Rowland
+ * 
+ * This class is responsible for managing the logic and operations 
+ * related to intersections in the application. It 
+ * serves as a controller for the intersection light UI.
+ */
 package com.project3;
 
 import javafx.fxml.FXML;

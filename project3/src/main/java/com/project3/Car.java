@@ -1,3 +1,18 @@
+/**
+ * CMSC 335
+ * Car.java
+ * DATE: 22 Apr 2025
+ * AUTHOR: Raymond Rowland
+ * 
+ * A class representing a car, which is part of the project3 package.
+ * This class is designed to encapsulate the properties and behaviors
+ * of a car within the context of the application.
+ * 
+ * The Car class implements the PhysicsTickListener interface, which
+ * allows it to respond to physics ticks in the simulation. It contains
+ * properties such as the car's ID, maximum speed, current speed, and
+ * position (x-coordinate).
+ */
 package com.project3;
 
 import java.util.Random;

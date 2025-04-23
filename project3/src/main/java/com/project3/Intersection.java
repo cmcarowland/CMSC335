@@ -1,3 +1,15 @@
+/**
+ * CMSC 335
+ * Intersection.java
+ * DATE: 22 APR 25
+ * AUTHOR: Raymond Rowland
+ * 
+ * This class represents an intersection in a traffic simulation system.
+ * It is part of the project3 package and is responsible for managing
+ * the behavior intersections. The class implements
+ * the PhysicStickListener interface to handle finely tuned timing events.
+ *
+ */
 package com.project3;
 
 import javafx.scene.Node;

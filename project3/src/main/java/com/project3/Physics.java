@@ -1,3 +1,15 @@
+/**
+ * CMSC 335
+ * Physics.java
+ * DATE: 22 APR 25
+ * AUTHOR: Raymond Rowland
+ * 
+ * This class provides functionality related to physics calculations and operations.
+ * It manages a list of listeners that are notified on each physics tick.
+ * It also handles the addition and removal of listeners in a thread-safe manner.
+ * The class runs a separate thread that simulates the physics ticks at a fixed interval.
+ * The delta time between ticks is calculated and can be accessed by listeners.
+ */
 package com.project3;
 
 import java.util.ArrayList;

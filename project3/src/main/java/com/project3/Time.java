@@ -1,3 +1,15 @@
+/**
+ * CMSC 335
+ * Time.java
+ * DATE: 22 APR 25
+ * AUTHOR: Raymond Rowland
+ * 
+ * This class represents a utility for handling time-related operations.
+ * It provides methods and functionality to work with time values.
+ * It includes a listener mechanism to notify other components
+ * when the time has ticked, allowing for real-time updates and synchronization.
+ * The time is represented in hours, minutes, and seconds format.
+ */
 package com.project3;
 
 import java.time.LocalTime;

@@ -1,3 +1,15 @@
+/**
+ * CMSC 335
+ * App.java
+ * DATE: 22 APR 2025
+ * AUTHOR: Raymond Rowland
+ * 
+ * This JavaFX application serves as the main entry point for Project 3. 
+ * It initializes the primary user interface, sets up the simulation state, 
+ * and manages the creation and interaction of intersections and traffic lights. 
+ * The application also provides utility methods for finding the next intersection 
+ * for a car and resetting the simulation scene.
+ */
 package com.project3;
 
 import javafx.application.Application;
@@ -12,9 +24,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * JavaFX App
- */
 public class App extends Application {
 
     private static Scene scene;

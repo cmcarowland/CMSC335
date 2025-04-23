@@ -1,3 +1,13 @@
+/**
+ * CMSC 335
+ * LightSettingController.java
+ * DATE: 22 APR 25
+ * AUTHOR: Raymond Rowland
+ * 
+ * This class is responsible for managing and controlling the light settings
+ * within the application. It provides methods to adjust, update, and retrieve
+ * light configurations as needed.
+ */
 package com.project3;
 
 import javafx.fxml.FXML;

@@ -1,3 +1,14 @@
+<!-- 
+   CMSC 335
+   primary.fxml
+   DATE: 22 APR 25
+   AUTHOR: Raymond Rowland
+
+   This file defines the user interface layout and components for the application using FXML.
+   This is the main display that shows the simulation controls, car data, and light settings.
+   It includes buttons for controlling the simulation, labels for displaying time and FPS,
+   and a scrollable area for car data.
+-->
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.Group?>

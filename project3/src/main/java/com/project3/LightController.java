@@ -1,3 +1,11 @@
+/**
+ * CMSC 335
+ * LightController.java
+ * DATE: 22 APR 25
+ * AUTHOR: Raymond Rowland
+ * 
+ * A controller for managing the GUI elements of traffic lights at an intersection.
+ */
 package com.project3;
 
 import javafx.fxml.FXML;

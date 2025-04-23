@@ -1,3 +1,12 @@
+<!--
+  CMSC 335
+  Intersection.fxml
+  DATE: 22 APR 25
+  AUTHOR: Raymond Rowland
+
+  This file defines the layout and structure of the Intersection UI using JavaFX.
+  Not used in the project anymore but kept for reference.
+-->
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>

@@ -1,3 +1,14 @@
+/**
+ * CMSC 335
+ * PrimaryController.java
+ * DATE: 22 APR 25
+ * AUTHOR: Raymond Rowland
+ * 
+ * This class serves as the controller for the main GUI of the application.
+ * It handles user interactions, manages the simulation state,
+ * and updates the display of cars and intersections.
+ * It also implements the TimeTickedListener interface to respond to time ticks.
+ */
 package com.project3;
 
 import javafx.application.Platform;
