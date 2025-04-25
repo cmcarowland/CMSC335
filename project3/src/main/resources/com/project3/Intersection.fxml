@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <!--
   CMSC 335
   Intersection.fxml
@@ -7,7 +8,6 @@
   This file defines the layout and structure of the Intersection UI using JavaFX.
   Not used in the project anymore but kept for reference.
 -->
-<?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.ColumnConstraints?>

@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <!-- 
    CMSC 335
    primary.fxml
@@ -9,7 +10,6 @@
    It includes buttons for controlling the simulation, labels for displaying time and FPS,
    and a scrollable area for car data.
 -->
-<?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.Group?>
 <?import javafx.scene.control.Button?>

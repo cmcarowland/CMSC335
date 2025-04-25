@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <!--
   CMSC 335
   light_settings.fxml
@@ -8,7 +9,6 @@
   It includes sliders for red, yellow, and green light durations,
   as well as buttons for saving, canceling, and removing the settings.
 -->
-<?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
