@@ -32,7 +32,7 @@ public class Car implements PhysicsTickListener {
     private Car nextCar;
     private Label label;
     private PhysicsState state = PhysicsState.MOVING;
-    private Intersection nexIntersection = null;
+    private Intersection nextIntersection = null;
 
     private final static int SAFETY_DISTANCE = 100;
     private final static float MPS_TO_MPH = 2.23694f;
@@ -132,14 +132,14 @@ public class Car implements PhysicsTickListener {
 
     @Override
     public void onPhysicsTicked() {
-        nexIntersection = App.findNextIntersection(this);
-        if (nexIntersection != null) {
-            float distance = getDistance(nexIntersection);
-            if (nexIntersection.getState() == LightState.RED && distance > SAFETY_DISTANCE / 2.0f && distance < SAFETY_DISTANCE) {
+        nextIntersection = App.findNextIntersection(this);
+        if (nextIntersection != null) {
+            float distance = getDistance(nextIntersection);
+            if (nextIntersection.getState() == LightState.RED && distance > SAFETY_DISTANCE / 2.0f && distance < SAFETY_DISTANCE) {
                 currentSpeed = 0;
                 state = PhysicsState.STOPPED;
                 // System.out.println("Car " + id + " stopped at intersection " + nexIntersection.getId());
-            } else if (nexIntersection.getState() == LightState.GREEN) {
+            } else if (nextIntersection.getState() == LightState.GREEN || distance > SAFETY_DISTANCE) {
                 currentSpeed = maxSpeed;
                 state = PhysicsState.MOVING;
                 // System.out.println("Car " + id + " passed intersection " + nexIntersection.getId());
