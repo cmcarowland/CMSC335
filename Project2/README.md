@@ -50,5 +50,17 @@ Run the tests in VSCode test explorer or equivilent test suite.
 ## Usage
 Perfered method is to use a IDE's build and run tools. Open the project and once your Java environment is in a ready state open the Project1.java file and press the run button for the IDE.
 
+Once open you will see the main menu above. There are three sections to this UI: the drawing pane, the shape selection, and the shape configuration.  
+<img src="../Images/image17.png" >
+
+You will select a shape from the left pane and the bottom section will switch to a configuration menu for that shape type. Configure the options for the selected shape and click in the drawing pane to place that shape. Click the cancel button to close the configuration pane. 
+
+### 2D Shapes
+<img src="../Images/image24.png" >
+
+### 3D Shapes
+<img src="../Images/image2f.png" >
+
+
 ## Troubleshooting
 If your project stops building and running with the Java plugins you may have a Java cache issue. In VSCode on a failed build there will be an option to clear the cache.  This has fixed the buiid pipeline issues for me in the past.
