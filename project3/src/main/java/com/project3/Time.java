@@ -22,29 +22,24 @@ class Time {
     private static LocalTime currentTime = LocalTime.of(0, 0, 0);
     private static DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss");
 
-    static {
-        Thread thread = new Thread(Time::tick);
-        thread.setDaemon(true);
-        thread.start();
-        System.out.println("Time thread started");
-    }
-
-    private static void tick() {
-        while(App.currentState != null) {
+    public static void tick() {
+        while(App.currentState != SimulationState.STOPPED) {
             try {
                 if(App.currentState == SimulationState.RUNNING) {
                     currentTime = currentTime.plusSeconds(1);
                     notifyListeners();
-                } else if (App.currentState == SimulationState.STOPPED && currentTime.compareTo(LocalTime.of(0, 0, 0)) > 0) {
-                    currentTime = LocalTime.of(0, 0, 0);
-                    notifyListeners();
-                } 
+                }
 
                 Thread.sleep(1000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
         }
+    }
+
+    public static void resetTimer() {
+        currentTime = LocalTime.of(0, 0, 0);
+        notifyListeners();
     }
 
     public static void addListener(TimeTickedListener listener) {

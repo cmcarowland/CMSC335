@@ -84,6 +84,7 @@ public class PrimaryController implements TimeTickedListener {
         App.setCurrentState(SimulationState.STOPPED);
         Physics.reset();
         App.resetScene();
+        Time.resetTimer();
     }
 
     @FXML
@@ -93,6 +94,9 @@ public class PrimaryController implements TimeTickedListener {
         contBtn.setDisable(true);
         pauseBtn.setDisable(false);
         App.setCurrentState(SimulationState.RUNNING);
+        Thread thread = new Thread(Time::tick);
+        thread.setDaemon(true);
+        thread.start();
     }
 
     @FXML
