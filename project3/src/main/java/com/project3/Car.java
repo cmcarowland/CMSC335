@@ -77,6 +77,10 @@ public class Car implements PhysicsTickListener {
         return "Car " + id + " at X: " + String.format("%.0f", x) + " at " + String.format("%.0f", currentSpeed * MPS_TO_MPH) + " MPH";
     }
 
+    public static void resetCounter() {
+        idCounter = 0;
+    }
+
     public int getId() {
         return id;
     }

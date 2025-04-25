@@ -105,5 +105,6 @@ public class App extends Application {
         }
 
         Platform.runLater(() -> primaryController.clearCars());
+        Car.resetCounter();
     }
 }
